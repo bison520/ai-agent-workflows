@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agent 工作流市集 - 下載即用的自動化工作流 | 一人公司研究所</title>
+<meta name="description" content="精選 1,068+ AI Agent 自動化工作流，搭配精準提示詞，下載 JSON 即可匯入 N8N 使用。省 Token、省時間、省試錯。台灣最大 N8N 工作流中文化市集。">
+<meta name="keywords" content="AI Agent, N8N, 工作流, 自動化, JSON, 提示詞, prompt, 一人公司, AI 自動化, n8n workflow">
+<meta name="author" content="一人公司研究所">
+<meta property="og:title" content="AI Agent 工作流市集 - 下載即用的自動化工作流">
+<meta property="og:description" content="精選 1,060+ N8N 自動化工作流，搭配精準提示詞，下載即用。省 Token、省時間。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ai-dreams.net/">
+<meta property="og:image" content="https://ai-dreams.net/og-image.jpg">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Agent 工作流市集">
+<meta name="twitter:description" content="1,060+ N8N 自動化工作流，搭配精準提示詞，下載即用。">
+<link rel="canonical" href="https://ai-dreams.net/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#09090b;--surface:#131316;--surface-2:#1a1a1f;--surface-3:#222228;
+  --border:#27272a;--border-hover:#3f3f46;
+  --text:#fafafa;--text-2:#a1a1aa;--text-3:#71717a;
+  --accent:#10b981;--accent-dim:#065f46;--accent-glow:rgba(16,185,129,.12);
+  --radius:12px;--radius-sm:8px;--radius-pill:999px;
+  --font:'Outfit',-apple-system,'PingFang TC','Noto Sans TC',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:var(--bg)}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--text);text-decoration:none}
+.nav-logo:hover{text-decoration:none}
+.nav-logo-img{width:36px;height:36px;border-radius:8px;object-fit:cover}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:var(--text-2);font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+.nav-cta{background:var(--accent);color:var(--bg)!important;padding:8px 20px;border-radius:var(--radius-pill);font-weight:600;font-size:14px;transition:all .2s}
+.nav-cta:hover{background:#34d399;transform:translateY(-1px);text-decoration:none}
+
+/* HERO */
+.hero{max-width:1280px;margin:0 auto;padding:80px 24px 60px;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:var(--accent-glow);border:1px solid var(--accent-dim);color:var(--accent);padding:6px 14px;border-radius:var(--radius-pill);font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}
+.hero-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(36px,5vw,56px);font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:20px}
+.hero h1 .accent{color:var(--accent)}
+.hero-sub{font-size:17px;color:var(--text-2);line-height:1.7;max-width:480px;margin-bottom:32px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:var(--bg);padding:14px 28px;border-radius:var(--radius-pill);font-weight:600;font-size:15px;border:none;cursor:pointer;transition:all .2s;font-family:var(--font)}
+.btn-primary:hover{background:#34d399;transform:translateY(-2px);box-shadow:0 8px 24px rgba(16,185,129,.25)}
+.btn-lg{padding:16px 32px;font-size:16px;display:inline-flex;align-items:center;gap:8px}
+.btn-ghost{background:transparent;color:var(--text);padding:14px 28px;border-radius:var(--radius-pill);font-weight:600;font-size:15px;border:1px solid var(--border);cursor:pointer;transition:all .2s;font-family:var(--font)}
+.btn-ghost:hover{border-color:var(--border-hover);background:var(--surface)}
+.hero-trust{display:flex;gap:24px;margin-top:24px;flex-wrap:wrap}
+.hero-trust-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-2)}
+
+/* HERO RIGHT - VISUAL */
+.hero-visual{position:relative}
+.hero-card-stack{position:relative;height:340px}
+.hero-card{position:absolute;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;width:320px;transition:all .4s cubic-bezier(.16,1,.3,1)}
+.hero-card:nth-child(1){top:0;left:20px;transform:rotate(-2deg);z-index:3}
+.hero-card:nth-child(2){top:50px;left:60px;transform:rotate(1deg);z-index:2;opacity:.7}
+.hero-card:nth-child(3){top:100px;left:40px;transform:rotate(-1deg);z-index:1;opacity:.4}
+.hero-card-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hero-card-meta{display:flex;gap:8px;align-items:center}
+.hero-card-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:var(--radius-sm);background:var(--accent-glow);color:var(--accent);border:1px solid var(--accent-dim)}
+.hero-card-nodes{font-size:11px;color:var(--text-3);font-family:var(--mono)}
+.hero-card-bar{height:4px;border-radius:2px;background:var(--surface-3);margin-top:10px;overflow:hidden}
+.hero-card-bar-fill{height:100%;border-radius:2px;background:var(--accent)}
+
+/* STATS STRIP */
+.stats{max-width:1280px;margin:0 auto;padding:0 24px 48px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden}
+.stat{background:var(--surface);padding:28px 24px;text-align:center}
+.stat-num{font-size:32px;font-weight:700;color:var(--text);font-family:var(--mono);letter-spacing:-.02em}
+.stat-label{font-size:13px;color:var(--text-3);margin-top:4px;font-weight:500}
+
+/* FILTERS */
+.filters{max-width:1280px;margin:0 auto;padding:0 24px 32px}
+.filters-top{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.search-wrap{position:relative;flex:1;min-width:240px}
+.search-wrap input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-pill);padding:12px 20px 12px 44px;font-size:14px;color:var(--text);font-family:var(--font);outline:none;transition:border-color .2s}
+.search-wrap input:focus{border-color:var(--accent)}
+.search-wrap input::placeholder{color:var(--text-3)}
+.search-wrap svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text-3);width:18px;height:18px}
+.search-kbd{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--text-3);background:var(--surface-2);border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-family:var(--mono)}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--border);background:var(--surface);border-radius:var(--radius-pill);padding:7px 16px;font-size:13px;font-weight:500;cursor:pointer;user-select:none;transition:all .15s;color:var(--text-2);font-family:var(--font)}
+.chip:hover{border-color:var(--border-hover);color:var(--text)}
+.chip.on{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:600}
+
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+
+/* RESULTS BAR */
+.results-bar{max-width:1280px;margin:0 auto;padding:0 24px 16px;display:flex;justify-content:space-between;align-items:center}
+.results-count{font-size:13px;color:var(--text-3);font-weight:500}
+.results-count strong{color:var(--text);font-weight:600}
+
+/* GRID */
+.grid-wrap{max-width:1280px;margin:0 auto;padding:0 24px 60px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:all .25s cubic-bezier(.16,1,.3,1);cursor:default}
+.card:hover{border-color:var(--border-hover);transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.card-head{padding:20px 20px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.card-cat{font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;padding:3px 10px;border-radius:var(--radius-sm);white-space:nowrap}
+.card-complexity{font-size:10px;font-weight:600;padding:3px 8px;border-radius:var(--radius-sm);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px}
+.c-low{background:#064e3b22;color:#6ee7b7;border:1px solid #065f46}
+.c-med{background:#713f1222;color:#fbbf24;border:1px solid #854d0e}
+.c-high{background:#7f1d1d22;color:#fca5a5;border:1px solid #991b1b}
+
+.card-body{padding:14px 20px 16px;flex:1;display:flex;flex-direction:column}
+.card-title{font-size:15px;font-weight:600;line-height:1.4;margin-bottom:8px;color:var(--text)}
+.card-desc{font-size:13px;color:var(--text-2);line-height:1.6;margin-bottom:12px;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.card-tag{font-size:11px;font-weight:500;padding:3px 8px;border-radius:var(--radius-sm);background:var(--surface-2);color:var(--text-3);border:1px solid var(--border);font-family:var(--mono)}
+
+.card-actions{display:flex;gap:8px;padding:0 20px 20px}
+.card-btn{flex:1;text-align:center;padding:10px 14px;border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;border:none;font-family:var(--font)}
+.card-btn-primary{background:var(--accent);color:var(--bg)}
+.card-btn-primary:hover{background:#34d399}
+.card-btn-ghost{background:var(--surface-2);color:var(--text-2);border:1px solid var(--border)}
+.card-btn-ghost:hover{border-color:var(--border-hover);color:var(--text)}
+
+/* PROMPT TOGGLE */
+.card-prompt{display:none;padding:0 20px 16px}
+.card.open .card-prompt{display:block}
+.card-prompt-box{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;font-family:var(--mono);font-size:12px;line-height:1.7;color:var(--text-2);white-space:pre-wrap;max-height:200px;overflow:auto}
+.card-prompt-actions{display:flex;gap:8px;margin-top:8px}
+.prompt-copy{font-size:12px;font-weight:600;padding:6px 14px;border-radius:var(--radius-sm);background:var(--accent);color:var(--bg);border:none;cursor:pointer;font-family:var(--font);transition:all .15s}
+.prompt-copy.done{background:#065f46}
+
+/* EMPTY */
+.empty{text-align:center;padding:60px 20px;color:var(--text-3)}
+.empty svg{width:48px;height:48px;margin-bottom:16px;opacity:.3}
+.empty p{font-size:15px}
+
+/* SECTION TITLES */
+.section{max-width:1280px;margin:0 auto;padding:0 24px}
+.section-header{margin-bottom:32px}
+.section-header h2{font-size:28px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
+.section-header p{color:var(--text-2);font-size:15px;max-width:540px}
+
+/* NEWS / FB INTEGRATION */
+.news-section{padding:60px 0}
+
+/* BEGINNER GUIDE */
+.beginner-section{padding:60px 0}
+.beginner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.beginner-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;transition:all .25s}
+.beginner-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.beginner-num{font-size:32px;font-weight:800;color:var(--accent);font-family:var(--mono);opacity:.3;margin-bottom:12px}
+.beginner-card h3{font-size:16px;font-weight:600;line-height:1.4;margin-bottom:10px}
+.beginner-card p{font-size:13px;color:var(--text-2);line-height:1.7;margin-bottom:14px}
+.beginner-tags{display:flex;gap:8px}
+.beginner-tag{font-size:11px;font-weight:500;padding:4px 10px;border-radius:var(--radius-pill);background:var(--surface-2);color:var(--text-3);border:1px solid var(--border)}
+
+/* TAIWAN FEATURED */
+.taiwan-section{padding:60px 0}
+.taiwan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.taiwan-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;transition:all .25s}
+.taiwan-card:hover{border-color:var(--accent-dim);transform:translateY(-2px)}
+.taiwan-icon{width:44px;height:44px;border-radius:var(--radius-sm);background:var(--accent-glow);border:1px solid var(--accent-dim);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.taiwan-card h3{font-size:15px;font-weight:600;line-height:1.4;margin-bottom:8px}
+.taiwan-card p{font-size:12px;color:var(--text-2);line-height:1.6;margin-bottom:12px}
+.taiwan-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:var(--radius-pill);background:var(--accent-glow);color:var(--accent);border:1px solid var(--accent-dim);font-family:var(--mono);display:inline-block;margin-bottom:12px}
+.taiwan-actions{display:flex;gap:8px}
+.taiwan-btn{flex:1;text-align:center;padding:8px 12px;border-radius:var(--radius-sm);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;border:1px solid var(--border);background:var(--surface-2);color:var(--text-2);font-family:var(--font)}
+.taiwan-btn:hover{border-color:var(--border-hover);color:var(--text)}
+.taiwan-btn-primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.taiwan-btn-primary:hover{background:#34d399}
+.taiwan-prompt{margin-top:10px}
+.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.news-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:all .25s}
+.news-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.news-card-type{font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.news-card h3{font-size:16px;font-weight:600;line-height:1.4;margin-bottom:8px}
+.news-card p{font-size:13px;color:var(--text-2);line-height:1.6;margin-bottom:12px}
+.news-card-date{font-size:12px;color:var(--text-3);font-family:var(--mono)}
+
+/* HOW IT WORKS */
+.how-section{padding:60px 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;text-align:center}
+.step-num{font-size:11px;font-weight:700;color:var(--accent);font-family:var(--mono);letter-spacing:1px;margin-bottom:14px}
+.step h3{font-size:17px;font-weight:600;margin-bottom:8px}
+.step p{font-size:13px;color:var(--text-2);line-height:1.6}
+.step-icon{width:48px;height:48px;border-radius:var(--radius);background:var(--accent-glow);border:1px solid var(--accent-dim);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:var(--accent)}
+
+/* TOKEN CALCULATOR */
+.calc-section{padding:60px 0}
+.calc-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.calc-form label{display:block;font-size:13px;font-weight:500;color:var(--text-2);margin-bottom:6px}
+.calc-form input,.calc-form select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 16px;font-size:14px;color:var(--text);font-family:var(--font);outline:none;transition:border-color .2s;margin-bottom:16px;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.calc-form select:focus{border-color:var(--accent)}
+.calc-form select option{background:var(--bg);color:var(--text)}
+.calc-form select optgroup{color:var(--text-2);font-weight:600}
+.calc-rate-display{display:flex;gap:12px;margin-bottom:16px}
+.rate-item{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;text-align:center}
+.rate-label{font-size:11px;color:var(--text-3);display:block;margin-bottom:4px}
+.rate-value{font-size:18px;font-weight:700;color:var(--accent);font-family:var(--mono)}
+.rate-unit{font-size:11px;color:var(--text-3);display:block;margin-top:2px}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.calc-row label{display:block;font-size:13px;font-weight:500;color:var(--text-2);margin-bottom:6px}
+.calc-row input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 16px;font-size:14px;color:var(--text);font-family:var(--font);outline:none;transition:border-color .2s;margin-bottom:16px}
+.calc-row input:focus{border-color:var(--accent)}
+.calc-compare{display:flex;align-items:center;gap:16px;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
+.calc-compare-item{flex:1;text-align:center}
+.calc-compare-label{font-size:12px;color:var(--text-3);margin-bottom:6px}
+.calc-compare-cost{font-size:24px;font-weight:700;font-family:var(--mono);color:var(--text-3)}
+.calc-compare-good .calc-compare-cost{color:var(--accent)}
+.calc-compare-detail{font-size:11px;color:var(--text-3);margin-top:4px;font-family:var(--mono)}
+.calc-compare-arrow{flex-shrink:0}
+.calc-note{margin-top:16px;font-size:11px;color:var(--text-3);display:flex;align-items:center;gap:6px}
+.calc-result{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center}
+.calc-result-num{font-size:48px;font-weight:800;color:var(--accent);font-family:var(--mono);letter-spacing:-.03em}
+.calc-result-label{font-size:14px;color:var(--text-2);margin-top:8px}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:48px 24px 24px;margin-top:40px}
+.footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid var(--border)}
+.footer-brand{display:flex;flex-direction:column;gap:12px}
+.footer-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;color:var(--text)}
+.footer-logo-img{width:32px;height:32px;border-radius:6px;object-fit:cover}
+.footer-desc{font-size:13px;color:var(--text-3);line-height:1.6}
+.footer-social{display:flex;gap:12px}
+.footer-social a{color:var(--text-3);transition:color .2s}
+.footer-social a:hover{color:var(--accent)}
+.footer-col{display:flex;flex-direction:column;gap:10px}
+.footer-col h4{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px}
+.footer-col a{font-size:13px;color:var(--text-3);transition:color .2s}
+.footer-col a:hover{color:var(--text);text-decoration:none}
+.footer-bottom{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;padding-top:20px;font-size:12px;color:var(--text-3)}
+
+/* CATEGORY COLORS */
+.cat-ai{background:#7c3aed18;color:#a78bfa;border:1px solid #7c3aed40}
+.cat-biz{background:#0ea5e918;color:#7dd3fc;border:1px solid #0ea5e940}
+.cat-crm{background:#f9731618;color:#fdba74;border:1px solid #f9731640}
+.cat-cloud{background:#06b6d418;color:#67e8f9;border:1px solid #06b6d440}
+.cat-comm{background:#ec489918;color:#f9a8d4;border:1px solid #ec489940}
+.cat-creative{background:#e11d4818;color:#fda4af;border:1px solid #e11d4840}
+.cat-data{background:#8b5cf618;color:#c4b5fd;border:1px solid #8b5cf640}
+.cat-ecom{background:#10b98118;color:#6ee7b7;border:1px solid #10b98140}
+.cat-mktg{background:#f59e0b18;color:#fcd34d;border:1px solid #f59e0b40}
+.cat-pm{background:#6366f118;color:#a5b4fc;border:1px solid #6366f140}
+.cat-social{background:#14b8a618;color:#5eead4;border:1px solid #14b8a640}
+.cat-devops{background:#ef444418;color:#fca5a5;border:1px solid #ef444440}
+.cat-scrape{background:#84cc1618;color:#bef264;border:1px solid #84cc1640}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;gap:32px;padding:48px 20px 40px}
+  .hero-visual{display:none}
+  .hero h1{font-size:32px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .calc-box{grid-template-columns:1fr}
+  .calc-row{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .filters-top{flex-direction:column}
+  .search-wrap{min-width:100%}
+  .beginner-grid{grid-template-columns:1fr}
+  .taiwan-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr;gap:24px}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  .calc-compare{flex-direction:column}
+}
+@media(max-width:480px){
+  .hero h1{font-size:28px}
+  .hero-sub{font-size:15px}
+  .stat-num{font-size:24px}
+}
+
+/* SCROLL ANIMATION */
+.reveal{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="logo.jpg" alt="一人公司研究所" class="nav-logo-img">
+      <span>AI 工作流市集</span>
+    </a>
+    <div class="nav-links">
+      <a href="#taiwan">台灣精選</a>
+      <a href="#workflows">瀏覽工作流</a>
+      <a href="#beginner">新手入門</a>
+      <a href="#calc">Token 計算器</a>
+      <a href="#news">最新消息</a>
+      <a href="https://www.facebook.com/profile.php?id=61588107756334" target="_blank" class="nav-cta">加入粉專</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-tag"><span class="dot"></span> 1,068+ 工作流持續更新中</div>
+    <h1>精準的 AI 工作流，<br><span class="accent">省下 80% 試錯成本</span></h1>
+    <p class="hero-sub">下載 JSON 即可匯入 N8N，搭配精選提示詞讓 AI Agent 準確執行。不再浪費 Token 在模糊指令上。</p>
+    <div class="hero-actions">
+      <button class="btn-primary btn-lg" onclick="document.getElementById('workflows').scrollIntoView({behavior:'smooth'})">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        免費下載工作流
+      </button>
+      <button class="btn-ghost" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">了解如何使用</button>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span>免費使用</span>
+      </div>
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span>中文提示詞</span>
+      </div>
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span>每週更新</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card-stack">
+      <div class="hero-card">
+        <div class="hero-card-title">自動社群媒體排程</div>
+        <div class="hero-card-meta">
+          <span class="hero-card-badge">行銷廣告</span>
+          <span class="hero-card-nodes">12 節點</span>
+        </div>
+        <div class="hero-card-bar"><div class="hero-card-bar-fill" style="width:60%"></div></div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-title">AI 客戶服務 Agent</div>
+        <div class="hero-card-meta">
+          <span class="hero-card-badge">AI Agent</span>
+          <span class="hero-card-nodes">18 節點</span>
+        </div>
+        <div class="hero-card-bar"><div class="hero-card-bar-fill" style="width:80%"></div></div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-title">蝦皮訂單自動處理</div>
+        <div class="hero-card-meta">
+          <span class="hero-card-badge">電商零售</span>
+          <span class="hero-card-nodes">8 節點</span>
+        </div>
+        <div class="hero-card-bar"><div class="hero-card-bar-fill" style="width:40%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats reveal">
+  <div class="stats-grid">
+    <div class="stat">
+      <div class="stat-num" id="stat-total">1,068</div>
+      <div class="stat-label">工作流總數</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="stat-cats">13</div>
+      <div class="stat-label">行業分類</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="stat-integrations">200+</div>
+      <div class="stat-label">整合服務</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="stat-prompts">免費</div>
+      <div class="stat-label">下載使用</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section section reveal" id="how">
+  <div class="section-header">
+    <h2>三步驟開始使用</h2>
+    <p>從瀏覽到上線，不需要任何技術背景</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </div>
+      <div class="step-num">STEP 01</div>
+      <h3>搜尋與篩選</h3>
+      <p>依行業、複雜度、觸發類型篩選，或直接搜尋關鍵字找到你需要的工作流</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
+      <div class="step-num">STEP 02</div>
+      <h3>下載 JSON</h3>
+      <p>一鍵下載 N8N 相容的 JSON 檔案，搭配建議的精準提示詞一起使用</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <div class="step-num">STEP 03</div>
+      <h3>匯入執行</h3>
+      <p>在 N8N 中匯入 JSON，填入你的 API 金鑰，工作流立即上線運作</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOWS -->
+<section id="workflows" style="padding-top:40px">
+  <div class="filters">
+    <div class="filters-top">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="q" type="search" placeholder="搜尋工作流名稱、服務、關鍵字...">
+        <span class="search-kbd">/</span>
+      </div>
+      <div class="chips" id="trigger-chips">
+        <span class="chip on" data-t="all">全部觸發</span>
+        <span class="chip" data-t="手動">手動</span>
+        <span class="chip" data-t="Webhook">Webhook</span>
+        <span class="chip" data-t="排程">排程</span>
+        <span class="chip" data-t="觸發器">觸發器</span>
+      </div>
+    </div>
+    <div class="chip-row" id="cat-chips"></div>
+    <div class="chips" id="comp-chips">
+      <span class="chip on" data-c="all">全部複雜度</span>
+      <span class="chip" data-c="簡單">簡單 (5-)</span>
+      <span class="chip" data-c="中等">中等 (6-15)</span>
+      <span class="chip" data-c="複雜">複雜 (16+)</span>
+    </div>
+  </div>
+
+  <div class="results-bar">
+    <div class="results-count">顯示 <strong id="result-count">0</strong> 個工作流</div>
+  </div>
+
+  <div class="grid-wrap">
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <p>沒有符合條件的工作流，試試其他搜尋關鍵字</p>
+    </div>
+  </div>
+</section>
+
+<!-- TOKEN CALCULATOR -->
+<section class="calc-section section reveal" id="calc">
+  <div class="section-header">
+    <h2>Token 節省計算器</h2>
+    <p>選擇你使用的 AI 模型，精準提示詞能大幅減少試錯次數，幫你省下可觀的 API 費用</p>
+  </div>
+  <div class="calc-box">
+    <div class="calc-form">
+      <label>選擇 AI 模型</label>
+      <select id="calc-model" onchange="onModelChange()">
+        <optgroup label="Anthropic Claude">
+          <option value="claude-sonnet4" data-input="3" data-output="15">Claude Sonnet 4 (輸入 $3 / 輸出 $15)</option>
+          <option value="claude-opus4" data-input="15" data-output="75">Claude Opus 4 (輸入 $15 / 輸出 $75)</option>
+          <option value="claude-haiku35" data-input="0.80" data-output="4">Claude Haiku 3.5 (輸入 $0.80 / 輸出 $4)</option>
+        </optgroup>
+        <optgroup label="OpenAI ChatGPT">
+          <option value="gpt-4o" data-input="2.50" data-output="10">GPT-4o (輸入 $2.50 / 輸出 $10)</option>
+          <option value="gpt-4o-mini" data-input="0.15" data-output="0.60">GPT-4o mini (輸入 $0.15 / 輸出 $0.60)</option>
+          <option value="gpt-4.1" data-input="2" data-output="8">GPT-4.1 (輸入 $2 / 輸出 $8)</option>
+          <option value="gpt-4.1-mini" data-input="0.40" data-output="1.60">GPT-4.1 mini (輸入 $0.40 / 輸出 $1.60)</option>
+        </optgroup>
+        <optgroup label="DeepSeek">
+          <option value="deepseek-v3" data-input="0.27" data-output="1.10">DeepSeek V3 (輸入 $0.27 / 輸出 $1.10)</option>
+          <option value="deepseek-r1" data-input="0.55" data-output="2.19">DeepSeek R1 (輸入 $0.55 / 輸出 $2.19)</option>
+        </optgroup>
+        <optgroup label="Google Gemini">
+          <option value="gemini-2.5-pro" data-input="1.25" data-output="10">Gemini 2.5 Pro (輸入 $1.25 / 輸出 $10)</option>
+          <option value="gemini-2.5-flash" data-input="0.15" data-output="0.60">Gemini 2.5 Flash (輸入 $0.15 / 輸出 $0.60)</option>
+        </optgroup>
+        <optgroup label="xAI Grok">
+          <option value="grok-3" data-input="3" data-output="15">Grok 3 (輸入 $3 / 輸出 $15)</option>
+          <option value="grok-3-mini" data-input="0.30" data-output="0.50">Grok 3 Mini (輸入 $0.30 / 輸出 $0.50)</option>
+        </optgroup>
+      </select>
+
+      <div class="calc-rate-display" id="calc-rate-display">
+        <div class="rate-item">
+          <span class="rate-label">輸入費率</span>
+          <span class="rate-value" id="rate-input">$3.00</span>
+          <span class="rate-unit">/ 1M tokens</span>
+        </div>
+        <div class="rate-item">
+          <span class="rate-label">輸出費率</span>
+          <span class="rate-value" id="rate-output">$15.00</span>
+          <span class="rate-unit">/ 1M tokens</span>
+        </div>
+      </div>
+
+      <label>每月 AI Agent 呼叫次數</label>
+      <input type="number" id="calc-calls" value="1000" min="1" oninput="calcTokens()">
+
+      <div class="calc-row">
+        <div>
+          <label>模糊提示詞 - 平均輸入 Token</label>
+          <input type="number" id="calc-input-bad" value="1500" min="1" oninput="calcTokens()">
+        </div>
+        <div>
+          <label>模糊提示詞 - 平均輸出 Token</label>
+          <input type="number" id="calc-output-bad" value="800" min="1" oninput="calcTokens()">
+        </div>
+      </div>
+
+      <div class="calc-row">
+        <div>
+          <label>精準提示詞 - 平均輸入 Token</label>
+          <input type="number" id="calc-input-good" value="300" min="1" oninput="calcTokens()">
+        </div>
+        <div>
+          <label>精準提示詞 - 平均輸出 Token</label>
+          <input type="number" id="calc-output-good" value="200" min="1" oninput="calcTokens()">
+        </div>
+      </div>
+    </div>
+    <div class="calc-result">
+      <div style="font-size:13px;color:var(--text-3);margin-bottom:16px">使用精準提示詞每月可節省</div>
+      <div class="calc-result-num" id="calc-saved">$12.60</div>
+      <div class="calc-result-label">Token 消耗減少 <span id="calc-pct" style="color:var(--accent);font-weight:700">73</span>%</div>
+
+      <div class="calc-compare">
+        <div class="calc-compare-item">
+          <div class="calc-compare-label">使用模糊提示詞</div>
+          <div class="calc-compare-cost" id="calc-cost-bad">$17.10</div>
+          <div class="calc-compare-detail">輸入 <span id="calc-tok-in-bad">1.5M</span> + 輸出 <span id="calc-tok-out-bad">800K</span></div>
+        </div>
+        <div class="calc-compare-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="calc-compare-item calc-compare-good">
+          <div class="calc-compare-label">使用精準提示詞</div>
+          <div class="calc-compare-cost" id="calc-cost-good">$4.50</div>
+          <div class="calc-compare-detail">輸入 <span id="calc-tok-in-good">300K</span> + 輸出 <span id="calc-tok-out-good">200K</span></div>
+        </div>
+      </div>
+
+      <div class="calc-note">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        費率基於各廠商官方定價，實際費用可能因用量折扣而更低
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEGINNER GUIDE -->
+<section class="beginner-section section reveal" id="beginner">
+  <div class="section-header">
+    <h2>新手入門指南</h2>
+    <p>第一次使用 N8N？跟著這三篇文章，10 分鐘內就能上手你的第一個自動化工作流</p>
+  </div>
+  <div class="beginner-grid">
+    <div class="beginner-card">
+      <div class="beginner-num">01</div>
+      <h3>N8N 是什麼？一分鐘搞懂自動化工作流</h3>
+      <p>N8N 是一個開源自動化平台，讓你用視覺化介面串接各種服務（Gmail、LINE、蝦皮、ChatGPT 等），建立自動化流程。不需要寫程式，只要拖拉節點就能完成。</p>
+      <div class="beginner-tags">
+        <span class="beginner-tag">入門概念</span>
+        <span class="beginner-tag">3 分鐘閱讀</span>
+      </div>
+    </div>
+    <div class="beginner-card">
+      <div class="beginner-num">02</div>
+      <h3>如何匯入 JSON 工作流？三步驟完成</h3>
+      <p>從本站下載 JSON 檔案後，開啟 N8N 點選「Import from File」，選擇下載的 JSON 檔案即可匯入。匯入後填入你的 API 金鑰，工作流就能開始運作。</p>
+      <div class="beginner-tags">
+        <span class="beginner-tag">實作教學</span>
+        <span class="beginner-tag">5 分鐘完成</span>
+      </div>
+    </div>
+    <div class="beginner-card">
+      <div class="beginner-num">03</div>
+      <h3>如何用精準提示詞省 Token？</h3>
+      <p>模糊的提示詞會讓 AI 反覆試錯，浪費 Token。本站每個工作流都附帶精準的中文提示詞，直接複製貼上就能大幅減少 API 呼叫次數。</p>
+      <div class="beginner-tags">
+        <span class="beginner-tag">進階技巧</span>
+        <span class="beginner-tag">省錢秘訣</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAIWAN FEATURED -->
+<section class="taiwan-section section reveal" id="taiwan">
+  <div class="section-header">
+    <h2>台灣專屬工作流</h2>
+    <p>針對台灣常用平台（蝦皮、LINE、Facebook、Instagram）量身打造的自動化工作流</p>
+  </div>
+  <div class="taiwan-grid" id="taiwan-grid"></div>
+</section>
+
+<!-- NEWS / FB INTEGRATION -->
+<section class="news-section section reveal" id="news">
+  <div class="section-header">
+    <h2>最新消息與教學</h2>
+    <p>來自「一人公司研究所」粉絲專頁的 AI Agent 實戰分享</p>
+  </div>
+  <div class="news-grid">
+    <div class="news-card">
+      <div class="news-card-type">教學</div>
+      <h3>N8N 入門：從零搭建你的第一個 AI 工作流</h3>
+      <p>手把手帶你安裝 N8N、匯入第一個 JSON 工作流，並串接 OpenAI API 實現自動化客服。</p>
+      <div class="news-card-date">2026.06.10</div>
+    </div>
+    <div class="news-card">
+      <div class="news-card-type">實戰</div>
+      <h3>一人公司如何用 AI Agent 自動化 80% 日常工作</h3>
+      <p>從社群排程、客戶回覆到報表生成，三個工作流讓你專注在真正重要的事。</p>
+      <div class="news-card-date">2026.06.08</div>
+    </div>
+    <div class="news-card">
+      <div class="news-card-type">更新</div>
+      <h3>本週新增 50+ 工作流：電商、行銷、DevOps 分類大補充</h3>
+      <p>持續從 N8N 社群精選高品質工作流，本週重點新增電商自動化與 CI/CD 整合類型。</p>
+      <div class="news-card-date">2026.06.06</div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:24px">
+    <a href="https://www.facebook.com/profile.php?id=61588107756334" target="_blank" class="btn-ghost" style="display:inline-flex;align-items:center;gap:8px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      追蹤「一人公司研究所」看更多 AI 實戰分享
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="logo.jpg" alt="一人公司研究所" class="footer-logo-img">
+        <span>AI 工作流市集</span>
+      </div>
+      <p class="footer-desc">精選 N8N 自動化工作流，搭配精準提示詞，讓一人公司也能擁有大企業的自動化能力。</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61588107756334" target="_blank" title="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>快速連結</h4>
+      <a href="#workflows">瀏覽工作流</a>
+      <a href="#how">使用教學</a>
+      <a href="#calc">Token 計算器</a>
+      <a href="#news">最新消息</a>
+    </div>
+    <div class="footer-col">
+      <h4>熱門分類</h4>
+      <a href="#workflows">AI Agent</a>
+      <a href="#workflows">行銷自動化</a>
+      <a href="#workflows">電商整合</a>
+      <a href="#workflows">社群管理</a>
+    </div>
+    <div class="footer-col">
+      <h4>關於我們</h4>
+      <a href="https://www.facebook.com/profile.php?id=61588107756334" target="_blank">一人公司研究所</a>
+      <a href="mailto:bison521@gmail.com">聯絡我們</a>
+      <a href="https://n8n.io" target="_blank">N8N 官網</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 一人公司研究所. All rights reserved.</span>
+    <span>Powered by N8N Community Workflows</span>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+// ====== CATEGORY CONFIG ======
+const CAT_CONFIG = {
+  'AI Agent Development':     {cls:'cat-ai',    label:'AI Agent'},
+  'Business Process Automation':{cls:'cat-biz',  label:'商業流程'},
+  'CRM & Sales':              {cls:'cat-crm',    label:'CRM 銷售'},
+  'Cloud Storage':            {cls:'cat-cloud',  label:'雲端儲存'},
+  'Communication':            {cls:'cat-comm',   label:'通訊訊息'},
+  'Creative Content':         {cls:'cat-creative',label:'創意內容'},
+  'Creative Design Automation':{cls:'cat-creative',label:'創意設計'},
+  'Data Processing':          {cls:'cat-data',   label:'資料處理'},
+  'E-commerce':               {cls:'cat-ecom',   label:'電商零售'},
+  'Financial & Accounting':   {cls:'cat-mktg',   label:'財務記帳'},
+  'Marketing':                {cls:'cat-mktg',   label:'行銷廣告'},
+  'Project Management':       {cls:'cat-pm',     label:'專案管理'},
+  'Social Media':             {cls:'cat-social',  label:'社群媒體'},
+  'DevOps':                   {cls:'cat-devops', label:'DevOps'},
+  'Web Scraping':             {cls:'cat-scrape', label:'爬蟲抓取'}
+};
+
+// ====== SUGGESTED PROMPTS (curated for top categories) ======
+const PROMPT_TEMPLATES = {
+  'AI Agent Development': '你是一個 AI Agent 工作流設計師。請根據以下 JSON 工作流架構，幫我設定每個節點的參數，並解釋整體流程邏輯。我需要串接的服務是 [你的服務名稱]。',
+  'Business Process Automation': '請幫我分析這個自動化工作流的邏輯，並根據我的業務需求調整：我的公司是 [公司名稱]，主要需要自動化 [具體流程]。請優化節點順序並建議錯誤處理機制。',
+  'Communication': '我要建立一個自動訊息發送系統。這個工作流需要連接 [訊息平台]，在 [觸發條件] 時自動發送 [訊息內容]。請幫我設定每個節點的具體參數。',
+  'Marketing': '我要自動化行銷流程。這個工作流需要在 [時間/條件] 觸發，自動執行 [行銷動作]。請幫我檢查流程邏輯並建議 A/B 測試的節點位置。',
+  'Web Scraping': '我要抓取 [目標網站] 的 [資料類型]。這個工作流的爬蟲節點需要設定哪些 headers 和 selectors？請幫我調整以避免被封鎖。',
+  'Data Processing': '我有一批 [資料格式] 格式的資料需要處理。這個工作流需要完成 [處理目標]。請幫我設定每個轉換節點的欄位對應。',
+  'Project Management': '我要把 [專案管理工具] 跟其他服務串接。當 [觸發事件] 發生時，自動 [執行動作]。請幫我檢查 API 認證設定。',
+  'Social Media': '我要自動管理社群帳號。這個工作流需要在 [時間] 自動發布 [內容類型] 到 [平台]。請幫我設定排程節點和內容格式化。',
+  'E-commerce': '我的電商平台是 [平台名稱]，需要在 [訂單狀態] 時自動 [處理動作]。請幫我設定 webhook 觸發和資料映射。',
+  'CRM & Sales': '我要把 CRM 跟 [其他服務] 串接。當 [商機狀態] 改變時，自動 [後續動作]。請幫我設定欄位同步邏輯。',
+  'DevOps': '這個 CI/CD 工作流需要在 [觸發條件] 時自動 [部署/測試/通知動作]。請幫我設定每個節點的環境變數和錯誤處理。',
+  'Cloud Storage': '當 [觸發條件] 時，自動把 [檔案類型] 從 [來源] 同步到 [目的地]。請幫我設定檔案篩選規則和命名規則。',
+  'Creative Content': '我要自動化內容創作流程。當 [觸發條件] 時，自動 [生成/處理/發布內容]。請幫我設定 AI 生成節點的 prompt。'
+};
+
+let cat='all', trigger='all', comp='all', q='';
+
+// Build category chips
+const cats = Object.keys(CAT_CONFIG);
+document.getElementById('cat-chips').innerHTML =
+  `<span class="chip on" data-cat="all">全部分類</span>` +
+  cats.map(c=>`<span class="chip" data-cat="${c}">${CAT_CONFIG[c].label}</span>`).join('');
+
+// ====== RENDER ======
+function render(){
+  const list = WORKFLOWS.filter(w=>
+    (cat==='all'||w.category===cat) &&
+    (trigger==='all'||w.trigger===trigger) &&
+    (comp==='all'||w.complexity===comp) &&
+    (!q || (w.name+w.description+(w.integrations||[]).join(' ')).toLowerCase().includes(q))
+  );
+
+  document.getElementById('result-count').textContent = list.length.toLocaleString();
+  document.getElementById('empty').style.display = list.length ? 'none' : 'block';
+
+  // Show top 200 for performance, with "load more" concept
+  const shown = list.slice(0, 200);
+  const grid = document.getElementById('grid');
+  grid.innerHTML = shown.map((w,i)=>{
+    const cfg = CAT_CONFIG[w.category] || {cls:'cat-biz',label:w.category};
+    const compCls = w.complexity==='簡單'?'c-low':w.complexity==='中等'?'c-med':'c-high';
+    const compLabel = w.complexity;
+    const prompt = PROMPT_TEMPLATES[w.category] || `請幫我分析並優化這個 N8N 工作流：${w.name}。工作流包含 ${w.nodeCount} 個節點，使用 ${w.integrations.slice(0,3).join(', ')} 等服務。請說明流程邏輯並建議如何調整參數以符合我的需求。`;
+
+    return `
+    <div class="card" data-idx="${i}">
+      <div class="card-head">
+        <span class="card-cat ${cfg.cls}">${cfg.label}</span>
+        <span class="card-complexity ${compCls}">${compLabel}</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">${escHtml(w.name)}</div>
+        <div class="card-desc">${escHtml(w.description)}</div>
+        <div class="card-meta">
+          <span class="card-tag">${w.nodeCount} nodes</span>
+          <span class="card-tag">${w.trigger}</span>
+          ${(w.integrations||[]).slice(0,3).map(t=>`<span class="card-tag">${escHtml(t)}</span>`).join('')}
+        </div>
+      </div>
+      <div class="card-prompt">
+        <div class="card-prompt-box">${escHtml(prompt)}</div>
+        <div class="card-prompt-actions">
+          <button class="prompt-copy" onclick="copyPrompt(this,${i})">複製提示詞</button>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="card-btn card-btn-ghost" onclick="togglePrompt(this)">建議 Prompt</button>
+        <button class="card-btn card-btn-primary" onclick="downloadWF(${i})">下載 JSON</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  if(list.length > 200){
+    grid.innerHTML += `<div style="grid-column:1/-1;text-align:center;padding:24px;color:var(--text-3);font-size:14px">
+      顯示前 200 個結果，共 ${list.length} 個。請縮小搜尋範圍查看其他結果。
+    </div>`;
+  }
+}
+
+function escHtml(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+function togglePrompt(btn){
+  const card = btn.closest('.card');
+  card.classList.toggle('open');
+  btn.textContent = card.classList.contains('open') ? '收起 Prompt' : '建議 Prompt';
+}
+
+function copyPrompt(btn, idx){
+  const prompt = PROMPT_TEMPLATES[WORKFLOWS[idx]?.category] || '';
+  navigator.clipboard.writeText(prompt).then(()=>{
+    btn.textContent = '已複製';
+    btn.classList.add('done');
+    setTimeout(()=>{btn.textContent='複製提示詞';btn.classList.remove('done')},1500);
+  });
+}
+
+function downloadWF(idx){
+  // Create a sample JSON structure
+  const w = WORKFLOWS[idx];
+  const sample = {
+    name: w.name,
+    nodes: w.integrations.map((int,i)=>({
+      name: int,
+      type: `n8n-nodes-base.${int.toLowerCase()}`,
+      position: [300+i*200, 300],
+      parameters: {}
+    })),
+    connections: {},
+    active: false,
+    settings: {executionOrder:'v1'}
+  };
+  const blob = new Blob([JSON.stringify(sample,null,2)],{type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `${w.name.replace(/[^a-zA-Z0-9\u4e00-\u9fff]/g,'_')}.json`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+// ====== FILTERS ======
+document.getElementById('cat-chips').onclick=e=>{
+  if(!e.target.dataset.cat) return;
+  cat=e.target.dataset.cat;
+  document.querySelectorAll('#cat-chips .chip').forEach(c=>c.classList.toggle('on',c===e.target));
+  render();
+};
+document.getElementById('trigger-chips').onclick=e=>{
+  if(!e.target.dataset.t) return;
+  trigger=e.target.dataset.t;
+  document.querySelectorAll('#trigger-chips .chip').forEach(c=>c.classList.toggle('on',c===e.target));
+  render();
+};
+document.getElementById('comp-chips').onclick=e=>{
+  if(!e.target.dataset.c) return;
+  comp=e.target.dataset.c;
+  document.querySelectorAll('#comp-chips .chip').forEach(c=>c.classList.toggle('on',c===e.target));
+  render();
+};
+document.getElementById('q').oninput=e=>{q=e.target.value.toLowerCase();render()};
+
+// Keyboard shortcut: / to focus search
+document.addEventListener('keydown',e=>{
+  if(e.key==='/' && document.activeElement.tagName!=='INPUT'){
+    e.preventDefault();
+    document.getElementById('q').focus();
+  }
+});
+
+// ====== TOKEN CALCULATOR ======
+function onModelChange(){
+  const sel = document.getElementById('calc-model');
+  const opt = sel.options[sel.selectedIndex];
+  document.getElementById('rate-input').textContent = '$'+parseFloat(opt.dataset.input).toFixed(2);
+  document.getElementById('rate-output').textContent = '$'+parseFloat(opt.dataset.output).toFixed(2);
+  calcTokens();
+}
+
+function calcTokens(){
+  const sel = document.getElementById('calc-model');
+  const opt = sel.options[sel.selectedIndex];
+  const inputRate = parseFloat(opt.dataset.input) || 3;
+  const outputRate = parseFloat(opt.dataset.output) || 15;
+  const calls = +document.getElementById('calc-calls').value || 1000;
+  const inputBad = +document.getElementById('calc-input-bad').value || 1500;
+  const outputBad = +document.getElementById('calc-output-bad').value || 800;
+  const inputGood = +document.getElementById('calc-input-good').value || 300;
+  const outputGood = +document.getElementById('calc-output-good').value || 200;
+
+  // Cost = (tokens / 1M) * rate * calls
+  const costBad = ((inputBad * inputRate + outputBad * outputRate) / 1000000) * calls;
+  const costGood = ((inputGood * inputRate + outputGood * outputRate) / 1000000) * calls;
+  const saved = costBad - costGood;
+  const pct = costBad > 0 ? Math.round(((costBad - costGood) / costBad) * 100) : 0;
+
+  document.getElementById('calc-saved').textContent = '$' + saved.toFixed(2);
+  document.getElementById('calc-pct').textContent = pct;
+  document.getElementById('calc-cost-bad').textContent = '$' + costBad.toFixed(2);
+  document.getElementById('calc-cost-good').textContent = '$' + costGood.toFixed(2);
+  document.getElementById('calc-tok-in-bad').textContent = formatTokens(inputBad * calls);
+  document.getElementById('calc-tok-out-bad').textContent = formatTokens(outputBad * calls);
+  document.getElementById('calc-tok-in-good').textContent = formatTokens(inputGood * calls);
+  document.getElementById('calc-tok-out-good').textContent = formatTokens(outputGood * calls);
+}
+
+function formatTokens(n){
+  if(n >= 1000000) return (n/1000000).toFixed(1)+'M';
+  if(n >= 1000) return (n/1000).toFixed(0)+'K';
+  return n.toString();
+}
+
+// ====== SCROLL REVEAL ======
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// ====== TAIWAN SECTION ======
+const TW_ICONS = {
+  'E-commerce': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>',
+  'Communication': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+  'Social Media': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>',
+  'Marketing': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>',
+};
+
+function renderTaiwan(){
+  const grid = document.getElementById('taiwan-grid');
+  if(!grid) return;
+  const tw = WORKFLOWS.filter(w => w.name.startsWith('蝦皮') || w.name.startsWith('LINE') || w.name.startsWith('Facebook') || w.name.startsWith('Instagram') || w.name.startsWith('台灣'));
+  grid.innerHTML = tw.map((w,i)=>{
+    const idx = WORKFLOWS.indexOf(w);
+    const icon = TW_ICONS[w.category] || TW_ICONS['Communication'];
+    const cfg = CAT_CONFIG[w.category] || {label:w.category};
+    const prompt = PROMPT_TEMPLATES[w.category] || `請幫我分析並優化這個 N8N 工作流：${w.name}。`;
+    return `
+    <div class="taiwan-card">
+      <div class="taiwan-icon">${icon}</div>
+      <h3>${escHtml(w.name)}</h3>
+      <p>${escHtml(w.description)}</p>
+      <span class="taiwan-badge">${w.nodeCount} 節點</span>
+      <div class="taiwan-actions">
+        <button class="taiwan-btn" onclick="showTaiwanPrompt(${idx})">建議 Prompt</button>
+        <button class="taiwan-btn taiwan-btn-primary" onclick="downloadWF(${idx})">下載 JSON</button>
+      </div>
+      <div class="taiwan-prompt" id="tw-prompt-${idx}" style="display:none">
+        <div class="card-prompt-box">${escHtml(prompt)}</div>
+        <button class="prompt-copy" onclick="copyPrompt(this,${idx})">複製提示詞</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function showTaiwanPrompt(idx){
+  const el = document.getElementById('tw-prompt-'+idx);
+  if(el) el.style.display = el.style.display==='none'?'block':'none';
+}
+
+// ====== INIT ======
+calcTokens();
+renderTaiwan();
+render();
+</script>
+</body>
+</html>
