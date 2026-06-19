@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Agent 工作流市集 - 下載即用的自動化工作流 | 一人公司研究所</title>
-<meta name="description" content="精選 1,068+ AI Agent 自動化工作流，搭配精準提示詞，下載 JSON 即可匯入 N8N 使用。省 Token、省時間、省試錯。台灣最大 N8N 工作流中文化市集。">
-<meta name="keywords" content="AI Agent, N8N, 工作流, 自動化, JSON, 提示詞, prompt, 一人公司, AI 自動化, n8n workflow">
+<meta name="description" content="精選 1,068+ AI Agent 自動化工作流，搭配精準提示詞，下載 JSON 即可匯入 N8N 使用。另有小龍蝦三代碟 AI 隨身碟開箱評測、使用教學與應用場景分享。">
+<meta name="keywords" content="AI Agent, N8N, 工作流, 自動化, JSON, 提示詞, prompt, 一人公司, AI 自動化, n8n workflow, 小龍蝦三代碟, USB AI 隨身碟, 離線 AI, AI 助手, AI 教學, AI 比較, ChatGPT 替代方案">
 <meta name="author" content="一人公司研究所">
 <meta property="og:title" content="AI Agent 工作流市集 - 下載即用的自動化工作流">
 <meta property="og:description" content="精選 1,060+ N8N 自動化工作流，搭配精準提示詞，下載即用。省 Token、省時間。">
@@ -153,6 +153,48 @@ a:hover{text-decoration:underline}
 .section-header h2{font-size:28px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
 .section-header p{color:var(--text-2);font-size:15px;max-width:540px}
 
+/* BLOG SECTION */
+.blog-section{padding:80px 0}
+.blog-grid{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px}
+.blog-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.blog-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.4)}
+.blog-card-img{position:relative;height:200px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.blog-card-placeholder{display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:linear-gradient(135deg,var(--surface) 0%,var(--surface-2) 100%)}
+.blog-card-tag{position:absolute;top:12px;left:12px;background:var(--accent);color:var(--bg);padding:4px 12px;border-radius:var(--radius-sm);font-size:12px;font-weight:600}
+.blog-card-body{padding:20px}
+.blog-card-body h3{font-size:18px;font-weight:600;line-height:1.4;margin-bottom:12px;color:var(--text)}
+.blog-card-body p{font-size:14px;color:var(--text-2);line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.blog-card-meta{display:flex;gap:16px;margin-bottom:16px}
+.blog-card-date,.blog-card-read{font-size:12px;color:var(--text-3)}
+.blog-card-link{color:var(--accent);font-size:14px;font-weight:600;transition:color .2s}
+.blog-card-link:hover{color:#34d399;text-decoration:none}
+
+/* BLOG FULL POSTS */
+.blog-full-post{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:32px;overflow:hidden}
+.blog-post-header{padding:32px 32px 24px;border-bottom:1px solid var(--border)}
+.blog-post-tag{display:inline-block;background:var(--accent);color:var(--bg);padding:4px 12px;border-radius:var(--radius-sm);font-size:12px;font-weight:600;margin-bottom:12px}
+.blog-post-header h3{font-size:28px;font-weight:700;line-height:1.3;margin-bottom:12px}
+.blog-post-meta{display:flex;gap:16px;font-size:14px;color:var(--text-3)}
+.blog-post-content{padding:32px;font-size:16px;line-height:1.8;color:var(--text-2)}
+.blog-post-content h4{font-size:20px;font-weight:600;color:var(--text);margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.blog-post-content p{margin-bottom:16px}
+.blog-post-content ul,.blog-post-content ol{margin:16px 0;padding-left:24px}
+.blog-post-content li{margin-bottom:8px}
+.blog-post-content code{background:var(--surface-2);padding:2px 6px;border-radius:4px;font-family:var(--mono);font-size:14px}
+.blog-post-content strong{color:var(--text)}
+.blog-post-cta{margin-top:32px;padding-top:24px;border-top:1px solid var(--border);text-align:center}
+.blog-code-block{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;margin:16px 0;overflow-x:auto}
+.blog-code-block code{background:none;padding:0;font-family:var(--mono);font-size:14px;line-height:1.6;color:var(--text-2);white-space:pre-wrap}
+.blog-comparison-table{margin:24px 0;overflow-x:auto}
+.blog-comparison-table table{width:100%;border-collapse:collapse;font-size:14px}
+.blog-comparison-table th{background:var(--surface-2);padding:12px 16px;text-align:left;font-weight:600;color:var(--text);border-bottom:2px solid var(--border)}
+.blog-comparison-table td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--text-2)}
+.blog-comparison-table tr:hover td{background:var(--surface-2)}
+.section{max-width:1280px;margin:0 auto;padding:0 24px}
+.section-header{margin-bottom:32px}
+.section-header h2{font-size:28px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
+.section-header p{color:var(--text-2);font-size:15px;max-width:540px}
+
 /* NEWS / FB INTEGRATION */
 .news-section{padding:60px 0}
 
@@ -287,7 +329,207 @@ a:hover{text-decoration:underline}
 /* SCROLL ANIMATION */
 .reveal{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.16,1,.3,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
+
+/* PRODUCT SECTION */
+.product-section{padding:80px 0;position:relative;overflow:hidden}
+.product-section::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(16,185,129,.06) 0%,transparent 70%);pointer-events:none}
+.product-hero{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:60px}
+.product-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#f59e0b18,#f59e0b08);border:1px solid #f59e0b40;color:#fbbf24;padding:6px 14px;border-radius:var(--radius-pill);font-size:12px;font-weight:600;letter-spacing:.5px;margin-bottom:16px}
+.product-badge svg{flex-shrink:0}
+.product-title{font-size:clamp(32px,4vw,48px);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:8px}
+.product-title .accent-gold{color:#fbbf24}
+.product-subtitle{font-size:18px;font-weight:600;color:var(--accent);margin-bottom:16px}
+.product-desc{font-size:15px;color:var(--text-2);line-height:1.8;margin-bottom:24px}
+.product-price-row{display:flex;align-items:baseline;gap:16px;margin-bottom:24px}
+.product-price{font-size:42px;font-weight:800;color:var(--accent);font-family:var(--mono)}
+.product-price-unit{font-size:16px;color:var(--text-3)}
+.product-price-note{font-size:13px;color:var(--text-3)}
+.product-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.btn-gold{background:linear-gradient(135deg,#f59e0b,#d97706);color:#000;padding:16px 32px;border-radius:var(--radius-pill);font-weight:700;font-size:16px;border:none;cursor:pointer;transition:all .2s;font-family:var(--font);display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,158,11,.3);text-decoration:none;color:#000}
+.product-guarantee{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-3)}
+.product-guarantee svg{color:var(--accent);flex-shrink:0}
+.product-visual{position:relative;display:flex;justify-content:center;align-items:center}
+.product-img-wrapper{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:var(--surface)}
+.product-img-wrapper img{width:100%;display:block}
+.product-img-glow{position:absolute;inset:-2px;border-radius:var(--radius);background:linear-gradient(135deg,var(--accent-dim),transparent,#f59e0b20);z-index:-1;filter:blur(8px)}
+
+/* PRODUCT FEATURES */
+.product-features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:60px}
+.product-feature{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;transition:all .25s}
+.product-feature:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.product-feature-icon{width:48px;height:48px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:24px}
+.product-feature-icon.green{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3)}
+.product-feature-icon.gold{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3)}
+.product-feature-icon.blue{background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.3)}
+.product-feature h3{font-size:16px;font-weight:600;line-height:1.4;margin-bottom:8px}
+.product-feature p{font-size:13px;color:var(--text-2);line-height:1.7}
+
+/* PRODUCT DUAL SECTION */
+.product-dual{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:60px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:40px}
+.product-dual-card{text-align:center;padding:24px}
+.product-dual-card h3{font-size:22px;font-weight:700;margin-bottom:8px}
+.product-dual-card .tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:var(--radius-pill);margin-bottom:12px}
+.product-dual-card.qwenpaw .tag{background:rgba(255,152,0,.12);color:#ffb74d;border:1px solid rgba(255,152,0,.3)}
+.product-dual-card.hermes .tag{background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.3)}
+.product-dual-card p{font-size:13px;color:var(--text-2);line-height:1.7}
+.product-dual-divider{display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;color:var(--text-3)}
+.product-dual-quote{text-align:center;font-size:15px;color:var(--text-2);line-height:1.7;margin-top:24px;padding-top:24px;border-top:1px solid var(--border);font-style:italic}
+
+/* PRODUCT AUDIENCE */
+.product-audience{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.product-audience-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;display:flex;align-items:flex-start;gap:12px;transition:all .25s}
+.product-audience-item:hover{border-color:var(--accent-dim)}
+.product-audience-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.product-audience-item h4{font-size:14px;font-weight:600;margin-bottom:4px}
+.product-audience-item p{font-size:12px;color:var(--text-3);line-height:1.5}
+
+/* PRODUCT BANNER */
+.product-banner{background:linear-gradient(135deg,var(--accent-dim),rgba(245,158,11,.08));border:1px solid var(--border);border-radius:var(--radius);padding:40px;text-align:center;margin-top:40px}
+.product-banner h3{font-size:24px;font-weight:800;margin-bottom:8px}
+.product-banner p{font-size:15px;color:var(--text-2);margin-bottom:24px}
+.product-banner .btn-gold{font-size:18px;padding:18px 40px}
+
+@media(max-width:768px){
+  .product-hero{grid-template-columns:1fr;gap:32px}
+  .product-features{grid-template-columns:1fr}
+  .product-dual{grid-template-columns:1fr;gap:24px;padding:24px}
+  .product-dual-divider{transform:rotate(90deg)}
+}
 </style>
+<!-- SEO: Blog Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "小龍蝦AI實驗室 - 部落格",
+  "description": "小龍蝦三代碟 AI 隨身碟的開箱評測、應用場景與實戰教學",
+  "url": "https://ai-dreams.net/#blog",
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "【開箱】小龍蝦三代碟：把 AI 裝進隨身碟，走到哪用到哪",
+      "description": "小龍蝦三代碟開箱評測，包含產品外觀、硬體規格、首次使用體驗、適用族群分析",
+      "datePublished": "2026-06-19",
+      "author": {"@type": "Organization", "name": "一人公司研究所"},
+      "keywords": ["USB AI 隨身碟", "小龍蝦三代", "AI Agent", "開箱評測"]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "為什麼你需要一個「不連網」的 AI 助手？隱私安全全解析",
+      "description": "雲端 AI 的隱私風險分析，離線 AI 的安全優勢，以及律師、醫師、企業的實際應用場景",
+      "datePublished": "2026-06-19",
+      "author": {"@type": "Organization", "name": "一人公司研究所"},
+      "keywords": ["離線 AI", "隱私安全", "資料保護", "AI 助手"]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "【教學】小龍蝦三代碟 5 分鐘快速上手指南",
+      "description": "從零開始的小龍蝦三代碟使用教學，5 分鐘學會所有基本操作",
+      "datePublished": "2026-06-19",
+      "author": {"@type": "Organization", "name": "一人公司研究所"},
+      "keywords": ["AI 教學", "快速上手", "使用指南", "新手入門"]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Hermes Agent 實戰：用 AI 幫你寫報告、做簡報、整理資料",
+      "description": "Hermes Agent 的實際應用場景，包含寫報告、做簡報、Excel 資料分析",
+      "datePublished": "2026-06-19",
+      "author": {"@type": "Organization", "name": "一人公司研究所"},
+      "keywords": ["Hermes Agent", "AI 寫報告", "AI 做簡報", "AI 工作"]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "【實測】小龍蝦三代碟 vs ChatGPT：誰才是你的最佳 AI 夥伴？",
+      "description": "從隱私、功能、價格三個面向比較小龍蝦三代碟和 ChatGPT",
+      "datePublished": "2026-06-19",
+      "author": {"@type": "Organization", "name": "一人公司研究所"},
+      "keywords": ["ChatGPT 比較", "AI 比較", "離線 AI vs 雲端 AI"]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Excel 表格一秒搞定！用 AI 自動處理報表的 5 個技巧",
+      "description": "用 AI 自動分析 Excel 資料、產生圖表、寫 VBA 巨集的實用技巧",
+      "datePublished": "2026-06-19",
+      "author": {"@type": "Organization", "name": "一人公司研究所"},
+      "keywords": ["AI Excel", "自動報表", "VBA 巨集", "資料分析"]
+    }
+  ]
+}
+</script>
+
+<!-- SEO: Product Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "小龍蝦三代碟 AI 隨身工作站",
+  "description": "雙 AI 代理 × 隨插即用 × 零安裝的 USB AI 隨身碟，包含 Hermes Agent 和 QwenPaw 兩大 AI 引擎",
+  "brand": {"@type": "Brand", "name": "小龍蝦"},
+  "offers": {
+    "@type": "Offer",
+    "price": "990",
+    "priceCurrency": "TWD",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "156"
+  }
+}
+</script>
+
+<!-- SEO: FAQ Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "小龍蝦三代碟可以在 Mac 上使用嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "目前僅支援 Windows 10/11 系統。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "需要安裝任何驅動程式嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不需要，插上 USB 就能使用。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以離線使用嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "是的，這是完全離線的 AI 解決方案，不需要網路連線。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "有使用次數限制嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "沒有，一次買斷、永久使用。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "小龍蝦三代碟和 ChatGPT 有什麼不同？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "小龍蝦三代碟是完全離線的 AI 解決方案，資料不離開電腦，隱私更安全。ChatGPT 需要連網且資料會上傳到雲端。價格方面，小龍蝦三代碟一次買斷 NT$990，ChatGPT Plus 每月需付 $20 美元。"
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 <body>
 
@@ -299,11 +541,14 @@ a:hover{text-decoration:underline}
       <span>AI 工作流市集</span>
     </a>
     <div class="nav-links">
+      <a href="learn.html">📚 線上教學</a>
+      <a href="#blog">部落格</a>
       <a href="#taiwan">台灣精選</a>
       <a href="#workflows">瀏覽工作流</a>
       <a href="#beginner">新手入門</a>
       <a href="#calc">Token 計算器</a>
       <a href="#news">最新消息</a>
+      <a href="#product" style="color:#fbbf24">🦐 隨身碟</a>
       <a href="https://www.facebook.com/profile.php?id=61588107756334" target="_blank" class="nav-cta">加入粉專</a>
     </div>
   </div>
@@ -599,6 +844,11 @@ a:hover{text-decoration:underline}
       </div>
     </div>
   </div>
+  <div style="text-align:center;margin-top:32px">
+    <a href="learn.html" class="btn-primary btn-lg" style="display:inline-flex;align-items:center;gap:8px">
+      📚 前往完整線上教學（8 章免費課程）
+    </a>
+  </div>
 </section>
 
 <!-- TAIWAN FEATURED -->
@@ -644,6 +894,695 @@ a:hover{text-decoration:underline}
   </div>
 </section>
 
+<!-- BLOG: 小龍蝦三代碟使用心得與教學 -->
+<section class="blog-section section reveal" id="blog">
+  <div class="section-header" style="text-align:center">
+    <h2>部落格：AI 隨身碟使用心得與教學</h2>
+    <p style="max-width:none">小龍蝦三代碟的開箱評測、應用場景與實戰教學</p>
+  </div>
+  <div class="blog-grid">
+    <!-- 文章 1：開箱評測 -->
+    <article class="blog-card">
+      <div class="blog-card-img">
+        <div class="blog-card-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+        </div>
+        <div class="blog-card-tag">開箱評測</div>
+      </div>
+      <div class="blog-card-body">
+        <h3>【開箱】小龍蝦三代碟：把 AI 裝進隨身碟，走到哪用到哪</h3>
+        <p>你有沒有想過，如果 AI 可以像隨身碟一樣，插上就能用、拔掉就帶走，那該有多方便？今天要開箱的「小龍蝦三代碟」，就是這樣一個神奇的產品...</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">2026.06.19</span>
+          <span class="blog-card-read">8 分鐘閱讀</span>
+        </div>
+        <a href="#blog-post-1" class="blog-card-link" onclick="showBlogPost('blog-post-1',event)">閱讀全文 →</a>
+      </div>
+    </article>
+
+    <!-- 文章 2：隱私安全 -->
+    <article class="blog-card">
+      <div class="blog-card-img">
+        <div class="blog-card-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <div class="blog-card-tag">隱私安全</div>
+      </div>
+      <div class="blog-card-body">
+        <h3>為什麼你需要一個「不連網」的 AI 助手？隱私安全全解析</h3>
+        <p>當你在用 ChatGPT、Claude、Gemini 這些 AI 工具時，你有沒有想過：你的對話內容去了哪裡？每一個你輸入的問題，都被傳送到遙遠的雲端伺服器...</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">2026.06.19</span>
+          <span class="blog-card-read">10 分鐘閱讀</span>
+        </div>
+        <a href="#blog-post-2" class="blog-card-link" onclick="showBlogPost('blog-post-2',event)">閱讀全文 →</a>
+      </div>
+    </article>
+
+    <!-- 文章 3：快速上手 -->
+    <article class="blog-card">
+      <div class="blog-card-img">
+        <div class="blog-card-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
+          </svg>
+        </div>
+        <div class="blog-card-tag">使用教學</div>
+      </div>
+      <div class="blog-card-body">
+        <h3>【教學】小龍蝦三代碟 5 分鐘快速上手指南</h3>
+        <p>剛拿到小龍蝦三代碟，不知道怎麼開始？別擔心，這篇教學會帶你從零開始，5 分鐘內學會所有基本操作。不需要任何技術背景...</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">2026.06.19</span>
+          <span class="blog-card-read">6 分鐘閱讀</span>
+        </div>
+        <a href="#blog-post-3" class="blog-card-link" onclick="showBlogPost('blog-post-3',event)">閱讀全文 →</a>
+      </div>
+    </article>
+
+    <!-- 文章 4：Hermes Agent 實戰 -->
+    <article class="blog-card">
+      <div class="blog-card-img">
+        <div class="blog-card-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <div class="blog-card-tag">實戰應用</div>
+      </div>
+      <div class="blog-card-body">
+        <h3>Hermes Agent 實戰：用 AI 幫你寫報告、做簡報、整理資料</h3>
+        <p>Hermes Agent 不只是聊天機器人，它是你的全能工作夥伴。從寫報告到做簡報，從整理資料到分析數據，一個人就是一個團隊...</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">2026.06.19</span>
+          <span class="blog-card-read">12 分鐘閱讀</span>
+        </div>
+        <a href="#blog-post-4" class="blog-card-link" onclick="showBlogPost('blog-post-4',event)">閱讀全文 →</a>
+      </div>
+    </article>
+
+    <!-- 文章 5：ChatGPT 比較 -->
+    <article class="blog-card">
+      <div class="blog-card-img">
+        <div class="blog-card-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round">
+            <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+        </div>
+        <div class="blog-card-tag">比較評測</div>
+      </div>
+      <div class="blog-card-body">
+        <h3>【實測】小龍蝦三代碟 vs ChatGPT：誰才是你的最佳 AI 夥伴？</h3>
+        <p>ChatGPT 很方便，但每個月要付 $20 美元。小龍蝦三代碟一次 $990 就能永久使用。到底該選哪一個？讓我們從隱私、功能、價格三個面向比較...</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">2026.06.19</span>
+          <span class="blog-card-read">10 分鐘閱讀</span>
+        </div>
+        <a href="#blog-post-5" class="blog-card-link" onclick="showBlogPost('blog-post-5',event)">閱讀全文 →</a>
+      </div>
+    </article>
+
+    <!-- 文章 6：Excel 應用 -->
+    <article class="blog-card">
+      <div class="blog-card-img">
+        <div class="blog-card-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/>
+          </svg>
+        </div>
+        <div class="blog-card-tag">辦公效率</div>
+      </div>
+      <div class="blog-card-body">
+        <h3>Excel 表格一秒搞定！用 AI 自動處理報表的 5 個技巧</h3>
+        <p>還在手動整理 Excel 報表嗎？小龍蝦三代碟的 AI 助手可以幫你自動分析數據、產生圖表、甚至寫出 VBA 巨集。學會這 5 個技巧...</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">2026.06.19</span>
+          <span class="blog-card-read">8 分鐘閱讀</span>
+        </div>
+        <a href="#blog-post-6" class="blog-card-link" onclick="showBlogPost('blog-post-6',event)">閱讀全文 →</a>
+      </div>
+    </article>
+  </div>
+  <div style="text-align:center;margin-top:32px">
+    <button class="btn-ghost" onclick="toggleAllPosts()">查看所有文章</button>
+  </div>
+
+  <!-- 完整文章內容（展開顯示） -->
+  <div id="all-blog-posts" style="display:none;margin-top:48px">
+    <!-- 文章 1 完整內容 -->
+    <article id="blog-post-1" class="blog-full-post">
+      <div class="blog-post-header">
+        <span class="blog-post-tag">開箱評測</span>
+        <h3>【開箱】小龍蝦三代碟：把 AI 裝進隨身碟，走到哪用到哪</h3>
+        <div class="blog-post-meta">
+          <span>2026年6月19日</span>
+          <span>8 分鐘閱讀</span>
+        </div>
+      </div>
+      <div class="blog-post-content">
+        <p>你有沒有想過，如果 AI 可以像隨身碟一樣，插上就能用、拔掉就帶走，那該有多方便？</p>
+        <p>今天要開箱的「小龍蝦三代碟」，就是這樣一個神奇的產品。它不是普通的 USB 隨身碟，而是一個<strong>內建完整 AI 系統的可攜式 AI Agent 工作站</strong>。</p>
+        
+        <h4>📦 開箱第一印象</h4>
+        <p>拿到小龍蝦三代碟的第一個感覺是——它就是一個普通的 Kingston 隨身碟。外觀上看不出任何特別之處。但當你插上電腦、雙擊 <code>menu.bat</code>，一個完整的 AI 工作環境就展現在你眼前了。</p>
+        
+        <h4>硬體規格</h4>
+        <ul>
+          <li><strong>儲存容量</strong>：足夠安裝完整 AI 模型和工作環境</li>
+          <li><strong>傳輸介面</strong>：USB 3.0，讀寫速度快</li>
+          <li><strong>相容性</strong>：Windows 10/11 系統</li>
+          <li><strong>攜帶性</strong>：鑰匙圈大小，放口袋就走</li>
+        </ul>
+
+        <h4>🖥️ 首次使用體驗</h4>
+        <p>插上 USB 後，系統會自動顯示主選單介面。主要功能包括：</p>
+        <ul>
+          <li><strong>啟動 Hermes Agent</strong> - 你的 AI 助手，可以對話、寫作、分析資料</li>
+          <li><strong>啟動 QwenPaw</strong> - 另一個 AI 引擎，擅長不同任務</li>
+          <li><strong>系統工具</strong> - 一鍵修復、系統更新、系統重設</li>
+        </ul>
+
+        <h4>最讓我驚豔的三點</h4>
+        <p><strong>第一：完全不需要安裝任何軟體。</strong>傳統的 AI 工具，你要先安裝 Python、設定環境變數、下載模型...光是環境設定就可能花掉半天。小龍蝦三代碟完全跳過這些步驟——插上就能用。</p>
+        <p><strong>第二：不需要網路連線。</strong>這是最大的賣點。你的所有資料、對話記錄、工作檔案，都存在這支隨身碟裡。不會上傳到任何雲端伺服器，隱私完全掌握在自己手上。</p>
+        <p><strong>第三：走到哪用到哪。</strong>去圖書館、咖啡廳、客戶辦公室，甚至出國出差，只要有一台 Windows 電腦，插上 USB 就能立即進入工作狀態。</p>
+
+        <h4>💡 適合哪些人？</h4>
+        <ul>
+          <li><strong>注重隱私的專業人士</strong>：律師、醫生、會計師等，處理敏感資料時不能上傳雲端</li>
+          <li><strong>經常出差的商務人士</strong>：不用帶著厚重的筆電，只要一支隨身碟</li>
+          <li><strong>學生和研究者</strong>：寫論文、分析數據、整理文獻，AI 幫你加速研究過程</li>
+          <li><strong>內容創作者和社群小編</strong>：用 AI 寫文案、做圖、排程發文</li>
+          <li><strong>對 AI 好奇的一般使用者</strong>：想體驗 AI 但不想被綁定在某個訂閱服務</li>
+        </ul>
+
+        <h4>💰 價格與購買方式</h4>
+        <p>小龍蝦三代碟目前在蝦皮購物販售，售價 <strong>$990 元</strong>。比起市面上動輒每月數百元的 AI 訂閱服務，這是一次性的投資。</p>
+        
+        <div class="blog-post-cta">
+          <a href="#product" class="btn-primary">立即購買 $990</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 文章 2 完整內容 -->
+    <article id="blog-post-2" class="blog-full-post">
+      <div class="blog-post-header">
+        <span class="blog-post-tag">隱私安全</span>
+        <h3>為什麼你需要一個「不連網」的 AI 助手？隱私安全全解析</h3>
+        <div class="blog-post-meta">
+          <span>2026年6月19日</span>
+          <span>10 分鐘閱讀</span>
+        </div>
+      </div>
+      <div class="blog-post-content">
+        <p>當你在用 ChatGPT、Claude、Gemini 這些 AI 工具時，你有沒有想過：<strong>你的對話內容去了哪裡？</strong></p>
+        <p>每一個你輸入的問題、每一段你貼上的資料、每一個你讓 AI 分析的檔案，都被傳送到遙遠的雲端伺服器。這些資料可能被用來訓練模型、可能被存取、可能在某天被洩漏。</p>
+        <p>這就是為什麼「離線 AI」正在成為新趨勢。</p>
+
+        <h4>☁️ 雲端 AI 的隱私風險</h4>
+        <p><strong>1. 你的對話被記錄了</strong></p>
+        <p>大多數雲端 AI 服務都會儲存你的對話記錄。雖然他們聲稱是為了「改善服務」，但這些資料的去向和用途，你完全無法掌控。</p>
+        
+        <p><strong>2. 敏感資料外洩風險</strong></p>
+        <p>2023年，三星就發生過員工將公司機密 code 貼到 ChatGPT，導致商業機密外洩的事件。之後三星直接禁止員工使用這類工具。</p>
+        
+        <p><strong>3. 法規合規問題</strong></p>
+        <p>如果你是律師、醫生、會計師，處理客戶的敏感資料時，將資料上傳到雲端可能違反職業保密義務，甚至觸犯個資法。</p>
+
+        <h4>🔒 離線 AI 的隱私優勢</h4>
+        <p><strong>資料完全在本地</strong>：使用離線 AI 工具如小龍蝦三代碟，所有的運算都在你的電腦上進行。你的對話、你的資料、你的工作成果，從頭到尾都不離開你的裝置。</p>
+        <p><strong>沒有帳號、沒有追蹤</strong>：不用註冊帳號、不用提供 email、不用同意任何隱私條款。插上 USB 就開始工作，拔掉 USB 所有痕跡都帶走。</p>
+
+        <h4>💼 哪些場景特別需要離線 AI？</h4>
+        <p><strong>場景一：律師事務所</strong> - 張律師正在處理一樁商業訴訟案。客戶提供的合約文件充滿商業機密。如果用雲端 AI 分析這些文件，等於把客戶的機密交給第三方。</p>
+        <p><strong>場景二：醫院診所</strong> - 李醫師想用 AI 幫忙分析病患的檢驗報告。但病患的健康資料受到醫療法嚴格保護，不能上傳到任何外部伺服器。</p>
+        <p><strong>場景三：企業研發部門</strong> - 王工程師的公司正在開發新產品，研發資料是最高商業機密。公司政策嚴禁將任何工作資料上傳到外部服務。</p>
+
+        <div class="blog-post-cta">
+          <a href="#product" class="btn-primary">保護你的隱私 - 立即購買</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 文章 3 完整內容 -->
+    <article id="blog-post-3" class="blog-full-post">
+      <div class="blog-post-header">
+        <span class="blog-post-tag">使用教學</span>
+        <h3>【教學】小龍蝦三代碟 5 分鐘快速上手指南</h3>
+        <div class="blog-post-meta">
+          <span>2026年6月19日</span>
+          <span>6 分鐘閱讀</span>
+        </div>
+      </div>
+      <div class="blog-post-content">
+        <p>剛拿到小龍蝦三代碟，不知道怎麼開始？別擔心，這篇教學會帶你從零開始，<strong>5 分鐘內學會所有基本操作</strong>。不需要任何技術背景，只要跟著步驟做就行了！</p>
+
+        <h4>📋 準備工作</h4>
+        <p>在開始之前，請確認：</p>
+        <ul>
+          <li>一台 Windows 10 或 11 的電腦</li>
+          <li>小龍蝦三代碟 USB 隨身碟</li>
+          <li>至少 10 分鐘的空閒時間</li>
+        </ul>
+
+        <h4>🚀 Step 1：插上 USB，開啟選單</h4>
+        <p>把小龍蝦三代碟插進電腦的 USB 孔。打開「檔案總管」，找到你的 USB 隨身碟，然後雙擊 <code>menu.bat</code> 檔案。</p>
+        <p><strong>💡 小提示</strong>：如果系統跳出安全警告，選擇「仍要執行」即可。這是 Windows 的標準安全機制。</p>
+
+        <h4>🤖 Step 2：選擇你的 AI 助手</h4>
+        <p>小龍蝦三代碟內建兩個 AI 引擎：</p>
+        <p><strong>Hermes Agent</strong> - 適合：寫作、對話、資料分析、程式開發。功能全面、擅長複雜任務。</p>
+        <p><strong>QwenPaw</strong> - 適合：中文處理、OCR 文字辨識、影音轉檔。中文能力強、多媒體處理佳。</p>
+        <p><strong>建議新手</strong>：先從 Hermes Agent 開始，它的 Web UI 介面最直覺。</p>
+
+        <h4>💬 Step 3：開始和 AI 對話</h4>
+        <p>啟動 Hermes Agent 後，你會看到一個類似聊天室的介面。試著輸入這些問題：</p>
+        <ul>
+          <li>「請幫我寫一封商業電子郵件」</li>
+          <li>「幫我整理這份會議記錄的重點」</li>
+          <li>「用繁體中文解釋什麼是人工智慧」</li>
+        </ul>
+
+        <h4>💡 新手必知的 5 個技巧</h4>
+        <ol>
+          <li><strong>善用提示詞</strong>：AI 的回答品質取決於你的問題品質。試著給清楚的指令和背景資訊。</li>
+          <li><strong>善用上下文</strong>：Hermes Agent 記得住對話上下文。你可以先描述情況，然後逐步要求 AI 完成任務。</li>
+          <li><strong>保存重要對話</strong>：對話記錄存在隨身碟裡。記得在 data/ 資料夾中備份。</li>
+          <li><strong>嘗試不同任務</strong>：不要只拿 AI 來聊天。試著讓它整理筆記、翻譯文件、分析資料。</li>
+          <li><strong>遇到問題先修復</strong>：如果 AI 突然變笨或出現錯誤，先嘗試「一鍵修復」。</li>
+        </ol>
+
+        <div class="blog-post-cta">
+          <a href="#product" class="btn-primary">開始你的 AI 旅程 - 立即購買</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 文章 4：Hermes Agent 實戰 -->
+    <article id="blog-post-4" class="blog-full-post">
+      <div class="blog-post-header">
+        <span class="blog-post-tag">實戰應用</span>
+        <h3>Hermes Agent 實戰：用 AI 幫你寫報告、做簡報、整理資料</h3>
+        <div class="blog-post-meta">
+          <span>2026年6月19日</span>
+          <span>12 分鐘閱讀</span>
+        </div>
+      </div>
+      <div class="blog-post-content">
+        <p>Hermes Agent 不只是聊天機器人，它是你的<strong>全能工作夥伴</strong>。從寫報告到做簡報，從整理資料到分析數據，一個人就是一個團隊。</p>
+        
+        <h4>📝 場景一：10 分鐘完成商業報告</h4>
+        <p>老闆要你明天交一份市場分析報告？以前你可能要花一整天查資料、打字、排版。現在只要告訴 Hermes Agent：</p>
+        <div class="blog-code-block">
+          <code>「請幫我寫一份台灣電商市場分析報告，包含市場規模、主要平台比較、消費者行為分析，以及未來趨勢預測。字數約 2000 字，使用商業報告格式。」</code>
+        </div>
+        <p>Hermes Agent 會在幾分鐘內產生一份結構完整的報告。你只需要檢查內容、微調細節，就能直接交差。</p>
+        
+        <h4>🎯 場景二：自動製作簡報大綱</h4>
+        <p>要做簡報但不知道從何開始？Hermes Agent 可以幫你：</p>
+        <ul>
+          <li><strong>分析主題</strong>：自動拆解簡報主題，找出關鍵要點</li>
+          <li><strong>規劃架構</strong>：設計邏輯清晰的簡報結構</li>
+          <li><strong>產出內容</strong>：每頁投影片的標題、重點、說明文字</li>
+          <li><strong>設計建議</strong>：推薦適合的圖表類型和視覺風格</li>
+        </ul>
+        
+        <h4>📊 場景三：Excel 資料分析</h4>
+        <p>手上有一堆 Excel 資料需要分析？Hermes Agent 可以：</p>
+        <ul>
+          <li><strong>資料清洗</strong>：自動找出缺失值、異常值、重複資料</li>
+          <li><strong>統計分析</strong>：計算平均值、標準差、相關性等統計指標</li>
+          <li><strong>趨勢預測</strong>：根據歷史資料預測未來趨勢</li>
+          <li><strong>圖表製作</strong>：自動產生適合的圖表類型</li>
+        </ul>
+        
+        <h4>💡 實用技巧：如何讓 AI 更懂你</h4>
+        <p><strong>技巧一：給明確的指令</strong></p>
+        <p>❌「幫我寫報告」→ AI 不知道你要什麼報告</p>
+        <p>✅「幫我寫一份 500 字的產品銷售報告，目標客群是 25-35 歲女性，重點是第三季的成長趨勢」</p>
+        
+        <p><strong>技巧二：提供背景資訊</strong></p>
+        <p>AI 需要知道上下文才能給出好答案。告訴它你的角色、目標、限制條件。</p>
+        
+        <p><strong>技巧三：迭代優化</strong></p>
+        <p>第一次的回答不滿意？直接告訴 AI 哪裡需要改進：「這個回答太正式了，請用更口語化的方式重寫」</p>
+        
+        <h4>🚀 立即體驗</h4>
+        <p>小龍蝦三代碟讓你隨時隨地擁有 AI 工作夥伴。不管是咖啡廳、圖書館、還是客戶辦公室，插上 USB 就能開始工作。</p>
+        
+        <div class="blog-post-cta">
+          <a href="#product" class="btn-primary">立即購買 $990 - 解鎖 AI 工作力</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 文章 5：ChatGPT 比較 -->
+    <article id="blog-post-5" class="blog-full-post">
+      <div class="blog-post-header">
+        <span class="blog-post-tag">比較評測</span>
+        <h3>【實測】小龍蝦三代碟 vs ChatGPT：誰才是你的最佳 AI 夥伴？</h3>
+        <div class="blog-post-meta">
+          <span>2026年6月19日</span>
+          <span>10 分鐘閱讀</span>
+        </div>
+      </div>
+      <div class="blog-post-content">
+        <p>ChatGPT 很方便，但每個月要付 $20 美元（約 NT$640）。小龍蝦三代碟一次 $990 就能永久使用。到底該選哪一個？</p>
+        <p>讓我們從<strong>隱私、功能、價格</strong>三個面向，實際比較這兩種 AI 解決方案。</p>
+
+        <h4>🔒 隱私比較：誰更安全？</h4>
+        <div class="blog-comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>比較項目</th>
+                <th>ChatGPT</th>
+                <th>小龍蝦三代碟</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>資料存儲位置</strong></td>
+                <td>OpenAI 雲端伺服器</td>
+                <td>你的 USB 隨身碟</td>
+              </tr>
+              <tr>
+                <td><strong>對話記錄</strong></td>
+                <td>預設被記錄，可用於訓練</td>
+                <td>完全在本地，不離開電腦</td>
+              </tr>
+              <tr>
+                <td><strong>帳號要求</strong></td>
+                <td>需要 email 註冊</td>
+                <td>不需要任何帳號</td>
+              </tr>
+              <tr>
+                <td><strong>網路需求</strong></td>
+                <td>必須連線</td>
+                <td>完全離線</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>結論</strong>：如果你處理敏感資料（法律、醫療、商業機密），小龍蝦三代碟是唯一安全的選擇。</p>
+
+        <h4>⚡ 功能比較：誰更強大？</h4>
+        <p><strong>ChatGPT 的優勢：</strong></p>
+        <ul>
+          <li>模型更新更快（GPT-4o、GPT-4 Turbo）</li>
+          <li>即時網路搜尋能力</li>
+          <li>支援圖片生成（DALL-E）</li>
+          <li>外掛生態系豐富</li>
+        </ul>
+        
+        <p><strong>小龍蝦三代碟的優勢：</strong></p>
+        <ul>
+          <li>完全離線，不受網路影響</li>
+          <li>可處理本地檔案（Excel、PDF、圖片）</li>
+          <li>支援 OCR 文字辨識</li>
+          <li>可執行系統指令和腳本</li>
+          <li>兩個 AI 引擎（Hermes + QwenPaw）</li>
+        </ul>
+        
+        <h4>💰 價格比較：誰更划算？</h4>
+        <div class="blog-comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>方案</th>
+                <th>月費</th>
+                <th>年費</th>
+                <th>3年總費用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ChatGPT Plus</strong></td>
+                <td>$20 USD (約 NT$640)</td>
+                <td>$240 USD (約 NT$7,680)</td>
+                <td>$720 USD (約 NT$23,040)</td>
+              </tr>
+              <tr>
+                <td><strong>小龍蝦三代碟</strong></td>
+                <td>-</td>
+                <td>-</td>
+                <td>NT$990（一次買斷）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>結論</strong>：使用 3 年，ChatGPT 要花 NT$23,040，小龍蝦三代碟只要 NT$990。省下超過 <strong>NT$22,000</strong>！</p>
+
+        <h4>🎯 該怎麼選？</h4>
+        <p><strong>選擇 ChatGPT 如果你：</strong></p>
+        <ul>
+          <li>需要最新、最強的 AI 模型</li>
+          <li>經常需要即時網路搜尋</li>
+          <li>不在意隱私問題</li>
+          <li>預算充足，願意付月費</li>
+        </ul>
+        
+        <p><strong>選擇小龍蝦三代碟如果你：</strong></p>
+        <ul>
+          <li>處理敏感資料，隱私是首要考量</li>
+          <li>不想被月費綁架</li>
+          <li>經常在沒有網路的環境工作</li>
+          <li>需要處理本地檔案（Excel、PDF）</li>
+          <li>想要一個穩定、可控的 AI 工具</li>
+        </ul>
+
+        <h4>💡 最佳策略：兩個都用</h4>
+        <p>其實，最好的策略是<strong>兩個都用</strong>：</p>
+        <ul>
+          <li><strong>日常對話、創意發想</strong> → 用 ChatGPT（模型更新、搜尋能力強）</li>
+          <li><strong>敏感資料、離線工作</strong> → 用小龍蝦三代碟（隱私安全、不需網路）</li>
+        </ul>
+        <p>這樣既能享受最新 AI 技術，又能保護重要資料安全。</p>
+        
+        <div class="blog-post-cta">
+          <a href="#product" class="btn-primary">保護隱私 - 立即購買 $990</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 文章 6：Excel 應用 -->
+    <article id="blog-post-6" class="blog-full-post">
+      <div class="blog-post-header">
+        <span class="blog-post-tag">辦公效率</span>
+        <h3>Excel 表格一秒搞定！用 AI 自動處理報表的 5 個技巧</h3>
+        <div class="blog-post-meta">
+          <span>2026年6月19日</span>
+          <span>8 分鐘閱讀</span>
+        </div>
+      </div>
+      <div class="blog-post-content">
+        <p>還在手動整理 Excel 報表嗎？小龍蝦三代碟的 AI 助手可以幫你自動分析數據、產生圖表、甚至寫出 VBA 巨集。</p>
+        <p>學會這 5 個技巧，讓你的辦公效率提升 10 倍！</p>
+
+        <h4>技巧 1：自動分析銷售數據</h4>
+        <p>把你的 Excel 檔案丟給 Hermes Agent，告訴它：</p>
+        <div class="blog-code-block">
+          <code>「請分析這份銷售報表，找出：1. 銷售額前 5 名的產品 2. 每月銷售趨勢 3. 成長率最高的品類 4. 建議下個月的庫存策略」</code>
+        </div>
+        <p>Hermes Agent 會自動讀取 Excel 內容，進行統計分析，並產生一份完整的分析報告。</p>
+        
+        <h4>技巧 2：自動產生圖表</h4>
+        <p>想要漂亮的圖表但不會做？AI 可以幫你：</p>
+        <ul>
+          <li><strong>選擇圖表類型</strong>：根據資料特性推薦最適合的圖表</li>
+          <li><strong>產生程式碼</strong>：自動寫出 Python 或 VBA 程式碼</li>
+          <li><strong>美化設計</strong>：調整顏色、標籤、標題</li>
+        </ul>
+        
+        <h4>技巧 3：資料清洗自動化</h4>
+        <p>Excel 資料常常很亂：有空值、格式不統一、重複資料。AI 可以幫你：</p>
+        <ul>
+          <li><strong>找出異常值</strong>：自動偵測不合理的數據</li>
+          <li><strong>填補缺失值</strong>：根據上下文推算合理的填補值</li>
+          <li><strong>統一格式</strong>：日期、數字、文字格式標準化</li>
+          <li><strong>刪除重複</strong>：自動找出並移除重複資料</li>
+        </ul>
+        
+        <h4>技巧 4：自動寫 VBA 巨集</h4>
+        <p>需要自動化重複性工作？告訴 AI 你想做什麼，它會幫你寫出 VBA 程式碼：</p>
+        <div class="blog-code-block">
+          <code>「請幫我寫一個 VBA 巨集，功能是：1. 讀取所有分頁的資料 2. 合併到一個總表 3. 依日期排序 4. 產生月報表」</code>
+        </div>
+        <p>AI 會產生完整的 VBA 程式碼，你只需要複製貼上就能執行。</p>
+        
+        <h4>技巧 5：預測分析</h4>
+        <p>有歷史資料想預測未來趨勢？AI 可以幫你：</p>
+        <ul>
+          <li><strong>銷售預測</strong>：根據過去數據預測下個月銷售額</li>
+          <li><strong>庫存建議</strong>：計算最佳庫存量，避免缺貨或積壓</li>
+          <li><strong>成長分析</strong>：找出業務成長的關鍵因素</li>
+        </ul>
+
+        <h4>🚀 立即體驗 AI Excel</h4>
+        <p>小龍蝦三代碟讓你在本地就能使用 AI 處理 Excel，不需要上傳到雲端，隱私完全掌控。</p>
+        
+        <div class="blog-post-cta">
+          <a href="#product" class="btn-primary">提升效率 - 立即購買 $990</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- PRODUCT: 小龍蝦第三代隨身碟 -->
+<section class="product-section section reveal" id="product">
+  <div class="product-hero">
+    <div>
+      <div class="product-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        三代進化 · 龍馬雙修
+      </div>
+      <h2 class="product-title">小龍蝦第三代<br><span class="accent-gold">AI 隨身工作站</span></h2>
+      <p class="product-subtitle">雙 AI 代理 × 隨插即用 × 零安裝</p>
+      <p class="product-desc">插上電腦、打開主控面板，你的兩大 AI 夥伴就醒了——千問小龍蝦 QwenPaw 負責對話與管理，愛瑪仕 Hermes Agent 負責自動化執行。不用安裝任何東西，不用設定環境變數，它就是一支隨身碟，插上去、點兩下，能聊天、能做事的 AI 代理人立刻報到！</p>
+      <div class="product-price-row">
+        <span class="product-price">$990</span>
+        <span class="product-price-unit">NTD</span>
+        <span class="product-price-note">一次買斷 · 永久使用</span>
+      </div>
+      <div class="product-cta-row">
+        <a href="https://s.shopee.tw/LkJyRXIjW" target="_blank" class="btn-gold">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          立即購買
+        </a>
+        <a href="#product-detail" class="btn-ghost" style="font-size:15px;padding:14px 28px">了解更多</a>
+      </div>
+      <div class="product-guarantee">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        蝦皮安心交易 · 有問題可隨時修復
+      </div>
+    </div>
+    <div class="product-visual">
+      <div class="product-img-wrapper">
+        <img src="product-poster.png" alt="小龍蝦第三代隨身碟 - 龍馬雙修">
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 大特色 -->
+  <div class="product-features" id="product-detail">
+    <div class="product-feature">
+      <div class="product-feature-icon gold">🔌</div>
+      <h3>隨插即用，零安裝</h3>
+      <p>不用裝軟體、不用設定環境變數、不用跟終端機打架。啟動腳本自動偵測磁碟代號，環境變數自動載入，AI 模型設定有圖形介面引導。</p>
+    </div>
+    <div class="product-feature">
+      <div class="product-feature-icon green">🔄</div>
+      <h3>龍馬雙修，互相修復</h3>
+      <p>小龍蝦掛了？愛瑪仕一鍵重建。愛瑪仕出錯？小龍蝦診斷復原。你不是買一個 AI，是買一對能互相 Cover 的搭檔。</p>
+    </div>
+    <div class="product-feature">
+      <div class="product-feature-icon blue">🌍</div>
+      <h3>走到哪，AI 跟到哪</h3>
+      <p>去客戶那邊簡報？換公司電腦？出國出差？拔下來插過去，環境一模一樣，連對話記錄都帶著走，不必再重頭來過。</p>
+    </div>
+    <div class="product-feature">
+      <div class="product-feature-icon gold">🛠️</div>
+      <h3>Skill 技能無限擴充</h3>
+      <p>今天需要處理 PDF，裝 PDF Skill。明天需要排程，裝 Cron Skill。它是會成長的 AI 代理人，功能隨你擴展。</p>
+    </div>
+    <div class="product-feature">
+      <div class="product-feature-icon green">📱</div>
+      <h3>WhatsApp 手機遠端操控</h3>
+      <p>人在外面，WhatsApp 傳一句話，AI 幫你在家電腦完成任務。多 Agent 同時跑多個任務不打架。</p>
+    </div>
+    <div class="product-feature">
+      <div class="product-feature-icon blue">📚</div>
+      <h3>N8N 工作流即戰力</h3>
+      <p>導入工作流概念，網路上眾多 N8N 模板都可以立即拆解變成實戰工作流。搶先學會 AI Agent 指揮邏輯與提示詞運用。</p>
+    </div>
+  </div>
+
+  <!-- 雙 AI 引擎介紹 -->
+  <div class="product-dual">
+    <div class="product-dual-card qwenpaw">
+      <div style="font-size:40px;margin-bottom:12px">🦐</div>
+      <h3>千問小龍蝦 QwenPaw</h3>
+      <div class="tag">AI 管家</div>
+      <p>千問大腦，負責跟你對話、寫文、查資料、排程發文、讀 PDF、控瀏覽器。<br><br>提供簡約清爽的 WebUI 愛瑪仕網頁版，以及傳統 CLI 視窗版本。</p>
+    </div>
+    <div class="product-dual-card hermes">
+      <div style="font-size:40px;margin-bottom:12px">⚡</div>
+      <h3>愛瑪仕 Hermes Agent</h3>
+      <div class="tag">AI 員工</div>
+      <p>執行者，負責自動化任務、手機遠端操控、WhatsApp 收發指令。<br><br>記憶強、有想法，能自動化你的日常工作流程。</p>
+    </div>
+  </div>
+  <div class="product-dual-quote">
+    「與其每月付 20 美金租個雲端 AI 代理人，不如一次擁有兩個能互相修復的 AI 夥伴，裝在隨身碟裡跟你到處走。」
+  </div>
+
+  <!-- 選單介面展示 -->
+  <div style="text-align:center;margin:40px 0">
+    <p style="font-size:14px;color:var(--text-3);margin-bottom:16px">▼ 簡約易用的主控面板選單 ▼</p>
+    <div style="max-width:600px;margin:0 auto;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)">
+      <img src="product-menu.jpg" alt="小龍蝦隨身碟選單介面" style="width:100%;display:block">
+    </div>
+  </div>
+
+  <!-- 誰適合 -->
+  <div class="section-header" style="margin-bottom:24px">
+    <h2 style="font-size:28px;font-weight:800;margin-bottom:8px">誰適合這支隨身碟？</h2>
+  </div>
+  <div class="product-audience">
+    <div class="product-audience-item">
+      <div class="product-audience-icon">✍️</div>
+      <div>
+        <h4>內容創作者</h4>
+        <p>自動排程發文、文案撰寫、素材整理</p>
+      </div>
+    </div>
+    <div class="product-audience-item">
+      <div class="product-audience-icon">🏢</div>
+      <div>
+        <h4>一人公司 / 自由工作者</h4>
+        <p>AI 秘書＋AI 員工，隨身帶著走</p>
+      </div>
+    </div>
+    <div class="product-audience-item">
+      <div class="product-audience-icon">💻</div>
+      <div>
+        <h4>工程師 / 開發者</h4>
+        <p>本機 AI Agent，跑自動化腳本、測試環境</p>
+      </div>
+    </div>
+    <div class="product-audience-item">
+      <div class="product-audience-icon">🌱</div>
+      <div>
+        <h4>AI 新手</h4>
+        <p>不想折騰安裝，想直接體驗 AI Agent 的威力</p>
+      </div>
+    </div>
+    <div class="product-audience-item">
+      <div class="product-audience-icon">🔥</div>
+      <div>
+        <h4>AI 老手</h4>
+        <p>覺得 ChatGPT 訂閱制太貴，想自選模型、自控成本</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 最終 CTA -->
+  <div class="product-banner">
+    <h3>🦐 小龍蝦第三代隨身碟 — 龍馬雙修，隨插即戰</h3>
+    <p>一支隨身碟，兩個 AI 夥伴，走到哪用到哪。一次買斷 $990，不再每月付訂閱。</p>
+    <a href="https://s.shopee.tw/LkJyRXIjW" target="_blank" class="btn-gold">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      前往蝦皮購買 $990
+    </a>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-grid">
@@ -664,6 +1603,7 @@ a:hover{text-decoration:underline}
       <a href="#workflows">瀏覽工作流</a>
       <a href="#how">使用教學</a>
       <a href="#calc">Token 計算器</a>
+      <a href="#product" style="color:#fbbf24">🦐 隨身碟產品</a>
       <a href="#news">最新消息</a>
     </div>
     <div class="footer-col">
@@ -676,7 +1616,7 @@ a:hover{text-decoration:underline}
     <div class="footer-col">
       <h4>關於我們</h4>
       <a href="https://www.facebook.com/profile.php?id=61588107756334" target="_blank">一人公司研究所</a>
-      <a href="mailto:bison521@gmail.com">聯絡我們</a>
+      <a href="/cdn-cgi/l/email-protection#14767d677b7a212625547379757d783a777b79">聯絡我們</a>
       <a href="https://n8n.io" target="_blank">N8N 官網</a>
     </div>
   </div>
@@ -686,7 +1626,7 @@ a:hover{text-decoration:underline}
   </div>
 </footer>
 
-<script src="data.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="data.js"></script>
 <script>
 // ====== CATEGORY CONFIG ======
 const CAT_CONFIG = {
@@ -912,6 +1852,36 @@ const TW_ICONS = {
   'Social Media': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>',
   'Marketing': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>',
 };
+
+// ====== BLOG SECTION ======
+function toggleAllPosts(){
+  const el = document.getElementById('all-blog-posts');
+  if(!el) return;
+  const btn = el.previousElementSibling.querySelector('button');
+  if(el.style.display==='none'){
+    el.style.display='block';
+    if(btn) btn.textContent='收合文章';
+    el.scrollIntoView({behavior:'smooth',block:'start'});
+  } else {
+    el.style.display='none';
+    if(btn) btn.textContent='查看所有文章';
+  }
+}
+
+function showBlogPost(postId, evt){
+  if(evt) evt.preventDefault();
+  const container = document.getElementById('all-blog-posts');
+  if(!container) return;
+  const btn = container.previousElementSibling.querySelector('button');
+  if(container.style.display==='none'){
+    container.style.display='block';
+    if(btn) btn.textContent='收合文章';
+  }
+  setTimeout(function(){
+    const target = document.getElementById(postId);
+    if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+  }, 50);
+}
 
 function renderTaiwan(){
   const grid = document.getElementById('taiwan-grid');
