@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agent Skill 市集 - 開箱即用的 Agent 技能庫 | 一人公司研究所</title>
+<meta name="description" content="精選 200+ AI Agent Skill，涵蓋 Claude Code、Hermes、OpenClaw、Codex、Cursor。必裝精選、分類瀏覽、一鍵安裝。">
+<meta name="keywords" content="AI Agent, Skill, MCP, Claude Code, Hermes Agent, OpenClaw, Codex, Cursor, AI 技能, MCP Server, AI 工具">
+<meta name="author" content="一人公司研究所">
+<meta property="og:title" content="AI Agent Skill 市集 - 開箱即用的 Agent 技能庫">
+<meta property="og:description" content="精選 200+ AI Agent Skill，涵蓋所有主流 Agent。必裝精選、一鍵安裝。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ai-dreams.net/">
+<meta property="og:image" content="https://ai-dreams.net/og-image.jpg">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Agent Skill 市集">
+<meta name="twitter:description" content="精選 200+ AI Agent Skill，涵蓋所有主流 Agent。">
+<link rel="canonical" href="https://ai-dreams.net/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AI Agent Skill 市集",
+  "url": "https://ai-dreams.net/",
+  "description": "精選 200+ AI Agent Skill，涵蓋 Claude Code、Hermes、OpenClaw、Codex、Cursor",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://ai-dreams.net/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#09090b;--surface:#131316;--surface-2:#1a1a1f;--surface-3:#222228;
+  --border:#27272a;--border-hover:#3f3f46;
+  --text:#fafafa;--text-2:#a1a1aa;--text-3:#71717a;
+  --accent:#10b981;--accent-dim:#065f46;--accent-glow:rgba(16,185,129,.12);
+  --radius:12px;--radius-sm:8px;--radius-lg:16px;--radius-pill:999px;
+  --font:'Outfit',-apple-system,'PingFang TC','Noto Sans TC',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  /* Agent colors */
+  --agent-universal:#10b981;--agent-claude:#f97316;--agent-hermes:#a855f7;
+  --agent-openclaw:#22c55e;--agent-codex:#3b82f6;--agent-cursor:#94a3b8;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:var(--bg)}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ═══ NAV ═══ */
+.nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:var(--text);text-decoration:none}
+.nav-logo:hover{text-decoration:none}
+.nav-logo-img{width:32px;height:32px;border-radius:8px;object-fit:cover}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{color:var(--text-2);font-size:13px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+.nav-cta{background:var(--accent);color:var(--bg)!important;padding:8px 18px;border-radius:var(--radius-pill);font-weight:600;font-size:13px;transition:all .2s}
+.nav-cta:hover{background:#34d399;transform:translateY(-1px);text-decoration:none}
+
+/* ═══ HERO ═══ */
+.hero{max-width:1280px;margin:0 auto;padding:72px 24px 48px;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-glow);border:1px solid var(--accent-dim);color:var(--accent);padding:8px 18px;border-radius:var(--radius-pill);font-size:13px;font-weight:600;margin-bottom:24px}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(36px,5.5vw,58px);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:20px}
+.hero h1 .accent{color:var(--accent)}
+.hero h1 .accent-gold{color:#fbbf24}
+.hero-sub{font-size:18px;color:var(--text-2);line-height:1.7;max-width:620px;margin:0 auto 36px}
+.hero-search{max-width:560px;margin:0 auto 32px;position:relative}
+.hero-search input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-pill);padding:16px 24px 16px 52px;font-size:15px;color:var(--text);font-family:var(--font);outline:none;transition:all .2s}
+.hero-search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
+.hero-search input::placeholder{color:var(--text-3)}
+.hero-search svg{position:absolute;left:20px;top:50%;transform:translateY(-50%);color:var(--text-3)}
+.hero-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat-num{font-size:28px;font-weight:800;color:var(--text);font-family:var(--mono)}
+.hero-stat-label{font-size:13px;color:var(--text-3);margin-top:2px}
+
+/* ═══ AGENT TABS ═══ */
+.agent-tabs{max-width:1280px;margin:0 auto;padding:0 24px 40px}
+.agent-tabs-inner{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.agent-tab{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-pill);padding:10px 20px;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;color:var(--text-2);font-family:var(--font);user-select:none}
+.agent-tab:hover{border-color:var(--border-hover);color:var(--text)}
+.agent-tab.active{color:var(--bg);font-weight:600}
+.agent-tab .icon{font-size:16px}
+.agent-tab .count{font-size:11px;font-family:var(--mono);opacity:.7}
+
+/* ═══ SECTION ═══ */
+.section{max-width:1280px;margin:0 auto;padding:0 24px 60px}
+.section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:12px}
+.section-header h2{font-size:24px;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.section-header h2 .emoji{font-size:28px}
+.section-header p{color:var(--text-2);font-size:14px}
+.section-link{font-size:13px;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:4px}
+.section-link:hover{text-decoration:none;color:#34d399}
+
+/* ═══ ESSENTIAL CAROUSEL ═══ */
+.essential-section{padding:48px 0;position:relative}
+.essential-section::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,transparent,var(--surface) 50%,transparent);opacity:.3;pointer-events:none}
+.essential-header{text-align:center;margin-bottom:36px}
+.essential-header h2{font-size:28px;font-weight:800;margin-bottom:8px}
+.essential-header p{color:var(--text-2);font-size:15px}
+.essential-row{margin-bottom:40px}
+.essential-row-title{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding:0 24px;max-width:1280px;margin-left:auto;margin-right:auto}
+.essential-row-title .agent-icon{font-size:24px}
+.essential-row-title h3{font-size:18px;font-weight:700}
+.essential-row-title .agent-name{color:var(--text-2);font-size:14px;font-weight:400;margin-left:4px}
+.essential-scroll{display:flex;gap:16px;overflow-x:auto;padding:0 24px 8px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;max-width:1280px;margin:0 auto}
+.essential-scroll::-webkit-scrollbar{height:4px}
+.essential-scroll::-webkit-scrollbar-track{background:var(--surface-2);border-radius:2px}
+.essential-scroll::-webkit-scrollbar-thumb{background:var(--border-hover);border-radius:2px}
+
+/* ═══ SKILL CARD ═══ */
+.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s cubic-bezier(.16,1,.3,1);cursor:pointer;flex-shrink:0;width:320px;scroll-snap-align:start}
+.skill-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.35)}
+.skill-card-img{width:100%;height:180px;object-fit:cover;background:var(--surface-2);display:block}
+.skill-card-body{padding:16px 18px 18px}
+.skill-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:8px}
+.skill-card-name{font-size:15px;font-weight:600;color:var(--text);line-height:1.3}
+.skill-card-essential{font-size:10px;font-weight:700;padding:2px 8px;border-radius:var(--radius-sm);background:rgba(251,191,36,.12);color:#fbbf24;border:1px solid rgba(251,191,36,.3);white-space:nowrap}
+.skill-card-tagline{font-size:13px;color:var(--text-2);margin-bottom:12px;line-height:1.5}
+.skill-card-agents{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}
+.skill-agent-dot{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;border:1px solid var(--border);background:var(--surface-2);flex-shrink:0;cursor:default;transition:transform .15s}
+.skill-agent-dot:hover{transform:scale(1.2);z-index:1}
+.skill-card-agents{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.skill-card-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text-3)}
+.skill-card-meta .stars{display:flex;align-items:center;gap:4px;font-family:var(--mono)}
+.skill-card-meta .stars svg{color:#fbbf24;width:13px;height:13px}
+.skill-card-meta .lang{font-size:11px;padding:2px 8px;border-radius:var(--radius-sm);background:var(--surface-2);border:1px solid var(--border)}
+
+/* ═══ GRID (full browse) ═══ */
+.browse-section{padding:20px 0 60px}
+.browse-filters{max-width:1280px;margin:0 auto;padding:0 24px 24px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.filter-chips{display:flex;gap:6px;flex-wrap:wrap}
+.filter-chip{border:1px solid var(--border);background:var(--surface);border-radius:var(--radius-pill);padding:7px 14px;font-size:12px;font-weight:500;cursor:pointer;transition:all .15s;color:var(--text-2);font-family:var(--font);user-select:none}
+.filter-chip:hover{border-color:var(--border-hover);color:var(--text)}
+.filter-chip.on{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:600}
+.results-count{font-size:13px;color:var(--text-3);font-weight:500;margin-left:auto}
+.results-count strong{color:var(--text)}
+.skill-grid{max-width:1280px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.skill-grid .skill-card{width:auto;flex-shrink:auto}
+
+/* ═══ DETAIL MODAL ═══ */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;backdrop-filter:blur(8px);padding:24px;overflow-y:auto}
+.modal-overlay.open{display:flex;align-items:flex-start;justify-content:center}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);max-width:800px;width:100%;overflow:hidden;animation:modalIn .3s cubic-bezier(.16,1,.3,1)}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.6);border:none;color:var(--text);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .2s}
+.modal-close:hover{background:rgba(0,0,0,.8)}
+.modal-hero{position:relative}
+.modal-hero img{width:100%;height:300px;object-fit:cover;display:block}
+.modal-hero-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(transparent,rgba(0,0,0,.8))}
+.modal-hero-title{font-size:24px;font-weight:800;margin-bottom:4px}
+.modal-hero-tagline{font-size:14px;color:var(--text-2)}
+.modal-body{padding:28px}
+.modal-agents{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.modal-agent-badge{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:var(--radius-pill);font-size:12px;font-weight:600;border:1px solid}
+.modal-section{margin-bottom:24px}
+.modal-section h4{font-size:14px;font-weight:600;color:var(--text-2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.modal-desc{font-size:15px;color:var(--text-2);line-height:1.8}
+.modal-features{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.modal-feature{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-2);padding:8px 12px;background:var(--surface-2);border-radius:var(--radius-sm)}
+.modal-feature::before{content:'✓';color:var(--accent);font-weight:700}
+.modal-install{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;font-family:var(--mono);font-size:13px;color:var(--text-2);display:flex;justify-content:space-between;align-items:center;gap:12px;overflow-x:auto}
+.modal-install code{flex:1;white-space:nowrap}
+.modal-install .copy-btn{flex-shrink:0;padding:6px 14px;border-radius:var(--radius-sm);background:var(--accent);color:var(--bg);border:none;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all .15s}
+.modal-install .copy-btn:hover{background:#34d399}
+.modal-install .copy-btn.done{background:#065f46}
+.modal-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.modal-stat{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;text-align:center}
+.modal-stat-num{font-size:22px;font-weight:700;font-family:var(--mono);color:var(--text)}
+.modal-stat-label{font-size:11px;color:var(--text-3);margin-top:2px}
+.modal-compat{display:grid;gap:6px}
+.modal-compat-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:8px 12px;background:var(--surface-2);border-radius:var(--radius-sm)}
+.modal-compat-row .agent{display:flex;align-items:center;gap:6px;font-weight:500}
+.modal-compat-row .version{font-family:var(--mono);font-size:12px;color:var(--text-3)}
+.modal-links{display:flex;gap:12px;margin-top:20px}
+.modal-link{flex:1;text-align:center;padding:12px;border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;border:1px solid var(--border);background:var(--surface-2);color:var(--text-2);font-family:var(--font);text-decoration:none}
+.modal-link:hover{border-color:var(--border-hover);color:var(--text);text-decoration:none}
+.modal-link-primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.modal-link-primary:hover{background:#34d399}
+.modal-video{margin-bottom:24px}
+.modal-video iframe{width:100%;border-radius:var(--radius-sm);aspect-ratio:16/9;border:none}
+
+/* TAIWAN FEATURED */
+.taiwan-section{padding:60px 0}
+.taiwan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.taiwan-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;transition:all .25s}
+.taiwan-card:hover{border-color:var(--accent-dim);transform:translateY(-2px)}
+.taiwan-icon{width:44px;height:44px;border-radius:var(--radius-sm);background:var(--accent-glow);border:1px solid var(--accent-dim);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.taiwan-card h3{font-size:15px;font-weight:600;line-height:1.4;margin-bottom:8px}
+.taiwan-card p{font-size:12px;color:var(--text-2);line-height:1.6;margin-bottom:12px}
+.taiwan-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:var(--radius-pill);background:var(--accent-glow);color:var(--accent);border:1px solid var(--accent-dim);font-family:var(--mono);display:inline-block;margin-bottom:12px}
+.taiwan-actions{display:flex;gap:8px}
+.taiwan-btn{flex:1;text-align:center;padding:8px 12px;border-radius:var(--radius-sm);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;border:1px solid var(--border);background:var(--surface-2);color:var(--text-2);font-family:var(--font)}
+.taiwan-btn:hover{border-color:var(--border-hover);color:var(--text)}
+.taiwan-btn-primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.taiwan-btn-primary:hover{background:#34d399}
+.taiwan-prompt{margin-top:10px}
+@media(max-width:768px){.taiwan-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:48px 24px 24px;margin-top:40px}
+.footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid var(--border)}
+.footer-brand{display:flex;flex-direction:column;gap:12px}
+.footer-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;color:var(--text)}
+.footer-logo-img{width:32px;height:32px;border-radius:6px;object-fit:cover}
+.footer-desc{font-size:13px;color:var(--text-3);line-height:1.6}
+.footer-col{display:flex;flex-direction:column;gap:10px}
+.footer-col h4{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px}
+.footer-col a{font-size:13px;color:var(--text-3);transition:color .2s}
+.footer-col a:hover{color:var(--text);text-decoration:none}
+.footer-bottom{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;padding-top:20px;font-size:12px;color:var(--text-3)}
+
+/* ═══ EMPTY ═══ */
+.empty{text-align:center;padding:60px 20px;color:var(--text-3)}
+.empty svg{width:48px;height:48px;margin-bottom:16px;opacity:.3}
+.empty p{font-size:15px}
+
+/* ═══ SCROLL REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:768px){
+  .hero h1{font-size:30px}
+  .hero-sub{font-size:15px}
+  .hero-stats{gap:24px}
+  .hero-stat-num{font-size:22px}
+  .nav-links{display:none}
+  .skill-card{width:280px}
+  .skill-grid{grid-template-columns:1fr}
+  .modal-features{grid-template-columns:1fr}
+  .modal-stats{grid-template-columns:1fr}
+  .modal-hero img{height:200px}
+  .footer-grid{grid-template-columns:1fr;gap:24px}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  .essential-row-title{padding:0 16px}
+  .essential-scroll{padding:0 16px 8px}
+  .section-header{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:480px){
+  .hero h1{font-size:26px}
+  .agent-tabs-inner{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:8px}
+  .agent-tab{flex-shrink:0}
+}
+
+/* ═══ BUTTONS ═══ */
+.btn-primary{display:inline-block;padding:12px 28px;border-radius:var(--radius-sm);background:var(--accent);color:var(--bg);font-size:14px;font-weight:600;font-family:var(--font);text-decoration:none;transition:all .2s;cursor:pointer;border:none}
+.btn-primary:hover{background:#34d399;transform:translateY(-1px);text-decoration:none}
+.btn-primary.btn-lg{padding:16px 36px;font-size:16px;border-radius:var(--radius)}
+.btn-ghost{display:inline-block;padding:10px 24px;border-radius:var(--radius-sm);background:transparent;color:var(--text-2);font-size:14px;font-weight:600;font-family:var(--font);border:1px solid var(--border);cursor:pointer;transition:all .2s}
+.btn-ghost:hover{border-color:var(--border-hover);color:var(--text)}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:var(--radius-sm);background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#000;font-size:16px;font-weight:700;font-family:var(--font);text-decoration:none;transition:all .2s;cursor:pointer;border:none}
+.btn-gold:hover{background:linear-gradient(135deg,#f59e0b,#d97706);transform:translateY(-2px);box-shadow:0 8px 24px rgba(251,191,36,.3);text-decoration:none}
+
+/* ═══ BLOG ═══ */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1280px;margin:0 auto}
+.blog-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s}
+.blog-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.3)}
+.blog-card-img{position:relative;height:180px;background:var(--surface-2);overflow:hidden}
+.blog-card-placeholder{display:flex;align-items:center;justify-content:center;height:100%;background:linear-gradient(135deg,var(--surface-2),var(--surface-3))}
+.blog-card-tag{position:absolute;top:12px;left:12px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:var(--radius-pill);background:var(--accent-glow);color:var(--accent);border:1px solid var(--accent-dim)}
+.blog-card-body{padding:18px 20px 20px}
+.blog-card-body h3{font-size:16px;font-weight:700;line-height:1.4;margin-bottom:10px;color:var(--text)}
+.blog-card-body p{font-size:13px;color:var(--text-2);line-height:1.7;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.blog-card-meta{display:flex;gap:16px;font-size:12px;color:var(--text-3);margin-bottom:14px}
+.blog-card-link{font-size:13px;font-weight:600;color:var(--accent);text-decoration:none;transition:color .2s}
+.blog-card-link:hover{color:#34d399;text-decoration:none}
+.blog-full-post{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px 40px;margin-bottom:24px}
+.blog-post-header{margin-bottom:24px}
+.blog-post-tag{display:inline-block;font-size:11px;font-weight:600;padding:4px 12px;border-radius:var(--radius-pill);background:var(--accent-glow);color:var(--accent);border:1px solid var(--accent-dim);margin-bottom:12px}
+.blog-post-header h3{font-size:24px;font-weight:800;line-height:1.3;margin-bottom:8px}
+.blog-post-meta{display:flex;gap:16px;font-size:13px;color:var(--text-3)}
+.blog-post-content{font-size:15px;color:var(--text-2);line-height:1.9}
+.blog-post-content h4{font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px}
+.blog-post-content p{margin-bottom:14px}
+.blog-post-content ul,.blog-post-content ol{margin:0 0 14px 20px}
+.blog-post-content li{margin-bottom:6px}
+.blog-post-content code{background:var(--surface-2);padding:2px 6px;border-radius:4px;font-family:var(--mono);font-size:13px}
+.blog-post-cta{margin-top:28px;padding-top:20px;border-top:1px solid var(--border);text-align:center}
+.blog-code-block{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 20px;margin:12px 0;overflow-x:auto}
+.blog-code-block code{font-family:var(--mono);font-size:13px;color:var(--accent);line-height:1.6;white-space:pre-wrap}
+@media(max-width:768px){
+  .blog-grid{grid-template-columns:1fr}
+  .blog-full-post{padding:24px 20px}
+}
+
+/* ═══ PRODUCT ═══ */
+.product-section{padding:60px 0}
+.product-hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1280px;margin:0 auto;padding:0 24px 48px}
+.product-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3);color:#fbbf24;padding:6px 16px;border-radius:var(--radius-pill);font-size:13px;font-weight:600;margin-bottom:16px}
+.product-title{font-size:clamp(32px,4vw,48px);font-weight:800;line-height:1.15;margin-bottom:12px}
+.accent-gold{color:#fbbf24}
+.product-subtitle{font-size:18px;font-weight:600;color:var(--text-2);margin-bottom:12px}
+.product-desc{font-size:15px;color:var(--text-2);line-height:1.8;margin-bottom:20px}
+.product-price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:20px}
+.product-price{font-size:40px;font-weight:800;font-family:var(--mono);color:#fbbf24}
+.product-price-unit{font-size:16px;color:var(--text-3);font-weight:600}
+.product-price-note{font-size:13px;color:var(--text-3);margin-left:8px}
+.product-cta-row{display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.product-guarantee{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-3)}
+.product-visual{display:flex;justify-content:center}
+.product-img-wrapper{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);max-width:400px}
+.product-img-wrapper img{width:100%;display:block}
+.product-features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1280px;margin:0 auto;padding:0 24px 48px}
+.product-feature{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;transition:all .25s}
+.product-feature:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.product-feature-icon{width:44px;height:44px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
+.product-feature-icon.gold{background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3)}
+.product-feature-icon.green{background:var(--accent-glow);border:1px solid var(--accent-dim)}
+.product-feature-icon.blue{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.3)}
+.product-feature h3{font-size:15px;font-weight:600;margin-bottom:8px}
+.product-feature p{font-size:13px;color:var(--text-2);line-height:1.7}
+.product-dual{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto 20px;padding:0 24px}
+.product-dual-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 24px;text-align:center}
+.product-dual-card.qwenpaw{border-color:rgba(255,243,224,.3);background:linear-gradient(135deg,rgba(255,243,224,.05),var(--surface))}
+.product-dual-card.hermes{border-color:rgba(252,228,236,.3);background:linear-gradient(135deg,rgba(252,228,236,.05),var(--surface))}
+.product-dual-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.product-dual-card .tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:var(--radius-pill);background:var(--accent-glow);color:var(--accent);margin-bottom:12px}
+.product-dual-card p{font-size:13px;color:var(--text-2);line-height:1.7}
+.product-dual-quote{text-align:center;font-size:15px;color:var(--text-2);font-style:italic;max-width:700px;margin:0 auto 36px;padding:0 24px;line-height:1.7}
+.product-audience{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1280px;margin:0 auto;padding:0 24px 48px}
+.product-audience-item{display:flex;align-items:flex-start;gap:14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 18px;transition:all .25s}
+.product-audience-item:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.product-audience-icon{font-size:28px;flex-shrink:0}
+.product-audience-item h4{font-size:14px;font-weight:600;margin-bottom:4px}
+.product-audience-item p{font-size:12px;color:var(--text-2);line-height:1.5}
+.product-banner{text-align:center;background:linear-gradient(135deg,rgba(251,191,36,.08),var(--surface));border:1px solid rgba(251,191,36,.2);border-radius:var(--radius-lg);padding:40px 24px;max-width:900px;margin:0 auto}
+.product-banner h3{font-size:22px;font-weight:800;margin-bottom:8px}
+.product-banner p{font-size:14px;color:var(--text-2);margin-bottom:20px}
+@media(max-width:768px){
+  .product-hero{grid-template-columns:1fr;text-align:center}
+  .product-features{grid-template-columns:1fr}
+  .product-dual{grid-template-columns:1fr}
+  .product-audience{grid-template-columns:1fr}
+}
+
+/* ═══ BEGINNER ═══ */
+.beginner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.beginner-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 24px;position:relative;transition:all .25s}
+.beginner-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.beginner-num{font-size:48px;font-weight:800;font-family:var(--mono);color:var(--surface-3);position:absolute;top:16px;right:20px}
+.beginner-card h3{font-size:16px;font-weight:700;margin-bottom:10px;line-height:1.4}
+.beginner-card p{font-size:13px;color:var(--text-2);line-height:1.7;margin-bottom:14px}
+.beginner-tags{display:flex;gap:6px;flex-wrap:wrap}
+.beginner-tag{font-size:11px;font-weight:600;padding:3px 10px;border-radius:var(--radius-pill);background:var(--surface-2);color:var(--text-3);border:1px solid var(--border)}
+@media(max-width:768px){.beginner-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+<div class="nav-inner">
+  <a href="#" class="nav-logo">
+    <img src="logo.jpg" alt="AI Agent Skill 市集" class="nav-logo-img">
+    <span>Skill 市集</span>
+  </a>
+  <div class="nav-links">
+    <a href="#essential">必裝精選</a>
+    <a href="#browse">全部瀏覽</a>
+    <a href="#taiwan">🇹🇼 台灣精選</a>
+    <a href="#blog">部落格</a>
+    <a href="learn.html">教學</a>
+    <a href="https://github.com/bison520/ai-agent-workflows" target="_blank">GitHub</a>
+  </div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge"><span class="dot"></span> 每週更新中</div>
+  <h1>你的 AI Agent<br>還沒<span class="accent">全副武裝</span>？</h1>
+  <p class="hero-sub">精選 200+ 開箱即用的 AI Agent Skill，涵蓋 Claude Code、Hermes、OpenClaw、Codex、Cursor。找到對的 Skill，讓你的 Agent 瞬間升級。</p>
+  <div class="hero-search">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input type="text" id="heroSearch" placeholder="搜尋 Skill... 例如：MCP、爬蟲、簡報、GitHub">
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-num" id="statSkills">200+</div><div class="hero-stat-label">Skill 數量</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">6</div><div class="hero-stat-label">支援 Agent</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">12</div><div class="hero-stat-label">分類</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">每週</div><div class="hero-stat-label">持續更新</div></div>
+  </div>
+</section>
+
+<!-- AGENT TABS -->
+<div class="agent-tabs" id="agentTabs">
+  <div class="agent-tabs-inner" id="agentTabsInner">
+    <!-- JS 渲染 -->
+  </div>
+</div>
+
+<!-- ESSENTIAL SECTION -->
+<section class="essential-section" id="essential">
+  <div class="essential-header reveal">
+    <h2>⭐ 每個 Agent 的必裝 Skill</h2>
+    <p>這些是社群公認的基礎必裝，新手優先從這裡開始</p>
+  </div>
+  <div id="essentialRows">
+    <!-- JS 渲染 -->
+  </div>
+</section>
+
+<!-- BROWSE ALL -->
+<section class="browse-section" id="browse">
+  <div class="section" style="padding-bottom:16px">
+    <div class="section-header">
+      <h2><span class="emoji">📦</span> 全部 Skill</h2>
+    </div>
+  </div>
+  <div class="browse-filters">
+    <div class="filter-chips" id="categoryChips">
+      <button class="filter-chip on" data-cat="all">全部</button>
+      <!-- JS 渲染 -->
+    </div>
+    <div class="filter-chips" id="agentFilterChips">
+      <!-- JS 渲染 -->
+    </div>
+    <span class="results-count" id="resultsCount"></span>
+  </div>
+  <div class="skill-grid" id="skillGrid">
+    <!-- JS 渲染 -->
+  </div>
+  <div class="empty" id="emptyState" style="display:none">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+    <p>找不到符合條件的 Skill</p>
+  </div>
+</section>
+
+<!-- TAIWAN FEATURED -->
+<section class="taiwan-section section reveal" id="taiwan">
+  <div class="section-header">
+    <h2>🇹🇼 台灣專屬工作流</h2>
+    <p>針對台灣常用平台（蝦皮、LINE、Facebook、Instagram）量身打造的自動化工作流</p>
+  </div>
+  <div class="taiwan-grid" id="taiwan-grid"></div>
+</section>
+
+<section class="blog-section section reveal" id="blog">
+  <div class="section-header" style="text-align:center">
+    <h2>部落格：AI 隨身碟使用心得與教學</h2>
+    <p style="max-width:none">小龍蝦三代碟的開箱評測、應用場景與實戰教學</p>
+  </div>
+  <div class="blog-grid">
+    <!-- 文章 1：開箱評測 -->
+    <article class="blog-card">
+      <div class="blog-card-img">
+        <div class="blog-card-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+        </div>
+        <div class="blog-card-tag">開箱評測</div>
+      </div>
+      <div class="blog-card-body">
+        <h3>【開箱】小龍蝦三代碟：把 AI 裝進隨身碟，走到哪用到哪</h3>
+        <p>你有沒有想過，如果 AI 可以像隨身碟一樣，插上就能用、拔掉就帶走，那該有多方便？今天要開箱的「小龍蝦三代碟」，就是這樣一個神奇的產品...</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">2026.06.19</span>
+          <span class="blog-card-read">8 分鐘閱讀</span>
+        </div>
+        <a href="#blog-post-1" class="blog-card-link" onclick="showBlogPost('blog-post-1',event)">閱讀全文 →</a>
+      </div>
+    </article>
+
+    <!-- 文章 2：隱私安全 -->
+    <article class="blog-card">
+      <div class="blog-card-img">
+        <div class="blog-card-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <div class="blog-card-tag">隱私安全</div>
+      </div>
+      <div class="blog-card-body">
+        <h3>為什麼你需要一個「不連網」的 AI 助手？隱私安全全解析</h3>
+        <p>當你在用 ChatGPT、Claude、Gemini 這些 AI 工具時，你有沒有想過：你的對話內容去了哪裡？每一個你輸入的問題，都被傳送到遙遠的雲端伺服器...</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">2026.06.19</span>
+          <span class="blog-card-read">10 分鐘閱讀</span>
+        </div>
+        <a href="#blog-post-2" class="blog-card-link" onclick="showBlogPost('blog-post-2',event)">閱讀全文 →</a>
+      </div>
+    </article>
+
+    <!-- 文章 3：快速上手 -->
+    <article class="blog-card">
+      <div class="blog-card-img">
+        <div class="blog-card-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
+          </svg>
+        </div>
+        <div class="blog-card-tag">使用教學</div>
+      </div>
+      <div class="blog-card-body">
+        <h3>【教學】小龍蝦三代碟 5 分鐘快速上手指南</h3>
+        <p>剛拿到小龍蝦三代碟，不知道怎麼開始？別擔心，這篇教學會帶你從零開始，5 分鐘內學會所有基本操作。不需要任何技術背景...</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">2026.06.19</span>
+          <span class="blog-card-read">6 分鐘閱讀</span>
+        </div>
+        <a href="#blog-post-3" class="blog-card-link" onclick="showBlogPost('blog-post-3',event)">閱讀全文 →</a>
+      </div>
+    </article>
+
+    <!-- 文章 4：Hermes Agent 實戰 -->
+    <article class="blog-card">
+      <div class="blog-card-img">
+        <div class="blog-card-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <div class="blog-card-tag">實戰應用</div>
+      </div>
+      <div class="blog-card-body">
+        <h3>Hermes Agent 實戰：用 AI 幫你寫報告、做簡報、整理資料</h3>
+        <p>Hermes Agent 不只是聊天機器人，它是你的全能工作夥伴。從寫報告到做簡報，從整理資料到分析數據，一個人就是一個團隊...</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">2026.06.19</span>
+          <span class="blog-card-read">12 分鐘閱讀</span>
+        </div>
+        <a href="#blog-post-4" class="blog-card-link" onclick="showBlogPost('blog-post-4',event)">閱讀全文 →</a>
+      </div>
+    </article>
+
+    <!-- 文章 5：ChatGPT 比較 -->
+    <article class="blog-card">
+      <div class="blog-card-img">
+        <div class="blog-card-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round">
+            <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+        </div>
+        <div class="blog-card-tag">比較評測</div>
+      </div>
+      <div class="blog-card-body">
+        <h3>【實測】小龍蝦三代碟 vs ChatGPT：誰才是你的最佳 AI 夥伴？</h3>
+        <p>ChatGPT 很方便，但每個月要付 $20 美元。小龍蝦三代碟一次 $990 就能永久使用。到底該選哪一個？讓我們從隱私、功能、價格三個面向比較...</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">2026.06.19</span>
+          <span class="blog-card-read">10 分鐘閱讀</span>
+        </div>
+        <a href="#blog-post-5" class="blog-card-link" onclick="showBlogPost('blog-post-5',event)">閱讀全文 →</a>
+      </div>
+    </article>
+
+    <!-- 文章 6：Excel 應用 -->
+    <article class="blog-card">
+      <div class="blog-card-img">
+        <div class="blog-card-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/>
+          </svg>
+        </div>
+        <div class="blog-card-tag">辦公效率</div>
+      </div>
+      <div class="blog-card-body">
+        <h3>Excel 表格一秒搞定！用 AI 自動處理報表的 5 個技巧</h3>
+        <p>還在手動整理 Excel 報表嗎？小龍蝦三代碟的 AI 助手可以幫你自動分析數據、產生圖表、甚至寫出 VBA 巨集。學會這 5 個技巧...</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">2026.06.19</span>
+          <span class="blog-card-read">8 分鐘閱讀</span>
+        </div>
+        <a href="#blog-post-6" class="blog-card-link" onclick="showBlogPost('blog-post-6',event)">閱讀全文 →</a>
+      </div>
+    </article>
+  </div>
+  <div style="text-align:center;margin-top:32px">
+    <button class="btn-ghost" onclick="toggleAllPosts()">查看所有文章</button>
+  </div>
+
+  <!-- 完整文章內容（展開顯示） -->
+  <div id="all-blog-posts" style="display:none;margin-top:48px">
+    <!-- 文章 1 完整內容 -->
+    <article id="blog-post-1" class="blog-full-post">
+      <div class="blog-post-header">
+        <span class="blog-post-tag">開箱評測</span>
+        <h3>【開箱】小龍蝦三代碟：把 AI 裝進隨身碟，走到哪用到哪</h3>
+        <div class="blog-post-meta">
+          <span>2026年6月19日</span>
+          <span>8 分鐘閱讀</span>
+        </div>
+      </div>
+      <div class="blog-post-content">
+        <p>你有沒有想過，如果 AI 可以像隨身碟一樣，插上就能用、拔掉就帶走，那該有多方便？</p>
+        <p>今天要開箱的「小龍蝦三代碟」，就是這樣一個神奇的產品。它不是普通的 USB 隨身碟，而是一個<strong>內建完整 AI 系統的可攜式 AI Agent 工作站</strong>。</p>
+        
+        <h4>📦 開箱第一印象</h4>
+        <p>拿到小龍蝦三代碟的第一個感覺是——它就是一個普通的 Kingston 隨身碟。外觀上看不出任何特別之處。但當你插上電腦、雙擊 <code>menu.bat</code>，一個完整的 AI 工作環境就展現在你眼前了。</p>
+        
+        <h4>硬體規格</h4>
+        <ul>
+          <li><strong>儲存容量</strong>：足夠安裝完整 AI 模型和工作環境</li>
+          <li><strong>傳輸介面</strong>：USB 3.0，讀寫速度快</li>
+          <li><strong>相容性</strong>：Windows 10/11 系統</li>
+          <li><strong>攜帶性</strong>：鑰匙圈大小，放口袋就走</li>
+        </ul>
+
+        <h4>🖥️ 首次使用體驗</h4>
+        <p>插上 USB 後，系統會自動顯示主選單介面。主要功能包括：</p>
+        <ul>
+          <li><strong>啟動 Hermes Agent</strong> - 你的 AI 助手，可以對話、寫作、分析資料</li>
+          <li><strong>啟動 QwenPaw</strong> - 另一個 AI 引擎，擅長不同任務</li>
+          <li><strong>系統工具</strong> - 一鍵修復、系統更新、系統重設</li>
+        </ul>
+
+        <h4>最讓我驚豔的三點</h4>
+        <p><strong>第一：完全不需要安裝任何軟體。</strong>傳統的 AI 工具，你要先安裝 Python、設定環境變數、下載模型...光是環境設定就可能花掉半天。小龍蝦三代碟完全跳過這些步驟——插上就能用。</p>
+        <p><strong>第二：不需要網路連線。</strong>這是最大的賣點。你的所有資料、對話記錄、工作檔案，都存在這支隨身碟裡。不會上傳到任何雲端伺服器，隱私完全掌握在自己手上。</p>
+        <p><strong>第三：走到哪用到哪。</strong>去圖書館、咖啡廳、客戶辦公室，甚至出國出差，只要有一台 Windows 電腦，插上 USB 就能立即進入工作狀態。</p>
+
+        <h4>💡 適合哪些人？</h4>
+        <ul>
+          <li><strong>注重隱私的專業人士</strong>：律師、醫生、會計師等，處理敏感資料時不能上傳雲端</li>
+          <li><strong>經常出差的商務人士</strong>：不用帶著厚重的筆電，只要一支隨身碟</li>
+          <li><strong>學生和研究者</strong>：寫論文、分析數據、整理文獻，AI 幫你加速研究過程</li>
+          <li><strong>內容創作者和社群小編</strong>：用 AI 寫文案、做圖、排程發文</li>
+          <li><strong>對 AI 好奇的一般使用者</strong>：想體驗 AI 但不想被綁定在某個訂閱服務</li>
+        </ul>
+
+        <h4>💰 價格與購買方式</h4>
+        <p>小龍蝦三代碟目前在蝦皮購物販售，售價 <strong>$990 元</strong>。比起市面上動輒每月數百元的 AI 訂閱服務，這是一次性的投資。</p>
+        
+        <div class="blog-post-cta">
+          <a href="#product" class="btn-primary">立即購買 $990</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 文章 2 完整內容 -->
+    <article id="blog-post-2" class="blog-full-post">
+      <div class="blog-post-header">
+        <span class="blog-post-tag">隱私安全</span>
+        <h3>為什麼你需要一個「不連網」的 AI 助手？隱私安全全解析</h3>
+        <div class="blog-post-meta">
+          <span>2026年6月19日</span>
+          <span>10 分鐘閱讀</span>
+        </div>
+      </div>
+      <div class="blog-post-content">
+        <p>當你在用 ChatGPT、Claude、Gemini 這些 AI 工具時，你有沒有想過：<strong>你的對話內容去了哪裡？</strong></p>
+        <p>每一個你輸入的問題、每一段你貼上的資料、每一個你讓 AI 分析的檔案，都被傳送到遙遠的雲端伺服器。這些資料可能被用來訓練模型、可能被存取、可能在某天被洩漏。</p>
+        <p>這就是為什麼「離線 AI」正在成為新趨勢。</p>
+
+        <h4>☁️ 雲端 AI 的隱私風險</h4>
+        <p><strong>1. 你的對話被記錄了</strong></p>
+        <p>大多數雲端 AI 服務都會儲存你的對話記錄。雖然他們聲稱是為了「改善服務」，但這些資料的去向和用途，你完全無法掌控。</p>
+        
+        <p><strong>2. 敏感資料外洩風險</strong></p>
+        <p>2023年，三星就發生過員工將公司機密 code 貼到 ChatGPT，導致商業機密外洩的事件。之後三星直接禁止員工使用這類工具。</p>
+        
+        <p><strong>3. 法規合規問題</strong></p>
+        <p>如果你是律師、醫生、會計師，處理客戶的敏感資料時，將資料上傳到雲端可能違反職業保密義務，甚至觸犯個資法。</p>
+
+        <h4>🔒 離線 AI 的隱私優勢</h4>
+        <p><strong>資料完全在本地</strong>：使用離線 AI 工具如小龍蝦三代碟，所有的運算都在你的電腦上進行。你的對話、你的資料、你的工作成果，從頭到尾都不離開你的裝置。</p>
+        <p><strong>沒有帳號、沒有追蹤</strong>：不用註冊帳號、不用提供 email、不用同意任何隱私條款。插上 USB 就開始工作，拔掉 USB 所有痕跡都帶走。</p>
+
+        <h4>💼 哪些場景特別需要離線 AI？</h4>
+        <p><strong>場景一：律師事務所</strong> - 張律師正在處理一樁商業訴訟案。客戶提供的合約文件充滿商業機密。如果用雲端 AI 分析這些文件，等於把客戶的機密交給第三方。</p>
+        <p><strong>場景二：醫院診所</strong> - 李醫師想用 AI 幫忙分析病患的檢驗報告。但病患的健康資料受到醫療法嚴格保護，不能上傳到任何外部伺服器。</p>
+        <p><strong>場景三：企業研發部門</strong> - 王工程師的公司正在開發新產品，研發資料是最高商業機密。公司政策嚴禁將任何工作資料上傳到外部服務。</p>
+
+        <div class="blog-post-cta">
+          <a href="#product" class="btn-primary">保護你的隱私 - 立即購買</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 文章 3 完整內容 -->
+    <article id="blog-post-3" class="blog-full-post">
+      <div class="blog-post-header">
+        <span class="blog-post-tag">使用教學</span>
+        <h3>【教學】小龍蝦三代碟 5 分鐘快速上手指南</h3>
+        <div class="blog-post-meta">
+          <span>2026年6月19日</span>
+          <span>6 分鐘閱讀</span>
+        </div>
+      </div>
+      <div class="blog-post-content">
+        <p>剛拿到小龍蝦三代碟，不知道怎麼開始？別擔心，這篇教學會帶你從零開始，<strong>5 分鐘內學會所有基本操作</strong>。不需要任何技術背景，只要跟著步驟做就行了！</p>
+
+        <h4>📋 準備工作</h4>
+        <p>在開始之前，請確認：</p>
+        <ul>
+          <li>一台 Windows 10 或 11 的電腦</li>
+          <li>小龍蝦三代碟 USB 隨身碟</li>
+          <li>至少 10 分鐘的空閒時間</li>
+        </ul>
+
+        <h4>🚀 Step 1：插上 USB，開啟選單</h4>
+        <p>把小龍蝦三代碟插進電腦的 USB 孔。打開「檔案總管」，找到你的 USB 隨身碟，然後雙擊 <code>menu.bat</code> 檔案。</p>
+        <p><strong>💡 小提示</strong>：如果系統跳出安全警告，選擇「仍要執行」即可。這是 Windows 的標準安全機制。</p>
+
+        <h4>🤖 Step 2：選擇你的 AI 助手</h4>
+        <p>小龍蝦三代碟內建兩個 AI 引擎：</p>
+        <p><strong>Hermes Agent</strong> - 適合：寫作、對話、資料分析、程式開發。功能全面、擅長複雜任務。</p>
+        <p><strong>QwenPaw</strong> - 適合：中文處理、OCR 文字辨識、影音轉檔。中文能力強、多媒體處理佳。</p>
+        <p><strong>建議新手</strong>：先從 Hermes Agent 開始，它的 Web UI 介面最直覺。</p>
+
+        <h4>💬 Step 3：開始和 AI 對話</h4>
+        <p>啟動 Hermes Agent 後，你會看到一個類似聊天室的介面。試著輸入這些問題：</p>
+        <ul>
+          <li>「請幫我寫一封商業電子郵件」</li>
+          <li>「幫我整理這份會議記錄的重點」</li>
+          <li>「用繁體中文解釋什麼是人工智慧」</li>
+        </ul>
+
+        <h4>💡 新手必知的 5 個技巧</h4>
+        <ol>
+          <li><strong>善用提示詞</strong>：AI 的回答品質取決於你的問題品質。試著給清楚的指令和背景資訊。</li>
+          <li><strong>善用上下文</strong>：Hermes Agent 記得住對話上下文。你可以先描述情況，然後逐步要求 AI 完成任務。</li>
+          <li><strong>保存重要對話</strong>：對話記錄存在隨身碟裡。記得在 data/ 資料夾中備份。</li>
+          <li><strong>嘗試不同任務</strong>：不要只拿 AI 來聊天。試著讓它整理筆記、翻譯文件、分析資料。</li>
+          <li><strong>遇到問題先修復</strong>：如果 AI 突然變笨或出現錯誤，先嘗試「一鍵修復」。</li>
+        </ol>
+
+        <div class="blog-post-cta">
+          <a href="#product" class="btn-primary">開始你的 AI 旅程 - 立即購買</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 文章 4：Hermes Agent 實戰 -->
+    <article id="blog-post-4" class="blog-full-post">
+      <div class="blog-post-header">
+        <span class="blog-post-tag">實戰應用</span>
+        <h3>Hermes Agent 實戰：用 AI 幫你寫報告、做簡報、整理資料</h3>
+        <div class="blog-post-meta">
+          <span>2026年6月19日</span>
+          <span>12 分鐘閱讀</span>
+        </div>
+      </div>
+      <div class="blog-post-content">
+        <p>Hermes Agent 不只是聊天機器人，它是你的<strong>全能工作夥伴</strong>。從寫報告到做簡報，從整理資料到分析數據，一個人就是一個團隊。</p>
+        
+        <h4>📝 場景一：10 分鐘完成商業報告</h4>
+        <p>老闆要你明天交一份市場分析報告？以前你可能要花一整天查資料、打字、排版。現在只要告訴 Hermes Agent：</p>
+        <div class="blog-code-block">
+          <code>「請幫我寫一份台灣電商市場分析報告，包含市場規模、主要平台比較、消費者行為分析，以及未來趨勢預測。字數約 2000 字，使用商業報告格式。」</code>
+        </div>
+        <p>Hermes Agent 會在幾分鐘內產生一份結構完整的報告。你只需要檢查內容、微調細節，就能直接交差。</p>
+        
+        <h4>🎯 場景二：自動製作簡報大綱</h4>
+        <p>要做簡報但不知道從何開始？Hermes Agent 可以幫你：</p>
+        <ul>
+          <li><strong>分析主題</strong>：自動拆解簡報主題，找出關鍵要點</li>
+          <li><strong>規劃架構</strong>：設計邏輯清晰的簡報結構</li>
+          <li><strong>產出內容</strong>：每頁投影片的標題、重點、說明文字</li>
+          <li><strong>設計建議</strong>：推薦適合的圖表類型和視覺風格</li>
+        </ul>
+        
+        <h4>📊 場景三：Excel 資料分析</h4>
+        <p>手上有一堆 Excel 資料需要分析？Hermes Agent 可以：</p>
+        <ul>
+          <li><strong>資料清洗</strong>：自動找出缺失值、異常值、重複資料</li>
+          <li><strong>統計分析</strong>：計算平均值、標準差、相關性等統計指標</li>
+          <li><strong>趨勢預測</strong>：根據歷史資料預測未來趨勢</li>
+          <li><strong>圖表製作</strong>：自動產生適合的圖表類型</li>
+        </ul>
+        
+        <h4>💡 實用技巧：如何讓 AI 更懂你</h4>
+        <p><strong>技巧一：給明確的指令</strong></p>
+        <p>❌「幫我寫報告」→ AI 不知道你要什麼報告</p>
+        <p>✅「幫我寫一份 500 字的產品銷售報告，目標客群是 25-35 歲女性，重點是第三季的成長趨勢」</p>
+        
+        <p><strong>技巧二：提供背景資訊</strong></p>
+        <p>AI 需要知道上下文才能給出好答案。告訴它你的角色、目標、限制條件。</p>
+        
+        <p><strong>技巧三：迭代優化</strong></p>
+        <p>第一次的回答不滿意？直接告訴 AI 哪裡需要改進：「這個回答太正式了，請用更口語化的方式重寫」</p>
+        
+        <h4>🚀 立即體驗</h4>
+        <p>小龍蝦三代碟讓你隨時隨地擁有 AI 工作夥伴。不管是咖啡廳、圖書館、還是客戶辦公室，插上 USB 就能開始工作。</p>
+        
+        <div class="blog-post-cta">
+          <a href="#product" class="btn-primary">立即購買 $990 - 解鎖 AI 工作力</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 文章 5：ChatGPT 比較 -->
+    <article id="blog-post-5" class="blog-full-post">
+      <div class="blog-post-header">
+        <span class="blog-post-tag">比較評測</span>
+        <h3>【實測】小龍蝦三代碟 vs ChatGPT：誰才是你的最佳 AI 夥伴？</h3>
+        <div class="blog-post-meta">
+          <span>2026年6月19日</span>
+          <span>10 分鐘閱讀</span>
+        </div>
+      </div>
+      <div class="blog-post-content">
+        <p>ChatGPT 很方便，但每個月要付 $20 美元（約 NT$640）。小龍蝦三代碟一次 $990 就能永久使用。到底該選哪一個？</p>
+        <p>讓我們從<strong>隱私、功能、價格</strong>三個面向，實際比較這兩種 AI 解決方案。</p>
+
+        <h4>🔒 隱私比較：誰更安全？</h4>
+        <div class="blog-comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>比較項目</th>
+                <th>ChatGPT</th>
+                <th>小龍蝦三代碟</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>資料存儲位置</strong></td>
+                <td>OpenAI 雲端伺服器</td>
+                <td>你的 USB 隨身碟</td>
+              </tr>
+              <tr>
+                <td><strong>對話記錄</strong></td>
+                <td>預設被記錄，可用於訓練</td>
+                <td>完全在本地，不離開電腦</td>
+              </tr>
+              <tr>
+                <td><strong>帳號要求</strong></td>
+                <td>需要 email 註冊</td>
+                <td>不需要任何帳號</td>
+              </tr>
+              <tr>
+                <td><strong>網路需求</strong></td>
+                <td>必須連線</td>
+                <td>完全離線</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>結論</strong>：如果你處理敏感資料（法律、醫療、商業機密），小龍蝦三代碟是唯一安全的選擇。</p>
+
+        <h4>⚡ 功能比較：誰更強大？</h4>
+        <p><strong>ChatGPT 的優勢：</strong></p>
+        <ul>
+          <li>模型更新更快（GPT-4o、GPT-4 Turbo）</li>
+          <li>即時網路搜尋能力</li>
+          <li>支援圖片生成（DALL-E）</li>
+          <li>外掛生態系豐富</li>
+        </ul>
+        
+        <p><strong>小龍蝦三代碟的優勢：</strong></p>
+        <ul>
+          <li>完全離線，不受網路影響</li>
+          <li>可處理本地檔案（Excel、PDF、圖片）</li>
+          <li>支援 OCR 文字辨識</li>
+          <li>可執行系統指令和腳本</li>
+          <li>兩個 AI 引擎（Hermes + QwenPaw）</li>
+        </ul>
+        
+        <h4>💰 價格比較：誰更划算？</h4>
+        <div class="blog-comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>方案</th>
+                <th>月費</th>
+                <th>年費</th>
+                <th>3年總費用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ChatGPT Plus</strong></td>
+                <td>$20 USD (約 NT$640)</td>
+                <td>$240 USD (約 NT$7,680)</td>
+                <td>$720 USD (約 NT$23,040)</td>
+              </tr>
+              <tr>
+                <td><strong>小龍蝦三代碟</strong></td>
+                <td>-</td>
+                <td>-</td>
+                <td>NT$990（一次買斷）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>結論</strong>：使用 3 年，ChatGPT 要花 NT$23,040，小龍蝦三代碟只要 NT$990。省下超過 <strong>NT$22,000</strong>！</p>
+
+        <h4>🎯 該怎麼選？</h4>
+        <p><strong>選擇 ChatGPT 如果你：</strong></p>
+        <ul>
+          <li>需要最新、最強的 AI 模型</li>
+          <li>經常需要即時網路搜尋</li>
+          <li>不在意隱私問題</li>
+          <li>預算充足，願意付月費</li>
+        </ul>
+        
+        <p><strong>選擇小龍蝦三代碟如果你：</strong></p>
+        <ul>
+          <li>處理敏感資料，隱私是首要考量</li>
+          <li>不想被月費綁架</li>
+          <li>經常在沒有網路的環境工作</li>
+          <li>需要處理本地檔案（Excel、PDF）</li>
+          <li>想要一個穩定、可控的 AI 工具</li>
+        </ul>
+
+        <h4>💡 最佳策略：兩個都用</h4>
+        <p>其實，最好的策略是<strong>兩個都用</strong>：</p>
+        <ul>
+          <li><strong>日常對話、創意發想</strong> → 用 ChatGPT（模型更新、搜尋能力強）</li>
+          <li><strong>敏感資料、離線工作</strong> → 用小龍蝦三代碟（隱私安全、不需網路）</li>
+        </ul>
+        <p>這樣既能享受最新 AI 技術，又能保護重要資料安全。</p>
+        
+        <div class="blog-post-cta">
+          <a href="#product" class="btn-primary">保護隱私 - 立即購買 $990</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 文章 6：Excel 應用 -->
+    <article id="blog-post-6" class="blog-full-post">
+      <div class="blog-post-header">
+        <span class="blog-post-tag">辦公效率</span>
+        <h3>Excel 表格一秒搞定！用 AI 自動處理報表的 5 個技巧</h3>
+        <div class="blog-post-meta">
+          <span>2026年6月19日</span>
+          <span>8 分鐘閱讀</span>
+        </div>
+      </div>
+      <div class="blog-post-content">
+        <p>還在手動整理 Excel 報表嗎？小龍蝦三代碟的 AI 助手可以幫你自動分析數據、產生圖表、甚至寫出 VBA 巨集。</p>
+        <p>學會這 5 個技巧，讓你的辦公效率提升 10 倍！</p>
+
+        <h4>技巧 1：自動分析銷售數據</h4>
+        <p>把你的 Excel 檔案丟給 Hermes Agent，告訴它：</p>
+        <div class="blog-code-block">
+          <code>「請分析這份銷售報表，找出：1. 銷售額前 5 名的產品 2. 每月銷售趨勢 3. 成長率最高的品類 4. 建議下個月的庫存策略」</code>
+        </div>
+        <p>Hermes Agent 會自動讀取 Excel 內容，進行統計分析，並產生一份完整的分析報告。</p>
+        
+        <h4>技巧 2：自動產生圖表</h4>
+        <p>想要漂亮的圖表但不會做？AI 可以幫你：</p>
+        <ul>
+          <li><strong>選擇圖表類型</strong>：根據資料特性推薦最適合的圖表</li>
+          <li><strong>產生程式碼</strong>：自動寫出 Python 或 VBA 程式碼</li>
+          <li><strong>美化設計</strong>：調整顏色、標籤、標題</li>
+        </ul>
+        
+        <h4>技巧 3：資料清洗自動化</h4>
+        <p>Excel 資料常常很亂：有空值、格式不統一、重複資料。AI 可以幫你：</p>
+        <ul>
+          <li><strong>找出異常值</strong>：自動偵測不合理的數據</li>
+          <li><strong>填補缺失值</strong>：根據上下文推算合理的填補值</li>
+          <li><strong>統一格式</strong>：日期、數字、文字格式標準化</li>
+          <li><strong>刪除重複</strong>：自動找出並移除重複資料</li>
+        </ul>
+        
+        <h4>技巧 4：自動寫 VBA 巨集</h4>
+        <p>需要自動化重複性工作？告訴 AI 你想做什麼，它會幫你寫出 VBA 程式碼：</p>
+        <div class="blog-code-block">
+          <code>「請幫我寫一個 VBA 巨集，功能是：1. 讀取所有分頁的資料 2. 合併到一個總表 3. 依日期排序 4. 產生月報表」</code>
+        </div>
+        <p>AI 會產生完整的 VBA 程式碼，你只需要複製貼上就能執行。</p>
+        
+        <h4>技巧 5：預測分析</h4>
+        <p>有歷史資料想預測未來趨勢？AI 可以幫你：</p>
+        <ul>
+          <li><strong>銷售預測</strong>：根據過去數據預測下個月銷售額</li>
+          <li><strong>庫存建議</strong>：計算最佳庫存量，避免缺貨或積壓</li>
+          <li><strong>成長分析</strong>：找出業務成長的關鍵因素</li>
+        </ul>
+
+        <h4>🚀 立即體驗 AI Excel</h4>
+        <p>小龍蝦三代碟讓你在本地就能使用 AI 處理 Excel，不需要上傳到雲端，隱私完全掌控。</p>
+        
+        <div class="blog-post-cta">
+          <a href="#product" class="btn-primary">提升效率 - 立即購買 $990</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<section class="product-section section reveal" id="product">
+  <div class="product-hero">
+    <div>
+      <div class="product-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        三代進化 · 龍馬雙修
+      </div>
+      <h2 class="product-title">小龍蝦第三代<br><span class="accent-gold">AI 隨身工作站</span></h2>
+      <p class="product-subtitle">雙 AI 代理 × 隨插即用 × 零安裝</p>
+      <p class="product-desc">插上電腦、打開主控面板，你的兩大 AI 夥伴就醒了——千問小龍蝦 QwenPaw 負責對話與管理，愛瑪仕 Hermes Agent 負責自動化執行。不用安裝任何東西，不用設定環境變數，它就是一支隨身碟，插上去、點兩下，能聊天、能做事的 AI 代理人立刻報到！</p>
+      <div class="product-price-row">
+        <span class="product-price">$990</span>
+        <span class="product-price-unit">NTD</span>
+        <span class="product-price-note">一次買斷 · 永久使用</span>
+      </div>
+      <div class="product-cta-row">
+        <a href="https://s.shopee.tw/LkJyRXIjW" target="_blank" class="btn-gold">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          立即購買
+        </a>
+        <a href="#product-detail" class="btn-ghost" style="font-size:15px;padding:14px 28px">了解更多</a>
+      </div>
+      <div class="product-guarantee">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        蝦皮安心交易 · 有問題可隨時修復
+      </div>
+    </div>
+    <div class="product-visual">
+      <div class="product-img-wrapper">
+        <img src="product-poster.png" alt="小龍蝦第三代隨身碟 - 龍馬雙修">
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 大特色 -->
+  <div class="product-features" id="product-detail">
+    <div class="product-feature">
+      <div class="product-feature-icon gold">🔌</div>
+      <h3>隨插即用，零安裝</h3>
+      <p>不用裝軟體、不用設定環境變數、不用跟終端機打架。啟動腳本自動偵測磁碟代號，環境變數自動載入，AI 模型設定有圖形介面引導。</p>
+    </div>
+    <div class="product-feature">
+      <div class="product-feature-icon green">🔄</div>
+      <h3>龍馬雙修，互相修復</h3>
+      <p>小龍蝦掛了？愛瑪仕一鍵重建。愛瑪仕出錯？小龍蝦診斷復原。你不是買一個 AI，是買一對能互相 Cover 的搭檔。</p>
+    </div>
+    <div class="product-feature">
+      <div class="product-feature-icon blue">🌍</div>
+      <h3>走到哪，AI 跟到哪</h3>
+      <p>去客戶那邊簡報？換公司電腦？出國出差？拔下來插過去，環境一模一樣，連對話記錄都帶著走，不必再重頭來過。</p>
+    </div>
+    <div class="product-feature">
+      <div class="product-feature-icon gold">🛠️</div>
+      <h3>Skill 技能無限擴充</h3>
+      <p>今天需要處理 PDF，裝 PDF Skill。明天需要排程，裝 Cron Skill。它是會成長的 AI 代理人，功能隨你擴展。</p>
+    </div>
+    <div class="product-feature">
+      <div class="product-feature-icon green">📱</div>
+      <h3>WhatsApp 手機遠端操控</h3>
+      <p>人在外面，WhatsApp 傳一句話，AI 幫你在家電腦完成任務。多 Agent 同時跑多個任務不打架。</p>
+    </div>
+    <div class="product-feature">
+      <div class="product-feature-icon blue">📚</div>
+      <h3>N8N 工作流即戰力</h3>
+      <p>導入工作流概念，網路上眾多 N8N 模板都可以立即拆解變成實戰工作流。搶先學會 AI Agent 指揮邏輯與提示詞運用。</p>
+    </div>
+  </div>
+
+  <!-- 雙 AI 引擎介紹 -->
+  <div class="product-dual">
+    <div class="product-dual-card qwenpaw">
+      <div style="font-size:40px;margin-bottom:12px">🦐</div>
+      <h3>千問小龍蝦 QwenPaw</h3>
+      <div class="tag">AI 管家</div>
+      <p>千問大腦，負責跟你對話、寫文、查資料、排程發文、讀 PDF、控瀏覽器。<br><br>提供簡約清爽的 WebUI 愛瑪仕網頁版，以及傳統 CLI 視窗版本。</p>
+    </div>
+    <div class="product-dual-card hermes">
+      <div style="font-size:40px;margin-bottom:12px">⚡</div>
+      <h3>愛瑪仕 Hermes Agent</h3>
+      <div class="tag">AI 員工</div>
+      <p>執行者，負責自動化任務、手機遠端操控、WhatsApp 收發指令。<br><br>記憶強、有想法，能自動化你的日常工作流程。</p>
+    </div>
+  </div>
+  <div class="product-dual-quote">
+    「與其每月付 20 美金租個雲端 AI 代理人，不如一次擁有兩個能互相修復的 AI 夥伴，裝在隨身碟裡跟你到處走。」
+  </div>
+
+  <!-- 選單介面展示 -->
+  <div style="text-align:center;margin:40px 0">
+    <p style="font-size:14px;color:var(--text-3);margin-bottom:16px">▼ 簡約易用的主控面板選單 ▼</p>
+    <div style="max-width:600px;margin:0 auto;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)">
+      <img src="product-menu.jpg" alt="小龍蝦隨身碟選單介面" style="width:100%;display:block">
+    </div>
+  </div>
+
+  <!-- 誰適合 -->
+  <div class="section-header" style="margin-bottom:24px">
+    <h2 style="font-size:28px;font-weight:800;margin-bottom:8px">誰適合這支隨身碟？</h2>
+  </div>
+  <div class="product-audience">
+    <div class="product-audience-item">
+      <div class="product-audience-icon">✍️</div>
+      <div>
+        <h4>內容創作者</h4>
+        <p>自動排程發文、文案撰寫、素材整理</p>
+      </div>
+    </div>
+    <div class="product-audience-item">
+      <div class="product-audience-icon">🏢</div>
+      <div>
+        <h4>一人公司 / 自由工作者</h4>
+        <p>AI 秘書＋AI 員工，隨身帶著走</p>
+      </div>
+    </div>
+    <div class="product-audience-item">
+      <div class="product-audience-icon">💻</div>
+      <div>
+        <h4>工程師 / 開發者</h4>
+        <p>本機 AI Agent，跑自動化腳本、測試環境</p>
+      </div>
+    </div>
+    <div class="product-audience-item">
+      <div class="product-audience-icon">🌱</div>
+      <div>
+        <h4>AI 新手</h4>
+        <p>不想折騰安裝，想直接體驗 AI Agent 的威力</p>
+      </div>
+    </div>
+    <div class="product-audience-item">
+      <div class="product-audience-icon">🔥</div>
+      <div>
+        <h4>AI 老手</h4>
+        <p>覺得 ChatGPT 訂閱制太貴，想自選模型、自控成本</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 最終 CTA -->
+  <div class="product-banner">
+    <h3>🦐 小龍蝦第三代隨身碟 — 龍馬雙修，隨插即戰</h3>
+    <p>一支隨身碟，兩個 AI 夥伴，走到哪用到哪。一次買斷 $990，不再每月付訂閱。</p>
+    <a href="https://s.shopee.tw/LkJyRXIjW" target="_blank" class="btn-gold">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      前往蝦皮購買 $990
+    </a>
+  </div>
+</section>
+
+
+<section class="beginner-section section reveal" id="beginner">
+  <div class="section-header">
+    <h2>新手入門指南</h2>
+    <p>第一次使用 N8N？跟著這三篇文章，10 分鐘內就能上手你的第一個自動化工作流</p>
+  </div>
+  <div class="beginner-grid">
+    <div class="beginner-card">
+      <div class="beginner-num">01</div>
+      <h3>N8N 是什麼？一分鐘搞懂自動化工作流</h3>
+      <p>N8N 是一個開源自動化平台，讓你用視覺化介面串接各種服務（Gmail、LINE、蝦皮、ChatGPT 等），建立自動化流程。不需要寫程式，只要拖拉節點就能完成。</p>
+      <div class="beginner-tags">
+        <span class="beginner-tag">入門概念</span>
+        <span class="beginner-tag">3 分鐘閱讀</span>
+      </div>
+    </div>
+    <div class="beginner-card">
+      <div class="beginner-num">02</div>
+      <h3>如何匯入 JSON 工作流？三步驟完成</h3>
+      <p>從本站下載 JSON 檔案後，開啟 N8N 點選「Import from File」，選擇下載的 JSON 檔案即可匯入。匯入後填入你的 API 金鑰，工作流就能開始運作。</p>
+      <div class="beginner-tags">
+        <span class="beginner-tag">實作教學</span>
+        <span class="beginner-tag">5 分鐘完成</span>
+      </div>
+    </div>
+    <div class="beginner-card">
+      <div class="beginner-num">03</div>
+      <h3>如何用精準提示詞省 Token？</h3>
+      <p>模糊的提示詞會讓 AI 反覆試錯，浪費 Token。本站每個工作流都附帶精準的中文提示詞，直接複製貼上就能大幅減少 API 呼叫次數。</p>
+      <div class="beginner-tags">
+        <span class="beginner-tag">進階技巧</span>
+        <span class="beginner-tag">省錢秘訣</span>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:32px">
+    <a href="learn.html" class="btn-primary btn-lg" style="display:inline-flex;align-items:center;gap:8px">
+      📚 前往完整線上教學（8 章免費課程）
+    </a>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-grid">
+  <div class="footer-brand">
+    <div class="footer-logo"><img src="logo.jpg" alt="Logo" class="footer-logo-img"> AI Agent Skill 市集</div>
+    <p class="footer-desc">由<a href="https://www.facebook.com/profile.php?id=61588107756334" target="_blank">一人公司研究所</a>維護。每週從 GitHub 精選最新、最實用的 AI Agent Skill。</p>
+  </div>
+  <div class="footer-col">
+    <h4>Agent 分類</h4>
+    <a href="#" onclick="filterByAgent('claude')">Claude Code</a>
+    <a href="#" onclick="filterByAgent('hermes')">Hermes Agent</a>
+    <a href="#" onclick="filterByAgent('openclaw')">OpenClaw</a>
+    <a href="#" onclick="filterByAgent('codex')">Codex CLI</a>
+    <a href="#" onclick="filterByAgent('cursor')">Cursor</a>
+  </div>
+  <div class="footer-col">
+    <h4>連結</h4>
+    <a href="https://github.com/bison520/ai-agent-workflows" target="_blank">GitHub 倉庫</a>
+    <a href="https://www.facebook.com/profile.php?id=61588107756334" target="_blank">Facebook 粉專</a>
+    <a href="https://github.com/modelcontextprotocol/servers" target="_pattern">MCP Servers</a>
+  </div>
+</div>
+<div class="footer-bottom">
+  <span>© 2026 一人公司研究所. All rights reserved.</span>
+  <span>最後更新：2026-06-21</span>
+</div>
+</footer>
+
+<!-- DETAIL MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <div class="modal-hero" style="position:relative">
+      <button class="modal-close" id="modalClose">×</button>
+      <img id="modalImg" src="" alt="">
+      <div class="modal-hero-overlay">
+        <div class="modal-hero-title" id="modalTitle"></div>
+        <div class="modal-hero-tagline" id="modalTagline"></div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-agents" id="modalAgents"></div>
+      <div class="modal-video" id="modalVideo" style="display:none"></div>
+      <div class="modal-section">
+        <h4>介紹</h4>
+        <div class="modal-desc" id="modalDesc"></div>
+      </div>
+      <div class="modal-section">
+        <h4>功能亮點</h4>
+        <div class="modal-features" id="modalFeatures"></div>
+      </div>
+      <div class="modal-section">
+        <h4>安裝方式</h4>
+        <div class="modal-install">
+          <code id="modalInstall"></code>
+          <button class="copy-btn" id="modalCopy">複製</button>
+        </div>
+      </div>
+      <div class="modal-section">
+        <h4>統計</h4>
+        <div class="modal-stats" id="modalStats"></div>
+      </div>
+      <div class="modal-section">
+        <h4>相容性</h4>
+        <div class="modal-compat" id="modalCompat"></div>
+      </div>
+      <div class="modal-links" id="modalLinks"></div>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script>
+// ═══ STATE ═══
+let currentAgent = 'all';
+let currentCategory = 'all';
+let searchQuery = '';
+
+// ═══ HELPERS ═══
+function agentColor(key) {
+  const map = {universal:'#10b981',claude:'#f97316',hermes:'#a855f7',openclaw:'#22c55e',codex:'#3b82f6',cursor:'#94a3b8'};
+  return map[key] || '#71717a';
+}
+
+function formatStars(n) {
+  if (n >= 1000) return (n/1000).toFixed(1).replace(/\.0$/,'') + 'k';
+  return n.toString();
+}
+
+function agentDotHTML(key) {
+  const a = AGENTS[key];
+  if (!a) return '';
+  return `<span class="skill-agent-dot" title="${a.name}" style="color:${a.color}">${a.icon}</span>`;
+}
+
+// ═══ AGENT TABS ═══
+function renderAgentTabs() {
+  const container = document.getElementById('agentTabsInner');
+  const counts = {all: SKILLS.length};
+  Object.keys(AGENTS).forEach(k => {
+    counts[k] = SKILLS.filter(s => s.agents.includes(k)).length;
+  });
+  let html = `<button class="agent-tab active" data-agent="all"><span class="icon">🌐</span> 全部 <span class="count">${counts.all}</span></button>`;
+  for (const [k, v] of Object.entries(AGENTS)) {
+    html += `<button class="agent-tab" data-agent="${k}"><span class="icon">${v.icon}</span> ${v.name} <span class="count">${counts[k]}</span></button>`;
+  }
+  container.innerHTML = html;
+  container.querySelectorAll('.agent-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      container.querySelectorAll('.agent-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentAgent = btn.dataset.agent;
+      applyFilters();
+    });
+  });
+}
+
+// ═══ ESSENTIAL ROWS ═══
+function renderEssentialRows() {
+  const container = document.getElementById('essentialRows');
+  // 只取 essential skills，每個只出現一次，按 star 排序
+  const essentialSkills = SKILLS.filter(s => s.essential).sort((a, b) => b.stars - a.stars);
+  if (essentialSkills.length === 0) { container.innerHTML = ''; return; }
+  let html = `<div class="essential-row reveal">
+    <div class="essential-row-title">
+      <span class="agent-icon">⭐</span>
+      <h3>必裝精選<span class="agent-name">每個 Agent 都該有的基礎 Skill</span></h3>
+    </div>
+    <div class="essential-scroll">`;
+  essentialSkills.forEach(skill => {
+    html += renderSkillCard(skill, true);
+  });
+  html += `</div></div>`;
+  container.innerHTML = html;
+}
+
+// ═══ SKILL CARD ═══
+function renderSkillCard(skill, carousel) {
+  const agentsHTML = skill.agents.map(a => agentDotHTML(a)).join('');
+  const essentialBadge = skill.essential ? '<span class="skill-card-essential">必裝</span>' : '';
+  return `<div class="skill-card" data-id="${skill.id}" onclick="openModal('${skill.id}')">
+    <img class="skill-card-img" src="${skill.imageUrl}" alt="${skill.name}" loading="lazy" onerror="this.style.display='none'">
+    <div class="skill-card-body">
+      <div class="skill-card-top">
+        <div class="skill-card-name">${skill.name}</div>
+        ${essentialBadge}
+      </div>
+      <div class="skill-card-tagline">${skill.tagline}</div>
+      <div class="skill-card-agents">${agentsHTML}</div>
+      <div class="skill-card-meta">
+        <span class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> ${formatStars(skill.stars)}</span>
+        <span class="lang">${skill.lang}</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ═══ CATEGORY CHIPS ═══
+function renderCategoryChips() {
+  const container = document.getElementById('categoryChips');
+  const cats = {};
+  SKILLS.forEach(s => {
+    cats[s.category] = (cats[s.category] || 0) + 1;
+  });
+  let html = '<button class="filter-chip on" data-cat="all">全部</button>';
+  for (const [k, count] of Object.entries(cats)) {
+    const cat = CATEGORIES[k];
+    if (!cat) continue;
+    html += `<button class="filter-chip" data-cat="${k}">${cat.icon} ${cat.name} (${count})</button>`;
+  }
+  container.innerHTML = html;
+  container.querySelectorAll('.filter-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      container.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      currentCategory = btn.dataset.cat;
+      applyFilters();
+    });
+  });
+}
+
+// ═══ AGENT FILTER CHIPS ═══
+function renderAgentFilterChips() {
+  const container = document.getElementById('agentFilterChips');
+  let html = '';
+  for (const [k, v] of Object.entries(AGENTS)) {
+    html += `<button class="filter-chip" data-agent="${k}">${v.icon} ${v.name}</button>`;
+  }
+  container.innerHTML = html;
+  container.querySelectorAll('.filter-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.classList.contains('on')) {
+        btn.classList.remove('on');
+        currentAgent = 'all';
+      } else {
+        container.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('on'));
+        btn.classList.add('on');
+        currentAgent = btn.dataset.agent;
+      }
+      // Sync top tabs
+      document.querySelectorAll('#agentTabsInner .agent-tab').forEach(t => {
+        t.classList.toggle('active', t.dataset.agent === currentAgent);
+      });
+      applyFilters();
+    });
+  });
+}
+
+// ═══ APPLY FILTERS ═══
+function applyFilters() {
+  let filtered = SKILLS;
+  if (currentAgent !== 'all') {
+    filtered = filtered.filter(s => s.agents.includes(currentAgent));
+  }
+  if (currentCategory !== 'all') {
+    filtered = filtered.filter(s => s.category === currentCategory);
+  }
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    filtered = filtered.filter(s =>
+      s.name.toLowerCase().includes(q) ||
+      s.tagline.toLowerCase().includes(q) ||
+      s.description.toLowerCase().includes(q) ||
+      (CATEGORIES[s.category] && CATEGORIES[s.category].name.toLowerCase().includes(q))
+    );
+  }
+  renderGrid(filtered);
+}
+
+// ═══ RENDER GRID ═══
+function renderGrid(skills) {
+  const grid = document.getElementById('skillGrid');
+  const empty = document.getElementById('emptyState');
+  const count = document.getElementById('resultsCount');
+  count.innerHTML = `共 <strong>${skills.length}</strong> 個 Skill`;
+  if (skills.length === 0) {
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  grid.innerHTML = skills.map(s => renderSkillCard(s, false)).join('');
+}
+
+// ═══ MODAL ═══
+function openModal(id) {
+  const skill = SKILLS.find(s => s.id === id);
+  if (!skill) return;
+  document.getElementById('modalImg').src = skill.imageUrl;
+  document.getElementById('modalTitle').textContent = skill.name;
+  document.getElementById('modalTagline').textContent = skill.tagline;
+  document.getElementById('modalDesc').textContent = skill.description;
+  document.getElementById('modalInstall').textContent = skill.installCmd;
+  // Agents
+  const agentsDiv = document.getElementById('modalAgents');
+  agentsDiv.innerHTML = skill.agents.map(a => {
+    const ag = AGENTS[a];
+    return `<span class="modal-agent-badge" style="background:${ag.color}18;color:${ag.color};border-color:${ag.color}40">${ag.icon} ${ag.name}</span>`;
+  }).join('');
+  // Features (only if non-empty)
+  const featuresDiv = document.getElementById('modalFeatures');
+  if (skill.features && skill.features.length > 0) {
+    featuresDiv.parentElement.style.display = '';
+    featuresDiv.innerHTML = skill.features.map(f => `<div class="modal-feature">${f}</div>`).join('');
+  } else {
+    featuresDiv.parentElement.style.display = 'none';
+  }
+  // Stats
+  document.getElementById('modalStats').innerHTML = `
+    <div class="modal-stat"><div class="modal-stat-num">${formatStars(skill.stars)}</div><div class="modal-stat-label">⭐ Stars</div></div>
+    <div class="modal-stat"><div class="modal-stat-num">${formatStars(skill.forks)}</div><div class="modal-stat-label">🍴 Forks</div></div>
+    <div class="modal-stat"><div class="modal-stat-num">${skill.updated}</div><div class="modal-stat-label">🕐 更新日期</div></div>
+  `;
+  // Compat
+  const compatDiv = document.getElementById('modalCompat');
+  compatDiv.innerHTML = Object.entries(skill.compatibility).map(([k, v]) => {
+    const ag = AGENTS[k];
+    return `<div class="modal-compat-row"><span class="agent">${ag.icon} ${ag.name}</span><span class="version">${v}</span></div>`;
+  }).join('');
+  // Video
+  const videoDiv = document.getElementById('modalVideo');
+  if (skill.videoUrl && skill.videoUrl.includes('youtube.com')) {
+    const vidMatch = skill.videoUrl.match(/(?:v=|youtu\.be\/)([\w-]+)/);
+    if (vidMatch) {
+      videoDiv.innerHTML = `<iframe src="https://www.youtube.com/embed/${vidMatch[1]}" allowfullscreen></iframe>`;
+      videoDiv.style.display = 'block';
+    }
+  } else {
+    videoDiv.style.display = 'none';
+  }
+  // Links
+  document.getElementById('modalLinks').innerHTML = `
+    <a class="modal-link" href="https://github.com/${skill.repo}" target="_blank">📂 GitHub Repo</a>
+    <a class="modal-link modal-link-primary" href="#" onclick="navigator.clipboard.writeText('${skill.installCmd.replace(/'/g,"\\'")}');this.textContent='已複製 ✓';return false;">📋 複製安裝指令</a>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('modalOverlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// Copy button
+document.getElementById('modalCopy').addEventListener('click', function() {
+  const cmd = document.getElementById('modalInstall').textContent;
+  navigator.clipboard.writeText(cmd).then(() => {
+    this.textContent = '已複製 ✓';
+    this.classList.add('done');
+    setTimeout(() => { this.textContent = '複製'; this.classList.remove('done'); }, 2000);
+  });
+});
+
+// ═══ SEARCH ═══
+const heroSearchInput = document.getElementById('heroSearch');
+function doSearch() {
+  searchQuery = heroSearchInput.value.trim();
+  applyFilters();
+}
+heroSearchInput.addEventListener('input', doSearch);
+heroSearchInput.addEventListener('keyup', doSearch);
+heroSearchInput.addEventListener('change', doSearch);
+// Enter 鍵：執行搜尋並滾動到結果區
+heroSearchInput.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    searchQuery = heroSearchInput.value.trim();
+    applyFilters();
+    document.getElementById('browse').scrollIntoView({behavior:'smooth'});
+  }
+});
+
+// ═══ BLOG FUNCTIONS ═══
+function showBlogPost(id, e) {
+  if (e) e.preventDefault();
+  var container = document.getElementById('all-blog-posts');
+  if (container) container.style.display = 'block';
+  var post = document.getElementById(id);
+  if (post) {
+    post.style.display = 'block';
+    post.scrollIntoView({behavior:'smooth'});
+  }
+}
+
+function toggleAllPosts() {
+  var container = document.getElementById('all-blog-posts');
+  if (!container) return;
+  if (container.style.display === 'none') {
+    container.style.display = 'block';
+    container.scrollIntoView({behavior:'smooth'});
+  } else {
+    container.style.display = 'none';
+  }
+}
+
+function filterByAgent(agent) {
+  currentAgent = agent;
+  // Sync top tabs
+  document.querySelectorAll('#agentTabsInner .agent-tab').forEach(function(t) {
+    t.classList.toggle('active', t.dataset.agent === agent);
+  });
+  // Sync filter chips
+  document.querySelectorAll('#agentFilterChips .filter-chip').forEach(function(b) {
+    b.classList.toggle('on', b.dataset.agent === agent);
+  });
+  applyFilters();
+  document.getElementById('browse').scrollIntoView({behavior:'smooth'});
+}
+
+// ═══ TAIWAN SECTION ═══
+const TW_ICONS = {
+  'E-commerce': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>',
+  'Communication': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+  'Social Media': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>',
+  'Marketing': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>',
+};
+
+// Taiwan workflow data (hardcoded from original site)
+const TAIWAN_WF = [
+  {name:'蝦皮訂單自動通知 - 新訂單推播到 LINE', category:'E-commerce', nodeCount:8, description:'蝦皮賣場接到新訂單時，自動透過 LINE Notify 推播訂單明細給賣家。'},
+  {name:'LINE 官方帳號自動回覆 + AI 客服', category:'Communication', nodeCount:12, description:'LINE 官方帳號收到訊息時，自動透過 AI 分析意圖並回覆。'},
+  {name:'Facebook 粉專貼文自動排程 + AI 產生文案', category:'Social Media', nodeCount:10, description:'每週自動從 Google 試算表讀取貼文主題，用 AI 產生文案。'},
+  {name:'Instagram 潛在客戶自動收集 + CRM 建檔', category:'Marketing', nodeCount:15, description:'定期掃描 Instagram 留言和私訊，用 AI 分析潛在客戶意圖。'},
+  {name:'蝦皮商品庫存同步 - 多平台管理', category:'E-commerce', nodeCount:18, description:'定時同步蝦皮商品庫存到 Google 試算表，庫存低於設定值時自動通知。'},
+  {name:'台灣發票自動整理 + 記帳', category:'E-commerce', nodeCount:10, description:'自動從 Gmail 擷取電子發票，解析發票內容並分類，匯入 Google 試算表記帳。'},
+  {name:'LINE 群組訊息摘要 + AI 整理', category:'Communication', nodeCount:5, description:'每天自動整理 LINE 群組的訊息，用 AI 產生摘要重點。'},
+  {name:'Facebook 廣告成效自動報表', category:'Marketing', nodeCount:12, description:'每週自動拉取 Facebook 廣告成效數據，產生報表並透過 Email 發送。'},
+];
+
+function renderTaiwan() {
+  const grid = document.getElementById('taiwan-grid');
+  if (!grid) return;
+  grid.innerHTML = TAIWAN_WF.map((w, i) => {
+    const icon = TW_ICONS[w.category] || TW_ICONS['Communication'];
+    return `<div class="taiwan-card">
+      <div class="taiwan-icon">${icon}</div>
+      <h3>${w.name}</h3>
+      <p>${w.description}</p>
+      <span class="taiwan-badge">${w.nodeCount} 節點</span>
+      <div class="taiwan-actions">
+        <button class="taiwan-btn taiwan-btn-primary" onclick="alert('此功能為 N8N 工作流下載，請至原工作流市集使用')">查看工作流</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ═══ SCROLL REVEAL ═══
+function initReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, {threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+// ═══ INIT ═══
+renderAgentTabs();
+renderEssentialRows();
+renderCategoryChips();
+renderAgentFilterChips();
+applyFilters();
+renderTaiwan();
+initReveal();
+
+// Update stat count
+document.getElementById('statSkills').textContent = SKILLS.length + '+';
+</script>
+</body>
+</html>

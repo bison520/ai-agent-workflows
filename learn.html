@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agent 線上教學 - 從零開始學會自動化工作流 | 一人公司研究所</title>
+<meta name="description" content="從最基礎的什麼是 AI Agent 開始，一步步帶你學會用 WhatsApp、Telegram 遙控 AI，到建立你的專屬自動化工作流。免費線上教學，文字搭配圖片，適合初學者。">
+<meta name="keywords" content="AI Agent 教學, 自動化工作流, N8N 教學, WhatsApp AI, Telegram Bot, 一人公司, AI 入門">
+<meta property="og:title" content="AI Agent 線上教學 - 從零開始學會自動化工作流">
+<meta property="og:description" content="8 章完整課程，從什麼是 AI Agent 到建立你的專屬工作流。">
+<meta property="og:url" content="https://ai-dreams.net/learn.html">
+<link rel="canonical" href="https://ai-dreams.net/learn.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#09090b;--surface:#131316;--surface-2:#1a1a1f;--surface-3:#222228;
+  --border:#27272a;--border-hover:#3f3f46;
+  --text:#fafafa;--text-2:#a1a1aa;--text-3:#71717a;
+  --accent:#10b981;--accent-dim:#065f46;--accent-glow:rgba(16,185,129,.12);
+  --radius:12px;--radius-sm:8px;--radius-pill:999px;
+  --font:'Outfit',-apple-system,'PingFang TC','Noto Sans TC',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --sidebar-w:280px;
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.8;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:var(--bg)}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* PROGRESS BAR */
+.progress-bar{position:fixed;top:0;left:0;width:0;height:3px;background:var(--accent);z-index:100;transition:width .1s}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(9,9,11,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--text);text-decoration:none}
+.nav-logo:hover{text-decoration:none}
+.nav-logo-img{width:36px;height:36px;border-radius:8px;object-fit:cover}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-back{color:var(--text-2);font-size:14px;font-weight:500;transition:color .2s;display:flex;align-items:center;gap:6px}
+.nav-back:hover{color:var(--text);text-decoration:none}
+.nav-chapter-select{display:none;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text);font-size:14px;padding:8px 12px;font-family:var(--font);cursor:pointer}
+
+/* LAYOUT */
+.layout{display:flex;max-width:1400px;margin:0 auto;min-height:calc(100vh - 64px)}
+
+/* SIDEBAR */
+.sidebar{position:sticky;top:64px;width:var(--sidebar-w);height:calc(100vh - 64px);overflow-y:auto;flex-shrink:0;border-right:1px solid var(--border);padding:24px 0;background:var(--bg)}
+.sidebar::-webkit-scrollbar{width:4px}
+.sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.sidebar-title{font-size:12px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:1px;padding:0 20px 12px}
+.sidebar-chapter{display:block;padding:10px 20px;color:var(--text-2);font-size:14px;font-weight:500;border-left:3px solid transparent;transition:all .2s;cursor:pointer}
+.sidebar-chapter:hover{color:var(--text);background:var(--surface);text-decoration:none}
+.sidebar-chapter.active{color:var(--accent);border-left-color:var(--accent);background:var(--accent-glow)}
+.sidebar-chapter .ch-num{font-family:var(--mono);font-size:11px;color:var(--text-3);margin-right:8px}
+.sidebar-chapter.active .ch-num{color:var(--accent)}
+.sidebar-progress{padding:20px;margin-top:12px;border-top:1px solid var(--border)}
+.sidebar-progress-label{font-size:12px;color:var(--text-3);margin-bottom:8px}
+.sidebar-progress-bar{height:6px;background:var(--surface-3);border-radius:3px;overflow:hidden}
+.sidebar-progress-fill{height:100%;background:var(--accent);border-radius:3px;transition:width .3s;width:0%}
+.sidebar-progress-text{font-size:12px;color:var(--text-3);margin-top:6px;font-family:var(--mono)}
+
+/* MAIN CONTENT */
+.content{flex:1;min-width:0;padding:40px 60px 80px}
+
+/* CHAPTER */
+.chapter{margin-bottom:80px;scroll-margin-top:80px}
+.chapter-header{margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.chapter-tag{display:inline-flex;align-items:center;gap:6px;background:var(--accent-glow);border:1px solid var(--accent-dim);color:var(--accent);padding:6px 14px;border-radius:var(--radius-pill);font-size:13px;font-weight:600;letter-spacing:.5px;margin-bottom:16px}
+.chapter-tag .ch-emoji{font-size:16px}
+.chapter h2{font-size:clamp(28px,3.5vw,40px);font-weight:800;line-height:1.2;letter-spacing:-.02em;margin-bottom:12px}
+.chapter-lead{font-size:18px;color:var(--text-2);line-height:1.7;max-width:680px}
+
+/* SECTION WITHIN CHAPTER */
+.section{margin-bottom:40px}
+.section h3{font-size:22px;font-weight:700;margin-bottom:16px;color:var(--text);line-height:1.4}
+.section h4{font-size:18px;font-weight:600;margin-bottom:12px;color:var(--text-2)}
+.section p{font-size:17px;line-height:1.9;color:var(--text-2);margin-bottom:16px}
+.section ul,.section ol{font-size:17px;line-height:2;color:var(--text-2);margin-bottom:16px;padding-left:24px}
+.section li{margin-bottom:8px}
+.section strong{color:var(--text);font-weight:600}
+
+/* IMAGE */
+.chapter-img{width:100%;border-radius:var(--radius);border:1px solid var(--border);margin:24px 0;object-fit:cover;max-height:420px}
+.chapter-img-caption{font-size:13px;color:var(--text-3);text-align:center;margin-top:-16px;margin-bottom:24px}
+
+/* CALLOUT BOX */
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius-sm);padding:20px 24px;margin:24px 0}
+.callout-title{font-size:15px;font-weight:700;color:var(--accent);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.callout p{font-size:16px;color:var(--text-2);line-height:1.8;margin:0}
+
+.callout-warn{border-left-color:#f59e0b}
+.callout-warn .callout-title{color:#f59e0b}
+
+.callout-info{border-left-color:#3b82f6}
+.callout-info .callout-title{color:#3b82f6}
+
+/* STEP BOX */
+.steps{counter-reset:step;margin:24px 0}
+.step{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px;position:relative;padding-left:72px}
+.step::before{counter-increment:step;content:counter(step);position:absolute;left:20px;top:24px;width:36px;height:36px;background:var(--accent-glow);border:1px solid var(--accent-dim);color:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;font-family:var(--mono)}
+.step h4{font-size:18px;font-weight:600;margin-bottom:8px;color:var(--text)}
+.step p{font-size:16px;color:var(--text-2);line-height:1.8;margin:0}
+
+/* CODE BLOCK */
+.code-block{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 20px;margin:16px 0;font-family:var(--mono);font-size:15px;color:var(--accent);overflow-x:auto;line-height:1.6}
+
+/* COMPARISON TABLE */
+.compare-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:16px}
+.compare-table th{background:var(--surface-2);color:var(--text);font-weight:600;padding:14px 16px;text-align:left;border:1px solid var(--border)}
+.compare-table td{background:var(--surface);color:var(--text-2);padding:14px 16px;border:1px solid var(--border);line-height:1.7}
+.compare-table tr:hover td{background:var(--surface-2)}
+
+/* CHAPTER NAVIGATION */
+.chapter-nav{display:flex;justify-content:space-between;gap:20px;margin-top:60px;padding-top:32px;border-top:1px solid var(--border)}
+.chapter-nav-btn{display:flex;flex-direction:column;gap:4px;padding:16px 20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;transition:all .2s;text-decoration:none;min-width:200px}
+.chapter-nav-btn:hover{border-color:var(--accent);background:var(--accent-glow);text-decoration:none;transform:translateY(-2px)}
+.chapter-nav-btn .nav-label{font-size:12px;color:var(--text-3);font-weight:500}
+.chapter-nav-btn .nav-title{font-size:15px;color:var(--text);font-weight:600}
+.chapter-nav-btn.next{text-align:right;margin-left:auto}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:32px 60px;text-align:center;color:var(--text-3);font-size:14px;background:var(--surface)}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:all .6s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .sidebar{display:none}
+  .nav-chapter-select{display:block}
+  .content{padding:24px 20px 60px}
+  .chapter-nav{flex-direction:column}
+  .chapter-nav-btn{min-width:0}
+  .chapter-nav-btn.next{text-align:left}
+  .footer{padding:24px 20px}
+}
+@media(max-width:600px){
+  .chapter h2{font-size:26px}
+  .section p,.section li{font-size:16px}
+  .chapter-lead{font-size:16px}
+  .chapter-img{max-height:260px}
+}
+</style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.jpg" alt="一人公司研究所" class="nav-logo-img">
+      <span>AI 工作流市集</span>
+    </a>
+    <div class="nav-right">
+      <select class="nav-chapter-select" id="mobileChapterSelect" onchange="jumpTo(this.value)">
+        <option value="ch1">Ch.1 認識 AI Agent</option>
+        <option value="ch2">Ch.2 自動化工作流</option>
+        <option value="ch3">Ch.3 串接 AI 模型</option>
+        <option value="ch4">Ch.4 手機遙控 AI</option>
+        <option value="ch5">Ch.5 第一個工作流</option>
+        <option value="ch6">Ch.6 節點與觸發器</option>
+        <option value="ch7">Ch.7 建立專屬工作流</option>
+        <option value="ch8">Ch.8 進階資源</option>
+      </select>
+      <a href="index.html" class="nav-back">← 返回首頁</a>
+    </div>
+  </div>
+</nav>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-title">課程目錄</div>
+  <a href="#ch1" class="sidebar-chapter active" data-ch="ch1">
+    <span class="ch-num">01</span>認識 AI Agent
+  </a>
+  <a href="#ch2" class="sidebar-chapter" data-ch="ch2">
+    <span class="ch-num">02</span>自動化工作流
+  </a>
+  <a href="#ch3" class="sidebar-chapter" data-ch="ch3">
+    <span class="ch-num">03</span>串接 AI 模型
+  </a>
+  <a href="#ch4" class="sidebar-chapter" data-ch="ch4">
+    <span class="ch-num">04</span>手機遙控 AI Agent
+  </a>
+  <a href="#ch5" class="sidebar-chapter" data-ch="ch5">
+    <span class="ch-num">05</span>你的第一個工作流
+  </a>
+  <a href="#ch6" class="sidebar-chapter" data-ch="ch6">
+    <span class="ch-num">06</span>節點與觸發器
+  </a>
+  <a href="#ch7" class="sidebar-chapter" data-ch="ch7">
+    <span class="ch-num">07</span>建立專屬工作流
+  </a>
+  <a href="#ch8" class="sidebar-chapter" data-ch="ch8">
+    <span class="ch-num">08</span>進階資源與社群
+  </a>
+  <div class="sidebar-progress">
+    <div class="sidebar-progress-label">學習進度</div>
+    <div class="sidebar-progress-bar"><div class="sidebar-progress-fill" id="progressFill"></div></div>
+    <div class="sidebar-progress-text" id="progressText">0 / 8 章</div>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="content">
+
+<!-- ============================================================ -->
+<!-- CHAPTER 1: 認識 AI Agent -->
+<!-- ============================================================ -->
+<div class="chapter reveal" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-tag"><span class="ch-emoji">🤖</span> 第一章</div>
+    <h2>認識 AI Agent</h2>
+    <p class="chapter-lead">什麼是 AI Agent？它跟我們平常使用的 ChatGPT 有什麼不同？這一章帶你建立最核心的概念。</p>
+  </div>
+
+  <img src="images/ch1a.jpg" alt="AI 智能代理人概念圖" class="chapter-img">
+  <div class="chapter-img-caption">AI Agent 就像一個能獨立思考、採取行動的數位助理</div>
+
+  <div class="section">
+    <h3>什麼是 AI？</h3>
+    <p><strong>AI（人工智慧）</strong>簡單來說，就是讓電腦像人一樣「思考」和「學習」的技術。你一定已經在用 AI 了——手機的語音助手、Google 翻譯、社群媒體的推薦演算法，這些都是 AI 的應用。</p>
+    <p>近年最火紅的 AI 技術就是<strong>大型語言模型（LLM）</strong>，像是 ChatGPT、Claude、Gemini 等。它們能理解自然語言，回答問題、寫文章、翻譯、甚至寫程式。</p>
+  </div>
+
+  <div class="section">
+    <h3>那 AI Agent 又是什麼？</h3>
+    <p>如果說 ChatGPT 是一個「你問它答」的聰明圖書館員，那 <strong>AI Agent 就是一個能幫你跑腿辦事的私人助理</strong>。</p>
+    <p>一般的 AI（如 ChatGPT）只能對話——你給它一句話，它回你一段文字。但 <strong>AI Agent 能主動「做事」</strong>：</p>
+    <ul>
+      <li>📧 自動讀取你的 Email，幫你分類和回覆</li>
+      <li>📊 定時抓取網站數據，產生報表</li>
+      <li>💬 監控社群留言，自動回覆常見問題</li>
+      <li>🛒 追蹤商品價格，降價時通知你</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">💡 一句話搞懂差異</div>
+    <p><strong>ChatGPT = 你問它答（被動回應）</strong><br>
+    <strong>AI Agent = 你設好條件，它自動去執行（主動行動）</strong></p>
+  </div>
+
+  <div class="section">
+    <h3>AI Agent 的運作原理</h3>
+    <p>AI Agent 的運作可以簡單分成三個步驟，就像人類做事一樣：</p>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <h4>感知（Perceive）— 發生了什麼事？</h4>
+      <p>Agent 從外部環境接收資訊。例如：收到一封新 Email、偵測到社群有新留言、到了排定的時間點。這就是「觸發」。</p>
+    </div>
+    <div class="step">
+      <h4>思考（Think）— 該怎麼處理？</h4>
+      <p>Agent 用 AI 大腦分析狀況，做出判斷。例如：這封 Email 是垃圾郵件還是重要信件？這則留言需要回覆嗎？回覆什麼內容？</p>
+    </div>
+    <div class="step">
+      <h4>行動（Act）— 去執行！</h4>
+      <p>Agent 根據判斷結果採取行動。例如：將 Email 標記為重要、自動回覆社群留言、把資料寫入 Google Sheets。</p>
+    </div>
+  </div>
+
+  <img src="images/ch1b.jpg" alt="AI Agent 運作流程" class="chapter-img">
+  <div class="chapter-img-caption">感知 → 思考 → 行動，AI Agent 的核心循環</div>
+
+  <div class="section">
+    <h3>AI Agent 跟自動化腳本有什麼不同？</h3>
+    <p>你可能會想：「寫個程式腳本也能自動化啊，為什麼需要 AI Agent？」</p>
+    <p>關鍵差異在於<strong>處理「不確定性」的能力</strong>：</p>
+  </div>
+
+  <table class="compare-table">
+    <thead>
+      <tr><th>比較項目</th><th>傳統自動化腳本</th><th>AI Agent</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>處理方式</strong></td><td>固定的 if-else 規則</td><td>用 AI 理解語意，靈活判斷</td></tr>
+      <tr><td><strong>面對新狀況</strong></td><td>超出規則就當機或忽略</td><td>能理解並做出合理回應</td></tr>
+      <tr><td><strong>舉例</strong></td><td>收到含「urgent」的信就標記重要</td><td>讀懂信件內容，判斷是否真的緊急</td></tr>
+      <tr><td><strong>適合場景</strong></td><td>流程固定、規則明確</td><td>需要理解文字、做出判斷的任務</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section">
+    <h3>生活中的 AI Agent 應用場景</h3>
+    <p>AI Agent 不是遙不可及的未來科技，它已經在各行各業發揮作用：</p>
+    <ul>
+      <li><strong>🏪 電商賣家</strong>：自動回覆買家詢問、追蹤訂單狀態、庫存不足時自動通知</li>
+      <li><strong>📱 社群小編</strong>：排程發文、監控留言、自動回覆常見問題</li>
+      <li><strong>📊 一人公司老闆</strong>：自動整理 Email、產生週報、追蹤專案進度</li>
+      <li><strong>🎓 老師 / 講師</strong>：自動批改選擇題、回答學生常見問題、整理學習數據</li>
+      <li><strong>🏠 個人用戶</strong>：追蹤包裹、整理收據、提醒重要事項</li>
+    </ul>
+  </div>
+
+  <div class="callout callout-info">
+    <div class="callout-title">ℹ️ 為什麼現在是學 AI Agent 的最好時機？</div>
+    <p>2024-2026 年，AI 模型的能力大幅提升、成本急速下降。過去需要一整個工程團隊才能做到的自動化，現在一個人、一台電腦就能搞定。<strong>這就是「一人公司」的超能力。</strong></p>
+  </div>
+
+  <div class="chapter-nav">
+    <div></div>
+    <a href="#ch2" class="chapter-nav-btn next">
+      <span class="nav-label">下一章 →</span>
+      <span class="nav-title">什麼是自動化工作流？</span>
+    </a>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CHAPTER 2: 什麼是自動化工作流 -->
+<!-- ============================================================ -->
+<div class="chapter reveal" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-tag"><span class="ch-emoji">⚙️</span> 第二章</div>
+    <h2>什麼是自動化工作流？</h2>
+    <p class="chapter-lead">了解什麼是工作流、為什麼需要自動化，以及如何用最簡單的方式開始你的第一個自動化任務。</p>
+  </div>
+
+  <img src="images/ch2a.jpg" alt="自動化工作流概念" class="chapter-img">
+  <div class="chapter-img-caption">把重複性的工作交給 AI，專注在真正重要的事</div>
+
+  <div class="section">
+    <h3>什麼是「工作流」？</h3>
+    <p><strong>工作流（Workflow）</strong>就是一連串有順序的步驟，完成某個任務。舉個生活中的例子：</p>
+    <p>每天早上你可能做這些事：</p>
+    <ol>
+      <li>起床 → 2. 刷牙洗臉 → 3. 吃早餐 → 4. 出門上班</li>
+    </ol>
+    <p>這就是一個「日常起居工作流」。在商業場景中也一樣：</p>
+    <ol>
+      <li>客戶下單 → 2. 確認庫存 → 3. 發送出貨通知 → 4. 更新帳務報表</li>
+    </ol>
+    <p>這些步驟如果每次都靠人工處理，既費時又容易出錯。<strong>自動化工作流就是把這些步驟交給電腦自動執行。</strong></p>
+  </div>
+
+  <div class="section">
+    <h3>為什麼一人公司更需要自動化？</h3>
+    <p>大公司有團隊分工，一個人只需要負責一個環節。但一人公司呢？<strong>一個人就是全部的部門</strong>——你是老闆、客服、小編、會計、倉管⋯⋯</p>
+    <p>自動化能幫你：</p>
+    <ul>
+      <li><strong>⏰ 省時間</strong>：把每天重複做的事交給 AI，一週省下 10-20 小時</li>
+      <li><strong>🎯 降低錯誤</strong>：電腦不會打錯字、不會忘記回覆、不會漏掉訂單</li>
+      <li><strong>🌙 24 小時運作</strong>：AI 不用睡覺，凌晨三點也能幫你回客戶訊息</li>
+      <li><strong>💰 降低成本</strong>：不用請助理，一套工作流就能頂一個人力</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>JSON 工作流：下載即用的自動化套件</h3>
+    <p>在本站，我們提供的是 <strong>JSON 格式的工作流檔案</strong>。你可以把 JSON 工作流想像成一個<strong>「自動化食譜」</strong>：</p>
+    <ul>
+      <li>📖 食譜上寫好了所有步驟（節點）和順序（連線）</li>
+      <li>🍳 你只需要照著做（匯入並執行），不用自己從頭設計菜色</li>
+      <li>✏️ 你還可以根據自己的口味微調（修改參數）</li>
+    </ul>
+    <p>最棒的是，<strong>你不需要安裝任何開發環境</strong>。只要把 JSON 檔匯入到支援的工作流平台，填入你的 API 金鑰，就能立刻執行。</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">💡 本站在做的事情</div>
+    <p>我們從全球開源社群精選 <strong>1,068+ 個高品質工作流</strong>，翻譯成中文、附上精準提示詞，讓你<strong>下載 JSON 就能直接使用</strong>，不需要從零開始學習如何搭建工作流。</p>
+  </div>
+
+  <div class="section">
+    <h3>工作流的三個核心要素</h3>
+    <p>不管多複雜的工作流，都由三個要素組成：</p>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <h4>觸發器（Trigger）— 什麼時候啟動？</h4>
+      <p>工作流的起點。可以是「收到新 Email 時」、「每天早上 9 點」、「有人在網站下單時」，或是「手動按下執行按鈕」。</p>
+    </div>
+    <div class="step">
+      <h4>節點（Node）— 做什麼事？</h4>
+      <p>每個節點負責一個動作，例如「讀取 Email 內容」、「呼叫 AI 分類」、「傳送 LINE 通知」。一個工作流可能有 5 個、10 個、甚至 50 個節點。</p>
+    </div>
+    <div class="step">
+      <h4>連線（Connection）— 順序是什麼？</h4>
+      <p>節點之間的箭頭，決定資料如何流動。A 節點做完 → 傳給 B 節點處理 → 再傳給 C 節點執行。</p>
+    </div>
+  </div>
+
+  <div class="chapter-nav">
+    <a href="#ch1" class="chapter-nav-btn prev">
+      <span class="nav-label">← 上一章</span>
+      <span class="nav-title">認識 AI Agent</span>
+    </a>
+    <a href="#ch3" class="chapter-nav-btn next">
+      <span class="nav-label">下一章 →</span>
+      <span class="nav-title">串接 AI 模型</span>
+    </a>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CHAPTER 3: 串接 AI 模型 -->
+<!-- ============================================================ -->
+<div class="chapter reveal" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-tag"><span class="ch-emoji">🧠</span> 第三章</div>
+    <h2>串接 AI 模型</h2>
+    <p class="chapter-lead">學會如何申請 AI 模型的 API 金鑰，以及如何用精準的提示詞讓 AI 更準確地完成任務。</p>
+  </div>
+
+  <img src="images/ch3a.jpg" alt="AI 模型與 API 串接" class="chapter-img">
+  <div class="chapter-img-caption">透過 API，你的工作流就能擁有 AI 的智慧能力</div>
+
+  <div class="section">
+    <h3>什麼是 AI 模型？</h3>
+    <p><strong>AI 模型</strong>就是 AI 的「大腦」。不同廠商推出了不同的大腦，各有擅長：</p>
+  </div>
+
+  <table class="compare-table">
+    <thead>
+      <tr><th>模型</th><th>廠商</th><th>特色</th><th>適合場景</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>GPT-4o</strong></td><td>OpenAI</td><td>綜合能力最強，支援圖片理解</td><td>通用任務、創意寫作</td></tr>
+      <tr><td><strong>Claude</strong></td><td>Anthropic</td><td>長文本處理能力佳，安全性高</td><td>文件分析、客服回覆</td></tr>
+      <tr><td><strong>Gemini</strong></td><td>Google</td><td>多模態，與 Google 服務整合好</td><td>搜尋、文件處理</td></tr>
+      <tr><td><strong>DeepSeek</strong></td><td>DeepSeek</td><td>開源、價格便宜、中文能力強</td><td>中文任務、預算有限</td></tr>
+      <tr><td><strong>Llama</strong></td><td>Meta</td><td>開源，可本地部署</td><td>隱私需求、自架環境</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section">
+    <h3>什麼是 API 金鑰？</h3>
+    <p><strong>API 金鑰（API Key）</strong>就像是 AI 模型的「通行證」。當你的工作流需要呼叫 AI 來做事時，必須出示這張通行證，AI 才知道「喔，是授權用戶來了」。</p>
+    <p>你可以把它想像成<strong>超商的會員卡</strong>——刷了卡才能累積點數、使用優惠。沒有卡就進不了門。</p>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <h4>申請 OpenAI API 金鑰（最常用）</h4>
+      <p>前往 <strong>platform.openai.com</strong> → 註冊帳號 → 點選「API Keys」→ 建立新的金鑰。複製並妥善保存，這串金鑰只會顯示一次。</p>
+    </div>
+    <div class="step">
+      <h4>申請 Google Gemini API 金鑰（免費額度）</h4>
+      <p>前往 <strong>aistudio.google.com</strong> → 用 Google 帳號登入 → 點選「Get API Key」→ 建立金鑰。Google 提供免費使用額度，非常適合新手練習。</p>
+    </div>
+    <div class="step">
+      <h4>在工作流中填入金鑰</h4>
+      <p>匯入 JSON 工作流後，找到需要 AI 的節點，將你的 API 金鑰貼到對應欄位即可。每個工作流的說明中都會標註「請在此填入你的 API Key」。</p>
+    </div>
+  </div>
+
+  <div class="callout callout-warn">
+    <div class="callout-title">⚠️ 安全提醒</div>
+    <p>API 金鑰就像密碼一樣重要！<strong>絕對不要分享給別人</strong>，也不要張貼在社群媒體上。如果金鑰外洩，別人可能會用你的額度呼叫 AI，產生費用。</p>
+  </div>
+
+  <img src="images/ch3b.jpg" alt="AI 對話與提示詞" class="chapter-img">
+  <div class="chapter-img-caption">精準的提示詞能讓 AI 更準確地完成你交代的任務</div>
+
+  <div class="section">
+    <h3>提示詞工程：讓 AI 聽懂你在說什麼</h3>
+    <p><strong>提示詞（Prompt）</strong>就是你給 AI 的指令。提示詞寫得好，AI 就能精準完成任務；寫得差，AI 就會給你模糊、不相關的回覆。</p>
+    <p>這就像跟外國人溝通——你說得越清楚、越具體，對方就越能理解你要什麼。</p>
+  </div>
+
+  <div class="section">
+    <h3>好的提示詞 vs 壞的提示詞</h3>
+    <h4>❌ 壞的提示詞（太模糊）</h4>
+    <div class="code-block">幫我回覆客戶的 Email</div>
+    <p>AI 不知道客戶是誰、Email 說了什麼、要用什麼語氣回覆⋯⋯結果當然是亂回一通。</p>
+
+    <h4>✅ 好的提示詞（明確具體）</h4>
+    <div class="code-block">你是一位親切的客服人員。請根據以下客戶來信內容，用繁體中文撰寫一封專業但溫暖的回覆。回覆需包含：1) 感謝客戶來信 2) 針對問題給出解答 3) 結尾邀請客戶有問題隨時再詢問。語氣不要太正式，像朋友聊天一樣自然。</div>
+    <p>這樣的提示詞給了 AI 清楚的角色、任務、格式和語氣要求，回覆品質天差地遠。</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">💡 本站的提示詞服務</div>
+    <p>每個工作流都附帶<strong>精心設計的中文提示詞</strong>，你不需要自己想。直接複製貼上就能大幅減少 AI 的試錯次數，<strong>省下 50%-80% 的 Token 費用</strong>。</p>
+  </div>
+
+  <div class="section">
+    <h3>Token 是什麼？為什麼要省？</h3>
+    <p><strong>Token</strong> 是 AI 模型計算費用的單位。大約 1 個中文字 ≈ 1.5 個 Token，1 個英文字 ≈ 1 個 Token。AI 廠商按照你使用了多少 Token 來收費。</p>
+    <p>省 Token 的秘訣：</p>
+    <ul>
+      <li>🎯 <strong>提示詞要精準</strong>：越明確，AI 越不用來回確認</li>
+      <li>✂️ <strong>只傳必要的資料</strong>：不要把整篇文章都丟給 AI，節選重點就好</li>
+      <li>📋 <strong>善用本站的提示詞</strong>：我們已經幫你優化過了</li>
+    </ul>
+  </div>
+
+  <div class="chapter-nav">
+    <a href="#ch2" class="chapter-nav-btn prev">
+      <span class="nav-label">← 上一章</span>
+      <span class="nav-title">什麼是自動化工作流？</span>
+    </a>
+    <a href="#ch4" class="chapter-nav-btn next">
+      <span class="nav-label">下一章 →</span>
+      <span class="nav-title">手機遙控 AI Agent</span>
+    </a>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CHAPTER 4: 手機遙控 AI Agent -->
+<!-- ============================================================ -->
+<div class="chapter reveal" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-tag"><span class="ch-emoji">📱</span> 第四章</div>
+    <h2>用 WhatsApp / Telegram 遙控 AI Agent</h2>
+    <p class="chapter-lead">學會從手機發訊息就能遠端操控電腦上的 AI Agent，讓自動化工作流隨身帶著走。</p>
+  </div>
+
+  <img src="images/ch4a.jpg" alt="手機遙控 AI Agent" class="chapter-img">
+  <div class="chapter-img-caption">用手機發一則訊息，AI Agent 就在電腦上自動執行任務</div>
+
+  <div class="section">
+    <h3>為什麼要從手機遙控？</h3>
+    <p>想像這個場景：你在外面跑客戶，突然想到「幫我查一下今天的銷售數據」或「幫我回覆那個客戶的訊息」。以前你得回到電腦前才能處理，但現在<strong>只要從手機傳一則訊息給你的 AI Agent，它就自動幫你搞定</strong>。</p>
+    <p>這就是「手機遙控 AI Agent」的威力——<strong>你的 AI 助理 24 小時待命，隨時等你下令</strong>。</p>
+  </div>
+
+  <div class="section">
+    <h3>選擇你的遙控工具</h3>
+    <p>最常拿來當「遙控器」的兩個 App：</p>
+  </div>
+
+  <table class="compare-table">
+    <thead>
+      <tr><th>比較項目</th><th>Telegram</th><th>WhatsApp</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>建立 Bot</strong></td><td>✅ 非常簡單，5 分鐘搞定</td><td>⚠️ 需要 WhatsApp Business API</td></tr>
+      <tr><td><strong>費用</strong></td><td>完全免費</td><td>免費（但 Business API 有額度限制）</td></tr>
+      <tr><td><strong>台灣使用率</strong></td><td>中等，科技圈較多</td><td>非常高，幾乎人人都有</td></tr>
+      <tr><td><strong>推薦程度</strong></td><td>⭐⭐⭐⭐⭐ 新手首選</td><td>⭐⭐⭐⭐ 已有 WhatsApp 者適用</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section">
+    <h3>方法一：用 Telegram 遙控（推薦新手）</h3>
+    <p>Telegram 是最簡單的遙控方案，因為它<strong>內建了 Bot 機制</strong>，不需要任何額外設定。</p>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <h4>建立你的 Telegram Bot</h4>
+      <p>在 Telegram 搜尋 <strong>@BotFather</strong>（這是 Telegram 官方的 Bot 管理員），發送 <code>/newbot</code> 指令，依照指示取名。完成後你會拿到一組 <strong>Bot Token</strong>（格式像 <code>123456:ABC-DEF...</code>），這就是你的 Bot 身份證。</p>
+    </div>
+    <div class="step">
+      <h4>建立工作流並加入 Telegram 節點</h4>
+      <p>在工作流中加入一個 <strong>Telegram Trigger 節點</strong>，填入你的 Bot Token。這個節點會「監聽」你傳給 Bot 的每一則訊息。</p>
+    </div>
+    <div class="step">
+      <h4>設計你的指令系統</h4>
+      <p>設定好指令格式，例如：</p>
+      <p>• 傳「<strong>報表</strong>」→ AI 自動產生今日銷售報表<br>
+      • 傳「<strong>回覆 [客戶名稱]</strong>」→ AI 幫你草擬回覆訊息<br>
+      • 傳「<strong>查 [商品名稱]</strong>」→ AI 幫你查詢庫存和價格</p>
+    </div>
+    <div class="step">
+      <h4>用手機測試</h4>
+      <p>在 Telegram 找到你剛建立的 Bot，發送一則測試訊息。如果工作流正確運作，你會收到 AI 的回覆！</p>
+    </div>
+  </div>
+
+  <img src="images/ch4b.jpg" alt="遠端遙控技術" class="chapter-img">
+  <div class="chapter-img-caption">透過 Telegram 或 WhatsApp，隨時隨地掌控你的 AI 工作流</div>
+
+  <div class="section">
+    <h3>方法二：用 WhatsApp 遙控</h3>
+    <p>WhatsApp 的設定稍微複雜一些，但如果你的客戶都在 WhatsApp 上，這會是更好的選擇：</p>
+    <ol>
+      <li>前往 <strong>developers.facebook.com</strong> 註冊 Meta 開發者帳號</li>
+      <li>申請 <strong>WhatsApp Business API</strong> 存取權限</li>
+      <li>在工作流中設定 WhatsApp 節點，填入你的 API 憑證</li>
+      <li>設定 webhook 接收訊息，設計自動回覆邏輯</li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">💡 實戰範例：用 Telegram 做一個 AI 客服</div>
+    <p>假設你是一個蝦皮賣家，每天收到很多買家詢問「有沒有現貨？」「什麼時候出貨？」。你可以建立一個工作流：</p>
+    <p>1. 買家傳訊息到你的 Telegram Bot<br>
+    2. AI 讀取訊息，判斷問題類型<br>
+    3. AI 從你的商品資料庫查詢答案<br>
+    4. 自動回覆買家<br><br>
+    <strong>全程你不需要動一根手指！</strong></p>
+  </div>
+
+  <div class="section">
+    <h3>進階玩法：群組遙控</h3>
+    <p>你不只能一對一遙控，還可以<strong>把 Bot 加入 Telegram 群組</strong>，讓團隊成員都能使用同一個 AI Agent：</p>
+    <ul>
+      <li>👨‍💼 老闆傳「@bot 週報」→ 自動彙整本週數據</li>
+      <li>👩‍💻 行銷傳「@bot 帮我想 5 個貼文標題」→ AI 給出建議</li>
+      <li>📦 倉管傳「@bot 庫存查詢 iPhone 16」→ 即時庫存數量</li>
+    </ul>
+    <p>一個 Bot 就是一個全能助理，服務整個團隊！</p>
+  </div>
+
+  <div class="chapter-nav">
+    <a href="#ch3" class="chapter-nav-btn prev">
+      <span class="nav-label">← 上一章</span>
+      <span class="nav-title">串接 AI 模型</span>
+    </a>
+    <a href="#ch5" class="chapter-nav-btn next">
+      <span class="nav-label">下一章 →</span>
+      <span class="nav-title">你的第一個工作流</span>
+    </a>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CHAPTER 5: 你的第一個工作流 -->
+<!-- ============================================================ -->
+<div class="chapter reveal" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-tag"><span class="ch-emoji">🚀</span> 第五章</div>
+    <h2>你的第一個工作流</h2>
+    <p class="chapter-lead">從本站下載一個 JSON 工作流，匯入執行，親眼見證 AI 自動化的力量。</p>
+  </div>
+
+  <img src="images/ch5a.jpg" alt="下載並執行工作流" class="chapter-img">
+  <div class="chapter-img-caption">三步驟：下載 → 匯入 → 執行，就是這麼簡單</div>
+
+  <div class="section">
+    <h3>挑選你的第一個工作流</h3>
+    <p>回到 <a href="index.html">AI 工作流市集首頁</a>，你可以用以下方式找到適合的工作流：</p>
+    <ul>
+      <li>🔍 <strong>搜尋關鍵字</strong>：例如「LINE」、「Email」、「社群」</li>
+      <li>📂 <strong>瀏覽分類</strong>：15 個行業分類，找到你最需要的</li>
+      <li>⭐ <strong>看台灣精選</strong>：針對台灣常用平台（蝦皮、LINE、Facebook）量身打造</li>
+      <li>🆕 <strong>看最新消息</strong>：每週更新的工作流推薦</li>
+    </ul>
+    <p>新手建議先挑一個<strong>節點數少（5-10 個）</strong>、<strong>複雜度標示為「簡單」</strong>的工作流來練習。</p>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <h4>下載 JSON 檔案</h4>
+      <p>在工作流卡片上點擊<strong>「下載 JSON」</strong>按鈕，你的瀏覽器會下載一個 <code>.json</code> 檔案。這就是工作流的全部資料，通常只有幾 KB 大小。</p>
+    </div>
+    <div class="step">
+      <h4>匯入到工作流平台</h4>
+      <p>登入你的工作流平台（如 N8N），找到<strong>「Import from File」</strong>或「匯入」功能，選擇剛才下載的 JSON 檔案。匯入後你會看到一個視覺化的工作流圖——每個方塊就是一個節點，箭頭就是連線。</p>
+    </div>
+    <div class="step">
+      <h4>填入你的 API 金鑰</h4>
+      <p>找到需要連接外部服務的節點（通常是 AI 模型、LINE、Email 等），點擊節點後填入你自己的 API 金鑰。<strong>沒有金鑰，節點就無法正常運作。</strong></p>
+    </div>
+    <div class="step">
+      <h4>測試執行</h4>
+      <p>點擊工作流的<strong>「Execute」或「測試執行」</strong>按鈕。你會看到資料像水流一樣，從觸發器開始，依序通過每個節點。如果一切順利，最後一個節點會顯示綠色的 ✅ 成功圖示！</p>
+    </div>
+  </div>
+
+  <img src="images/ch5b.jpg" alt="工作流執行介面" class="chapter-img">
+  <div class="chapter-img-caption">看到每個節點都亮綠色 ✅，就代表工作流執行成功了！</div>
+
+  <div class="callout callout-info">
+    <div class="callout-title">ℹ️ 下載後的提示詞別忘了用</div>
+    <p>每個工作流除了 JSON 檔，還附帶一組<strong>中文提示詞</strong>。匯入工作流後，把提示詞貼到 AI 節點的 System Prompt 欄位，能大幅提升 AI 的回覆品質，同時省下 50% 以上的 Token 費用。</p>
+  </div>
+
+  <div class="section">
+    <h3>常見問題排除</h3>
+    <ul>
+      <li><strong>🔴 節點出現紅色錯誤</strong>：通常是 API 金鑰沒有填、或填錯了。重新檢查一遍。</li>
+      <li><strong>⚠️ 回傳資料是空的</strong>：可能是觸發條件沒有滿足。例如 Webhook 觸發器需要有人真的呼叫它才會啟動。</li>
+      <li><strong>🐌 執行很慢</strong>：AI 模型的回應時間取決於模型和提示詞長度，通常需要 5-30 秒，這是正常的。</li>
+    </ul>
+  </div>
+
+  <div class="chapter-nav">
+    <a href="#ch4" class="chapter-nav-btn prev">
+      <span class="nav-label">← 上一章</span>
+      <span class="nav-title">手機遙控 AI Agent</span>
+    </a>
+    <a href="#ch6" class="chapter-nav-btn next">
+      <span class="nav-label">下一章 →</span>
+      <span class="nav-title">節點與觸發器</span>
+    </a>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CHAPTER 6: 理解節點與觸發器 -->
+<!-- ============================================================ -->
+<div class="chapter reveal" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-tag"><span class="ch-emoji">🔗</span> 第六章</div>
+    <h2>理解節點與觸發器</h2>
+    <p class="chapter-lead">深入了解工作流的內部結構——每個節點在做什麼、資料如何流動。</p>
+  </div>
+
+  <img src="images/ch6a.jpg" alt="節點與連線" class="chapter-img">
+  <div class="chapter-img-caption">每個節點就像一個專業工人，各司其職，串聯起來就是一條生產線</div>
+
+  <div class="section">
+    <h3>觸發器：工作流的起點</h3>
+    <p>每個工作流都有一個<strong>觸發器（Trigger）</strong>，它決定了「什麼時候開始執行」。常見的觸發器有：</p>
+  </div>
+
+  <table class="compare-table">
+    <thead>
+      <tr><th>觸發器類型</th><th>說明</th><th>使用場景</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>手動觸發</strong></td><td>你按下「執行」按鈕才會啟動</td><td>測試、不定期執行的任務</td></tr>
+      <tr><td><strong>排程觸發</strong></td><td>設定時間自動執行（每小時、每天 9 點⋯）</td><td>定時報表、定期備份</td></tr>
+      <tr><td><strong>Webhook</strong></td><td>外部系統發送 HTTP 請求時啟動</td><td>網站表單送出、電商訂單成立</td></tr>
+      <tr><td><strong>Email 觸發</strong></td><td>收到新 Email 時啟動</td><td>自動分類信件、自動回覆</td></tr>
+      <tr><td><strong>Telegram 觸發</strong></td><td>收到 Telegram 訊息時啟動</td><td>手機遙控 AI Agent</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section">
+    <h3>常用節點類型</h3>
+    <p>觸發器之後，就是一連串的<strong>節點（Node）</strong>。每個節點做一件事，以下是工作流中最常出現的節點：</p>
+    <ul>
+      <li><strong>🌐 HTTP Request</strong>：向任何網站或 API 發送請求。這是萬用節點，幾乎什麼都能串。</li>
+      <li><strong>🤖 AI / LLM 節點</strong>：呼叫 ChatGPT、Claude 等 AI 模型來分析文字、產生回覆。</li>
+      <li><strong>🔀 IF（條件判斷）</strong>：根據條件走不同路線。例如「如果訊息包含投訴 → 轉給人工客服」。</li>
+      <li><strong>📝 Set（設定資料）</strong>：整理、轉換資料格式。像是把 AI 回覆整理成 Email 格式。</li>
+      <li><strong>💻 Code（程式碼）</strong>：執行 JavaScript 或 Python 程式碼，處理複雜邏輯。</li>
+      <li><strong>📧 Email / LINE / Telegram</strong>：發送訊息到各種平台。</li>
+      <li><strong>📊 Google Sheets</strong>：讀寫 Google 試算表，做資料紀錄和報表。</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>資料如何在節點之間流動？</h3>
+    <p>想像一條工廠的<strong>輸送帶</strong>：</p>
+    <ol>
+      <li>觸發器產生一個「包裹」（資料）放上輸送帶</li>
+      <li>每個節點從輸送帶上拿到包裹，做自己的事（加工），再放回輸送帶</li>
+      <li>最後一個節點把成品送出（例如：發一則 LINE 訊息）</li>
+    </ol>
+    <p>每個節點都能看到前面所有節點的輸出結果。例如第一個節點抓到了客戶 Email 內容，第二個節點就能拿到這份內容送給 AI 分析，第三個節點就能拿到 AI 的分析結果來決定怎麼回覆。</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">💡 看懂 JSON 就看懂工作流</h3>
+    <p>JSON 工作流的結構其實很直覺：<code>"nodes"</code> 陣列裡放的就是所有節點，<code>"connections"</code> 裡放的就是節點之間的連線。下次匯入工作流時，不妨試著閱讀 JSON 內容，你會發現它比你想像的簡單！</p>
+  </div>
+
+  <div class="chapter-nav">
+    <a href="#ch5" class="chapter-nav-btn prev">
+      <span class="nav-label">← 上一章</span>
+      <span class="nav-title">你的第一個工作流</span>
+    </a>
+    <a href="#ch7" class="chapter-nav-btn next">
+      <span class="nav-label">下一章 →</span>
+      <span class="nav-title">建立你的專屬工作流</span>
+    </a>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CHAPTER 7: 實戰 — 建立你的專屬工作流 -->
+<!-- ============================================================ -->
+<div class="chapter reveal" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-tag"><span class="ch-emoji">🛠️</span> 第七章</div>
+    <h2>實戰：建立你的專屬工作流</h2>
+    <p class="chapter-lead">從需求分析到完成部署，一步步帶你打造屬於自己的自動化工作流。</p>
+  </div>
+
+  <img src="images/ch7a.jpg" alt="建立專屬工作流" class="chapter-img">
+  <div class="chapter-img-caption">從一個想法開始，到完成一個真正有用的自動化工作流</div>
+
+  <div class="section">
+    <h3>第一步：需求分析 — 你想自動化什麼？</h3>
+    <p>在動手之前，先問自己這幾個問題：</p>
+    <ul>
+      <li>🤔 我每天花最多時間在什麼<strong>重複性</strong>的事情上？</li>
+      <li>😤 哪些事情讓我覺得<strong>煩躁</strong>、但又不得不做？</li>
+      <li>💡 如果有個助理，我最想<strong>交代</strong>他做什麼？</li>
+    </ul>
+    <p>把答案寫下來，這就是你的自動化需求。</p>
+  </div>
+
+  <div class="section">
+    <h3>常見的自動化場景</h3>
+    <table class="compare-table">
+      <thead>
+        <tr><th>場景</th><th>觸發條件</th><th>自動執行</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>客戶 Email 回覆</td><td>收到新 Email</td><td>AI 讀取 → 判斷類型 → 草擬回覆</td></tr>
+        <tr><td>社群排程發文</td><td>每天早上 9 點</td><td>AI 產生文案 → 發到 FB/IG</td></tr>
+        <tr><td>訂單通知</td><td>蝦皮有新訂單</td><td>抓取訂單資料 → 傳 LINE 通知</td></tr>
+        <tr><td>數據報表</td><td>每週一早上</td><td>彙整 Google Sheets → 產生週報</td></tr>
+        <tr><td>留言監控</td><td>粉專有新留言</td><td>AI 分析情緒 → 自動或人工回覆</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h3>第二步：畫出工作流架構</h3>
+    <p>拿起紙筆（或用任何畫圖工具），把你的工作流畫出來：</p>
+    <ol>
+      <li>先畫<strong>觸發器</strong>：什麼時候啟動？</li>
+      <li>再畫<strong>主要動作</strong>：需要做哪些事？</li>
+      <li>最後畫<strong>分支邏輯</strong>：不同情況要怎麼處理？</li>
+    </ol>
+    <p>例如，一個「AI 自動回覆 Email」的架構圖：</p>
+    <div class="code-block">
+[收到新 Email] → [AI 讀取內容] → [判斷類型]
+                                    ├→ 投訴 → [草擬道歉回覆] → [寄出]
+                                    ├→ 詢價 → [查商品資料] → [草擬報價] → [寄出]
+                                    └→ 垃圾 → [標記垃圾] → [結束]
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>第三步：在平台上搭建</h3>
+    <p>有了架構圖，就可以開始在工作流平台上搭建了：</p>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <h4>新增觸發器節點</h4>
+      <p>根據你的需求選擇觸發器。如果是要監聽 Email，就選 Email Trigger；如果是定時執行，就選 Schedule Trigger。</p>
+    </div>
+    <div class="step">
+      <h4>依序加入功能節點</h4>
+      <p>按照架構圖，一個一個拉入節點。每個節點之間用箭頭（連線）串起來。不用急，慢慢來。</p>
+    </div>
+    <div class="step">
+      <h4>設定每個節點的參數</h4>
+      <p>點擊每個節點，填入需要的設定——API 金鑰、收件人、提示詞內容等。這是最花時間的部分。</p>
+    </div>
+    <div class="step">
+      <h4>加入條件判斷</h4>
+      <p>用 IF 節點處理不同情況。例如「如果 AI 判斷是投訴 → 走 A 路線；是詢價 → 走 B 路線」。</p>
+    </div>
+  </div>
+
+  <img src="images/ch7b.jpg" alt="測試與除錯" class="chapter-img">
+  <div class="chapter-img-caption">反覆測試是打造穩定工作流的不二法門</div>
+
+  <div class="section">
+    <h3>第四步：測試、除錯、優化</h3>
+    <p>搭建完成後，一定要反覆測試：</p>
+    <ul>
+      <li>✅ <strong>正常路線測試</strong>：給一個標準的輸入，確認輸出正確</li>
+      <li>❌ <strong>異常路線測試</strong>：給一個異常的輸入（空白 Email、超長文字），看工作流是否會當掉</li>
+      <li>⚡ <strong>效能優化</strong>：如果執行太慢，檢查是不是某個節點呼叫 API 的次數太多</li>
+      <li>💰 <strong>成本優化</strong>：AI 節點的提示詞是否夠精準？能否減少不必要的 AI 呼叫？</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">💡 組合技：修改現有工作流</div>
+    <p>與其從零開始，不如<strong>找一個接近你需求的工作流，下載 JSON，然後修改</strong>。例如找到一個「Email 自動分類」的工作流，你可以再加上「自動回覆」的節點。站在巨人的肩膀上，事半功倍！</p>
+  </div>
+
+  <div class="chapter-nav">
+    <a href="#ch6" class="chapter-nav-btn prev">
+      <span class="nav-label">← 上一章</span>
+      <span class="nav-title">節點與觸發器</span>
+    </a>
+    <a href="#ch8" class="chapter-nav-btn next">
+      <span class="nav-label">下一章 →</span>
+      <span class="nav-title">進階資源與社群</span>
+    </a>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CHAPTER 8: 進階資源與社群 -->
+<!-- ============================================================ -->
+<div class="chapter reveal" id="ch8">
+  <div class="chapter-header">
+    <div class="chapter-tag"><span class="ch-emoji">🌟</span> 第八章</div>
+    <h2>進階資源與社群</h2>
+    <p class="chapter-lead">恭喜你完成了課程！接下來這些資源能幫助你持續成長。</p>
+  </div>
+
+  <img src="images/ch8a.jpg" alt="學習社群" class="chapter-img">
+  <div class="chapter-img-caption">加入社群，和志同道合的人一起學習 AI 自動化</div>
+
+  <div class="section">
+    <h3>🎓 課程總結</h3>
+    <p>恭喜你走到了這裡！讓我們回顧一下你學到了什麼：</p>
+    <ul>
+      <li>✅ <strong>Ch.1</strong> — 了解了 AI Agent 的概念和運作原理</li>
+      <li>✅ <strong>Ch.2</strong> — 理解了自動化工作流和 JSON 格式</li>
+      <li>✅ <strong>Ch.3</strong> — 學會了如何申請 API 金鑰和撰寫提示詞</li>
+      <li>✅ <strong>Ch.4</strong> — 掌握了用手機遙控 AI Agent 的方法</li>
+      <li>✅ <strong>Ch.5</strong> — 成功下載並執行了你的第一個工作流</li>
+      <li>✅ <strong>Ch.6</strong> — 深入了解了節點、觸發器和資料流</li>
+      <li>✅ <strong>Ch.7</strong> — 學會了如何從零打造專屬工作流</li>
+    </ul>
+    <p>你已經具備了 AI 自動化的基本功。接下來，就是<strong>持續練習、持續探索</strong>！</p>
+  </div>
+
+  <div class="section">
+    <h3>🔍 本站工作流搜尋技巧</h3>
+    <p>回到 <a href="index.html">AI 工作流市集</a>，善用以下功能找到你需要的工作流：</p>
+    <ul>
+      <li><strong>關鍵字搜尋</strong>：用中文或英文搜尋功能、平台名稱（如「LINE」、「蝦皮」、「Email」）</li>
+      <li><strong>分類篩選</strong>：15 個行業分類快速篩選</li>
+      <li><strong>複雜度篩選</strong>：新手選「簡單」，熟練後挑戰「中等」和「複雜」</li>
+      <li><strong>Token 計算器</strong>：在首頁底部，評估使用特定 AI 模型的成本</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>📚 推薦學習資源</h3>
+    <table class="compare-table">
+      <thead>
+        <tr><th>資源</th><th>說明</th><th>適合誰</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>N8N 官方文件</strong></td><td>docs.n8n.io — 最完整的節點說明</td><td>想深入了解特定節點的人</td></tr>
+        <tr><td><strong>N8N 社群</strong></td><td>community.n8n.io — 問答和工作流分享</td><td>遇到問題想找答案的人</td></tr>
+        <tr><td><strong>OpenAI 文件</strong></td><td>platform.openai.com/docs — API 說明</td><td>想更了解 AI 模型的人</td></tr>
+        <tr><td><strong>YouTube 搜尋</strong></td><td>搜尋「N8N 教學」、「AI Agent 教學」</td><td>喜歡看影片學習的人</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h3>👥 加入「一人公司研究所」社群</h3>
+    <p>學習的路上不需要孤軍奮鬥！加入我們的社群：</p>
+    <ul>
+      <li>📘 <strong>Facebook 粉絲專頁</strong>：<a href="https://www.facebook.com/profile.php?id=61588107756334" target="_blank">一人公司研究所</a> — 每週分享 AI 實戰案例和新工作流</li>
+      <li>💬 <strong>留言互動</strong>：在粉專貼文下方提問，我們會盡量回答</li>
+      <li>📢 <strong>最新消息</strong>：追蹤粉專，第一時間收到新工作流和教學更新</li>
+    </ul>
+  </div>
+
+  <div class="callout callout-info">
+    <div class="callout-title">🚀 下一步行動建議</div>
+    <p>1. 回到 <a href="index.html">工作流市集</a>，下載 3 個你感興趣的工作流<br>
+    2. 每天花 15 分鐘研究一個工作流的結構<br>
+    3. 嘗試修改一個工作流，加入自己的客製化邏輯<br>
+    4. 在粉專分享你的成果，幫助更多人學習！</p>
+  </div>
+
+  <div class="section">
+    <h3>🦐 小龍蝦三代隨身碟</h3>
+    <p>如果你想要一個<strong>開箱即用</strong>的 AI 自動化解決方案，我們推出了<strong>小龍蝦三代 USB AI Agent 隨身碟</strong>——內建完整的 AI 運行環境，插上電腦就能用，不需要任何安裝設定。</p>
+    <p>詳情請見 <a href="index.html#product">首頁產品介紹</a>。</p>
+  </div>
+
+  <div class="chapter-nav">
+    <a href="#ch7" class="chapter-nav-btn prev">
+      <span class="nav-label">← 上一章</span>
+      <span class="nav-title">建立你的專屬工作流</span>
+    </a>
+    <a href="index.html" class="chapter-nav-btn next">
+      <span class="nav-label">回到首頁 →</span>
+      <span class="nav-title">瀏覽 1,068+ 工作流</span>
+    </a>
+  </div>
+</div>
+
+</main>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 一人公司研究所 — AI Agent 工作流市集 | <a href="index.html">返回首頁</a> | <a href="https://www.facebook.com/profile.php?id=61588107756334" target="_blank">Facebook 粉專</a></p>
+</footer>
+
+<script>
+// ====== PROGRESS BAR ======
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const pct=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('progressBar').style.width=pct+'%';
+});
+
+// ====== SIDEBAR ACTIVE STATE ======
+const chapters=document.querySelectorAll('.chapter');
+const sidebarLinks=document.querySelectorAll('.sidebar-chapter');
+const progressFill=document.getElementById('progressFill');
+const progressText=document.getElementById('progressText');
+
+const observerOpts={rootMargin:'-80px 0px -60% 0px',threshold:0};
+const chapterObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const id=entry.target.id;
+      sidebarLinks.forEach(l=>{
+        l.classList.toggle('active',l.dataset.ch===id);
+      });
+      // Update mobile select
+      document.getElementById('mobileChapterSelect').value=id;
+      // Update progress
+      const chNum=parseInt(id.replace('ch',''));
+      const pct=Math.round(chNum/8*100);
+      progressFill.style.width=pct+'%';
+      progressText.textContent=chNum+' / 8 章';
+    }
+  });
+},observerOpts);
+
+chapters.forEach(ch=>chapterObserver.observe(ch));
+
+// ====== MOBILE CHAPTER SELECT ======
+function jumpTo(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+// ====== SCROLL REVEAL ======
+const revealObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+},{threshold:0.05});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+</script>
+</body>
+</html>
