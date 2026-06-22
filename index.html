@@ -367,6 +367,7 @@ a:hover{text-decoration:underline}
     <span>Skill 市集</span>
   </a>
   <div class="nav-links">
+    <a href="featured/geo-workflow.html" style="color:var(--gold);font-weight:600">⭐ 本週精選</a>
     <a href="#essential">必裝精選</a>
     <a href="#browse">全部瀏覽</a>
     <a href="#taiwan">🇹🇼 台灣精選</a>
@@ -1563,6 +1564,7 @@ const TW_ICONS = {
 
 // Taiwan workflow data (hardcoded from original site)
 const TAIWAN_WF = [
+  {name:'⭐ GEO 最佳化工作流 — 讓 AI 搜尋引擎主動引用你', category:'Marketing', nodeCount:5, description:'基於 Princeton 研究的 GEO 工作流，5 大階段系統性優化網站：診斷、Schema 標記、內容重構、平台佈局、效果監控。提升 30-40% AI 搜尋可見度。', featured:true, link:'featured/geo-workflow.html'},
   {name:'蝦皮訂單自動通知 - 新訂單推播到 LINE', category:'E-commerce', nodeCount:8, description:'蝦皮賣場接到新訂單時，自動透過 LINE Notify 推播訂單明細給賣家。'},
   {name:'LINE 官方帳號自動回覆 + AI 客服', category:'Communication', nodeCount:12, description:'LINE 官方帳號收到訊息時，自動透過 AI 分析意圖並回覆。'},
   {name:'Facebook 粉專貼文自動排程 + AI 產生文案', category:'Social Media', nodeCount:10, description:'每週自動從 Google 試算表讀取貼文主題，用 AI 產生文案。'},
@@ -1578,13 +1580,21 @@ function renderTaiwan() {
   if (!grid) return;
   grid.innerHTML = TAIWAN_WF.map((w, i) => {
     const icon = TW_ICONS[w.category] || TW_ICONS['Communication'];
-    return `<div class="taiwan-card">
+    const isFeatured = w.featured;
+    const badgeHtml = isFeatured ? '<span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;background:rgba(251,191,36,.15);color:#fbbf24;border:1px solid rgba(251,191,36,.4);margin-bottom:8px">⭐ 本週精選</span>' : '';
+    const btnAction = isFeatured
+      ? `window.location.href='${w.link}'`
+      : `alert('此功能為 N8N 工作流下載，請至原工作流市集使用')`;
+    const btnStyle = isFeatured ? 'background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#000;border-color:#fbbf24' : '';
+    const cardStyle = isFeatured ? 'border-color:rgba(251,191,36,.4);background:linear-gradient(135deg,rgba(251,191,36,.05),var(--surface))' : '';
+    return `<div class="taiwan-card" style="${cardStyle}">
       <div class="taiwan-icon">${icon}</div>
+      ${badgeHtml}
       <h3>${w.name}</h3>
       <p>${w.description}</p>
-      <span class="taiwan-badge">${w.nodeCount} 節點</span>
+      <span class="taiwan-badge">${w.nodeCount} ${isFeatured ? '階段' : '節點'}</span>
       <div class="taiwan-actions">
-        <button class="taiwan-btn taiwan-btn-primary" onclick="alert('此功能為 N8N 工作流下載，請至原工作流市集使用')">查看工作流</button>
+        <button class="taiwan-btn taiwan-btn-primary" style="${btnStyle}" onclick="${btnAction}">${isFeatured ? '查看完整介紹' : '查看工作流'}</button>
       </div>
     </div>`;
   }).join('');
