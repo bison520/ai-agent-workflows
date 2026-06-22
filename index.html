@@ -541,6 +541,7 @@ a:hover{text-decoration:underline}
       <span>AI 工作流市集</span>
     </a>
     <div class="nav-links">
+      <a href="featured/geo-workflow.html" style="color:#fbbf24;font-weight:600">⭐ 本週精選</a>
       <a href="learn.html">📚 線上教學</a>
       <a href="#blog">部落格</a>
       <a href="#taiwan">台灣精選</a>
@@ -1886,8 +1887,19 @@ function showBlogPost(postId, evt){
 function renderTaiwan(){
   const grid = document.getElementById('taiwan-grid');
   if(!grid) return;
+  const featured = `<div class="taiwan-card" style="border-color:rgba(251,191,36,.4);background:linear-gradient(135deg,rgba(251,191,36,.05),var(--surface))">
+      <div class="taiwan-icon">${TW_ICONS['Marketing'] || TW_ICONS['Communication']}</div>
+      <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;background:rgba(251,191,36,.15);color:#fbbf24;border:1px solid rgba(251,191,36,.4);margin-bottom:8px">⭐ 本週精選</span>
+      <h3>GEO 最佳化工作流 — 讓 AI 搜尋引擎主動引用你</h3>
+      <p>基於 Princeton 研究的 GEO 工作流，5 大階段系統性優化網站：診斷、Schema 標記、內容重構、平台佈局、效果監控。提升 30-40% AI 搜尋可見度。</p>
+      <span class="taiwan-badge">5 階段</span>
+      <div class="taiwan-actions">
+        <button class="taiwan-btn" onclick="window.open('featured/geo-workflow-guide.md','_blank')">📥 下載指南</button>
+        <button class="taiwan-btn taiwan-btn-primary" style="background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#000;border-color:#fbbf24" onclick="window.location.href='featured/geo-workflow.html'">查看完整介紹</button>
+      </div>
+    </div>`;
   const tw = WORKFLOWS.filter(w => w.name.startsWith('蝦皮') || w.name.startsWith('LINE') || w.name.startsWith('Facebook') || w.name.startsWith('Instagram') || w.name.startsWith('台灣'));
-  grid.innerHTML = tw.map((w,i)=>{
+  grid.innerHTML = featured + tw.map((w,i)=>{
     const idx = WORKFLOWS.indexOf(w);
     const icon = TW_ICONS[w.category] || TW_ICONS['Communication'];
     const cfg = CAT_CONFIG[w.category] || {label:w.category};
