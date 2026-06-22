@@ -3,37 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Agent Skill 市集 - 開箱即用的 Agent 技能庫 | 一人公司研究所</title>
-<meta name="description" content="精選 200+ AI Agent Skill，涵蓋 Claude Code、Hermes、OpenClaw、Codex、Cursor。必裝精選、分類瀏覽、一鍵安裝。">
-<meta name="keywords" content="AI Agent, Skill, MCP, Claude Code, Hermes Agent, OpenClaw, Codex, Cursor, AI 技能, MCP Server, AI 工具">
+<title>AI Agent 工作流市集 - 下載即用的自動化工作流 | 一人公司研究所</title>
+<meta name="description" content="精選 1,068+ AI Agent 自動化工作流，搭配精準提示詞，下載 JSON 即可匯入 N8N 使用。另有小龍蝦三代碟 AI 隨身碟開箱評測、使用教學與應用場景分享。">
+<meta name="keywords" content="AI Agent, N8N, 工作流, 自動化, JSON, 提示詞, prompt, 一人公司, AI 自動化, n8n workflow, 小龍蝦三代碟, USB AI 隨身碟, 離線 AI, AI 助手, AI 教學, AI 比較, ChatGPT 替代方案">
 <meta name="author" content="一人公司研究所">
-<meta property="og:title" content="AI Agent Skill 市集 - 開箱即用的 Agent 技能庫">
-<meta property="og:description" content="精選 200+ AI Agent Skill，涵蓋所有主流 Agent。必裝精選、一鍵安裝。">
+<meta property="og:title" content="AI Agent 工作流市集 - 下載即用的自動化工作流">
+<meta property="og:description" content="精選 1,060+ N8N 自動化工作流，搭配精準提示詞，下載即用。省 Token、省時間。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ai-dreams.net/">
 <meta property="og:image" content="https://ai-dreams.net/og-image.jpg">
 <meta property="og:locale" content="zh_TW">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Agent Skill 市集">
-<meta name="twitter:description" content="精選 200+ AI Agent Skill，涵蓋所有主流 Agent。">
+<meta name="twitter:title" content="AI Agent 工作流市集">
+<meta name="twitter:description" content="1,060+ N8N 自動化工作流，搭配精準提示詞，下載即用。">
 <link rel="canonical" href="https://ai-dreams.net/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "AI Agent Skill 市集",
-  "url": "https://ai-dreams.net/",
-  "description": "精選 200+ AI Agent Skill，涵蓋 Claude Code、Hermes、OpenClaw、Codex、Cursor",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://ai-dreams.net/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -41,12 +27,9 @@
   --border:#27272a;--border-hover:#3f3f46;
   --text:#fafafa;--text-2:#a1a1aa;--text-3:#71717a;
   --accent:#10b981;--accent-dim:#065f46;--accent-glow:rgba(16,185,129,.12);
-  --radius:12px;--radius-sm:8px;--radius-lg:16px;--radius-pill:999px;
+  --radius:12px;--radius-sm:8px;--radius-pill:999px;
   --font:'Outfit',-apple-system,'PingFang TC','Noto Sans TC',sans-serif;
   --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
-  /* Agent colors */
-  --agent-universal:#10b981;--agent-claude:#f97316;--agent-hermes:#a855f7;
-  --agent-openclaw:#22c55e;--agent-codex:#3b82f6;--agent-cursor:#94a3b8;
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -54,142 +37,177 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 
-/* ═══ NAV ═══ */
-.nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:var(--text);text-decoration:none}
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--text);text-decoration:none}
 .nav-logo:hover{text-decoration:none}
-.nav-logo-img{width:32px;height:32px;border-radius:8px;object-fit:cover}
-.nav-links{display:flex;gap:24px;align-items:center}
-.nav-links a{color:var(--text-2);font-size:13px;font-weight:500;transition:color .2s}
+.nav-logo-img{width:36px;height:36px;border-radius:8px;object-fit:cover}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:var(--text-2);font-size:14px;font-weight:500;transition:color .2s}
 .nav-links a:hover{color:var(--text);text-decoration:none}
-.nav-cta{background:var(--accent);color:var(--bg)!important;padding:8px 18px;border-radius:var(--radius-pill);font-weight:600;font-size:13px;transition:all .2s}
+.nav-cta{background:var(--accent);color:var(--bg)!important;padding:8px 20px;border-radius:var(--radius-pill);font-weight:600;font-size:14px;transition:all .2s}
 .nav-cta:hover{background:#34d399;transform:translateY(-1px);text-decoration:none}
 
-/* ═══ HERO ═══ */
-.hero{max-width:1280px;margin:0 auto;padding:72px 24px 48px;text-align:center}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-glow);border:1px solid var(--accent-dim);color:var(--accent);padding:8px 18px;border-radius:var(--radius-pill);font-size:13px;font-weight:600;margin-bottom:24px}
-.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+/* HERO */
+.hero{max-width:1280px;margin:0 auto;padding:80px 24px 60px;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:var(--accent-glow);border:1px solid var(--accent-dim);color:var(--accent);padding:6px 14px;border-radius:var(--radius-pill);font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}
+.hero-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hero h1{font-size:clamp(36px,5.5vw,58px);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:20px}
+.hero h1{font-size:clamp(36px,5vw,56px);font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:20px}
 .hero h1 .accent{color:var(--accent)}
-.hero h1 .accent-gold{color:#fbbf24}
-.hero-sub{font-size:18px;color:var(--text-2);line-height:1.7;max-width:620px;margin:0 auto 36px}
-.hero-search{max-width:560px;margin:0 auto 32px;position:relative}
-.hero-search input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-pill);padding:16px 24px 16px 52px;font-size:15px;color:var(--text);font-family:var(--font);outline:none;transition:all .2s}
-.hero-search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
-.hero-search input::placeholder{color:var(--text-3)}
-.hero-search svg{position:absolute;left:20px;top:50%;transform:translateY(-50%);color:var(--text-3)}
-.hero-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
-.hero-stat{text-align:center}
-.hero-stat-num{font-size:28px;font-weight:800;color:var(--text);font-family:var(--mono)}
-.hero-stat-label{font-size:13px;color:var(--text-3);margin-top:2px}
+.hero-sub{font-size:17px;color:var(--text-2);line-height:1.7;max-width:480px;margin-bottom:32px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:var(--bg);padding:14px 28px;border-radius:var(--radius-pill);font-weight:600;font-size:15px;border:none;cursor:pointer;transition:all .2s;font-family:var(--font)}
+.btn-primary:hover{background:#34d399;transform:translateY(-2px);box-shadow:0 8px 24px rgba(16,185,129,.25)}
+.btn-lg{padding:16px 32px;font-size:16px;display:inline-flex;align-items:center;gap:8px}
+.btn-ghost{background:transparent;color:var(--text);padding:14px 28px;border-radius:var(--radius-pill);font-weight:600;font-size:15px;border:1px solid var(--border);cursor:pointer;transition:all .2s;font-family:var(--font)}
+.btn-ghost:hover{border-color:var(--border-hover);background:var(--surface)}
+.hero-trust{display:flex;gap:24px;margin-top:24px;flex-wrap:wrap}
+.hero-trust-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-2)}
 
-/* ═══ AGENT TABS ═══ */
-.agent-tabs{max-width:1280px;margin:0 auto;padding:0 24px 40px}
-.agent-tabs-inner{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.agent-tab{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-pill);padding:10px 20px;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;color:var(--text-2);font-family:var(--font);user-select:none}
-.agent-tab:hover{border-color:var(--border-hover);color:var(--text)}
-.agent-tab.active{color:var(--bg);font-weight:600}
-.agent-tab .icon{font-size:16px}
-.agent-tab .count{font-size:11px;font-family:var(--mono);opacity:.7}
+/* HERO RIGHT - VISUAL */
+.hero-visual{position:relative}
+.hero-card-stack{position:relative;height:340px}
+.hero-card{position:absolute;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;width:320px;transition:all .4s cubic-bezier(.16,1,.3,1)}
+.hero-card:nth-child(1){top:0;left:20px;transform:rotate(-2deg);z-index:3}
+.hero-card:nth-child(2){top:50px;left:60px;transform:rotate(1deg);z-index:2;opacity:.7}
+.hero-card:nth-child(3){top:100px;left:40px;transform:rotate(-1deg);z-index:1;opacity:.4}
+.hero-card-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hero-card-meta{display:flex;gap:8px;align-items:center}
+.hero-card-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:var(--radius-sm);background:var(--accent-glow);color:var(--accent);border:1px solid var(--accent-dim)}
+.hero-card-nodes{font-size:11px;color:var(--text-3);font-family:var(--mono)}
+.hero-card-bar{height:4px;border-radius:2px;background:var(--surface-3);margin-top:10px;overflow:hidden}
+.hero-card-bar-fill{height:100%;border-radius:2px;background:var(--accent)}
 
-/* ═══ SECTION ═══ */
-.section{max-width:1280px;margin:0 auto;padding:0 24px 60px}
-.section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:12px}
-.section-header h2{font-size:24px;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
-.section-header h2 .emoji{font-size:28px}
-.section-header p{color:var(--text-2);font-size:14px}
-.section-link{font-size:13px;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:4px}
-.section-link:hover{text-decoration:none;color:#34d399}
+/* STATS STRIP */
+.stats{max-width:1280px;margin:0 auto;padding:0 24px 48px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden}
+.stat{background:var(--surface);padding:28px 24px;text-align:center}
+.stat-num{font-size:32px;font-weight:700;color:var(--text);font-family:var(--mono);letter-spacing:-.02em}
+.stat-label{font-size:13px;color:var(--text-3);margin-top:4px;font-weight:500}
 
-/* ═══ ESSENTIAL CAROUSEL ═══ */
-.essential-section{padding:48px 0;position:relative}
-.essential-section::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,transparent,var(--surface) 50%,transparent);opacity:.3;pointer-events:none}
-.essential-header{text-align:center;margin-bottom:36px}
-.essential-header h2{font-size:28px;font-weight:800;margin-bottom:8px}
-.essential-header p{color:var(--text-2);font-size:15px}
-.essential-row{margin-bottom:40px}
-.essential-row-title{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding:0 24px;max-width:1280px;margin-left:auto;margin-right:auto}
-.essential-row-title .agent-icon{font-size:24px}
-.essential-row-title h3{font-size:18px;font-weight:700}
-.essential-row-title .agent-name{color:var(--text-2);font-size:14px;font-weight:400;margin-left:4px}
-.essential-scroll{display:flex;gap:16px;overflow-x:auto;padding:0 24px 8px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;max-width:1280px;margin:0 auto}
-.essential-scroll::-webkit-scrollbar{height:4px}
-.essential-scroll::-webkit-scrollbar-track{background:var(--surface-2);border-radius:2px}
-.essential-scroll::-webkit-scrollbar-thumb{background:var(--border-hover);border-radius:2px}
+/* FILTERS */
+.filters{max-width:1280px;margin:0 auto;padding:0 24px 32px}
+.filters-top{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.search-wrap{position:relative;flex:1;min-width:240px}
+.search-wrap input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-pill);padding:12px 20px 12px 44px;font-size:14px;color:var(--text);font-family:var(--font);outline:none;transition:border-color .2s}
+.search-wrap input:focus{border-color:var(--accent)}
+.search-wrap input::placeholder{color:var(--text-3)}
+.search-wrap svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text-3);width:18px;height:18px}
+.search-kbd{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--text-3);background:var(--surface-2);border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-family:var(--mono)}
 
-/* ═══ SKILL CARD ═══ */
-.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s cubic-bezier(.16,1,.3,1);cursor:pointer;flex-shrink:0;width:320px;scroll-snap-align:start}
-.skill-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.35)}
-.skill-card-img{width:100%;height:180px;object-fit:cover;background:var(--surface-2);display:block}
-.skill-card-body{padding:16px 18px 18px}
-.skill-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:8px}
-.skill-card-name{font-size:15px;font-weight:600;color:var(--text);line-height:1.3}
-.skill-card-essential{font-size:10px;font-weight:700;padding:2px 8px;border-radius:var(--radius-sm);background:rgba(251,191,36,.12);color:#fbbf24;border:1px solid rgba(251,191,36,.3);white-space:nowrap}
-.skill-card-tagline{font-size:13px;color:var(--text-2);margin-bottom:12px;line-height:1.5}
-.skill-card-agents{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}
-.skill-agent-dot{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;border:1px solid var(--border);background:var(--surface-2);flex-shrink:0;cursor:default;transition:transform .15s}
-.skill-agent-dot:hover{transform:scale(1.2);z-index:1}
-.skill-card-agents{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
-.skill-card-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text-3)}
-.skill-card-meta .stars{display:flex;align-items:center;gap:4px;font-family:var(--mono)}
-.skill-card-meta .stars svg{color:#fbbf24;width:13px;height:13px}
-.skill-card-meta .lang{font-size:11px;padding:2px 8px;border-radius:var(--radius-sm);background:var(--surface-2);border:1px solid var(--border)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--border);background:var(--surface);border-radius:var(--radius-pill);padding:7px 16px;font-size:13px;font-weight:500;cursor:pointer;user-select:none;transition:all .15s;color:var(--text-2);font-family:var(--font)}
+.chip:hover{border-color:var(--border-hover);color:var(--text)}
+.chip.on{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:600}
 
-/* ═══ GRID (full browse) ═══ */
-.browse-section{padding:20px 0 60px}
-.browse-filters{max-width:1280px;margin:0 auto;padding:0 24px 24px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.filter-chips{display:flex;gap:6px;flex-wrap:wrap}
-.filter-chip{border:1px solid var(--border);background:var(--surface);border-radius:var(--radius-pill);padding:7px 14px;font-size:12px;font-weight:500;cursor:pointer;transition:all .15s;color:var(--text-2);font-family:var(--font);user-select:none}
-.filter-chip:hover{border-color:var(--border-hover);color:var(--text)}
-.filter-chip.on{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:600}
-.results-count{font-size:13px;color:var(--text-3);font-weight:500;margin-left:auto}
-.results-count strong{color:var(--text)}
-.skill-grid{max-width:1280px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.skill-grid .skill-card{width:auto;flex-shrink:auto}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
 
-/* ═══ DETAIL MODAL ═══ */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;backdrop-filter:blur(8px);padding:24px;overflow-y:auto}
-.modal-overlay.open{display:flex;align-items:flex-start;justify-content:center}
-.modal{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);max-width:800px;width:100%;overflow:hidden;animation:modalIn .3s cubic-bezier(.16,1,.3,1)}
-@keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
-.modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.6);border:none;color:var(--text);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .2s}
-.modal-close:hover{background:rgba(0,0,0,.8)}
-.modal-hero{position:relative}
-.modal-hero img{width:100%;height:300px;object-fit:cover;display:block}
-.modal-hero-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(transparent,rgba(0,0,0,.8))}
-.modal-hero-title{font-size:24px;font-weight:800;margin-bottom:4px}
-.modal-hero-tagline{font-size:14px;color:var(--text-2)}
-.modal-body{padding:28px}
-.modal-agents{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
-.modal-agent-badge{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:var(--radius-pill);font-size:12px;font-weight:600;border:1px solid}
-.modal-section{margin-bottom:24px}
-.modal-section h4{font-size:14px;font-weight:600;color:var(--text-2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
-.modal-desc{font-size:15px;color:var(--text-2);line-height:1.8}
-.modal-features{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.modal-feature{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-2);padding:8px 12px;background:var(--surface-2);border-radius:var(--radius-sm)}
-.modal-feature::before{content:'✓';color:var(--accent);font-weight:700}
-.modal-install{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;font-family:var(--mono);font-size:13px;color:var(--text-2);display:flex;justify-content:space-between;align-items:center;gap:12px;overflow-x:auto}
-.modal-install code{flex:1;white-space:nowrap}
-.modal-install .copy-btn{flex-shrink:0;padding:6px 14px;border-radius:var(--radius-sm);background:var(--accent);color:var(--bg);border:none;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all .15s}
-.modal-install .copy-btn:hover{background:#34d399}
-.modal-install .copy-btn.done{background:#065f46}
-.modal-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.modal-stat{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;text-align:center}
-.modal-stat-num{font-size:22px;font-weight:700;font-family:var(--mono);color:var(--text)}
-.modal-stat-label{font-size:11px;color:var(--text-3);margin-top:2px}
-.modal-compat{display:grid;gap:6px}
-.modal-compat-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:8px 12px;background:var(--surface-2);border-radius:var(--radius-sm)}
-.modal-compat-row .agent{display:flex;align-items:center;gap:6px;font-weight:500}
-.modal-compat-row .version{font-family:var(--mono);font-size:12px;color:var(--text-3)}
-.modal-links{display:flex;gap:12px;margin-top:20px}
-.modal-link{flex:1;text-align:center;padding:12px;border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;border:1px solid var(--border);background:var(--surface-2);color:var(--text-2);font-family:var(--font);text-decoration:none}
-.modal-link:hover{border-color:var(--border-hover);color:var(--text);text-decoration:none}
-.modal-link-primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
-.modal-link-primary:hover{background:#34d399}
-.modal-video{margin-bottom:24px}
-.modal-video iframe{width:100%;border-radius:var(--radius-sm);aspect-ratio:16/9;border:none}
+/* RESULTS BAR */
+.results-bar{max-width:1280px;margin:0 auto;padding:0 24px 16px;display:flex;justify-content:space-between;align-items:center}
+.results-count{font-size:13px;color:var(--text-3);font-weight:500}
+.results-count strong{color:var(--text);font-weight:600}
+
+/* GRID */
+.grid-wrap{max-width:1280px;margin:0 auto;padding:0 24px 60px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:all .25s cubic-bezier(.16,1,.3,1);cursor:default}
+.card:hover{border-color:var(--border-hover);transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.card-head{padding:20px 20px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.card-cat{font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;padding:3px 10px;border-radius:var(--radius-sm);white-space:nowrap}
+.card-complexity{font-size:10px;font-weight:600;padding:3px 8px;border-radius:var(--radius-sm);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px}
+.c-low{background:#064e3b22;color:#6ee7b7;border:1px solid #065f46}
+.c-med{background:#713f1222;color:#fbbf24;border:1px solid #854d0e}
+.c-high{background:#7f1d1d22;color:#fca5a5;border:1px solid #991b1b}
+
+.card-body{padding:14px 20px 16px;flex:1;display:flex;flex-direction:column}
+.card-title{font-size:15px;font-weight:600;line-height:1.4;margin-bottom:8px;color:var(--text)}
+.card-desc{font-size:13px;color:var(--text-2);line-height:1.6;margin-bottom:12px;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.card-tag{font-size:11px;font-weight:500;padding:3px 8px;border-radius:var(--radius-sm);background:var(--surface-2);color:var(--text-3);border:1px solid var(--border);font-family:var(--mono)}
+
+.card-actions{display:flex;gap:8px;padding:0 20px 20px}
+.card-btn{flex:1;text-align:center;padding:10px 14px;border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;border:none;font-family:var(--font)}
+.card-btn-primary{background:var(--accent);color:var(--bg)}
+.card-btn-primary:hover{background:#34d399}
+.card-btn-ghost{background:var(--surface-2);color:var(--text-2);border:1px solid var(--border)}
+.card-btn-ghost:hover{border-color:var(--border-hover);color:var(--text)}
+
+/* PROMPT TOGGLE */
+.card-prompt{display:none;padding:0 20px 16px}
+.card.open .card-prompt{display:block}
+.card-prompt-box{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;font-family:var(--mono);font-size:12px;line-height:1.7;color:var(--text-2);white-space:pre-wrap;max-height:200px;overflow:auto}
+.card-prompt-actions{display:flex;gap:8px;margin-top:8px}
+.prompt-copy{font-size:12px;font-weight:600;padding:6px 14px;border-radius:var(--radius-sm);background:var(--accent);color:var(--bg);border:none;cursor:pointer;font-family:var(--font);transition:all .15s}
+.prompt-copy.done{background:#065f46}
+
+/* EMPTY */
+.empty{text-align:center;padding:60px 20px;color:var(--text-3)}
+.empty svg{width:48px;height:48px;margin-bottom:16px;opacity:.3}
+.empty p{font-size:15px}
+
+/* SECTION TITLES */
+.section{max-width:1280px;margin:0 auto;padding:0 24px}
+.section-header{margin-bottom:32px}
+.section-header h2{font-size:28px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
+.section-header p{color:var(--text-2);font-size:15px;max-width:540px}
+
+/* BLOG SECTION */
+.blog-section{padding:80px 0}
+.blog-grid{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px}
+.blog-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.blog-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.4)}
+.blog-card-img{position:relative;height:200px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.blog-card-placeholder{display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:linear-gradient(135deg,var(--surface) 0%,var(--surface-2) 100%)}
+.blog-card-tag{position:absolute;top:12px;left:12px;background:var(--accent);color:var(--bg);padding:4px 12px;border-radius:var(--radius-sm);font-size:12px;font-weight:600}
+.blog-card-body{padding:20px}
+.blog-card-body h3{font-size:18px;font-weight:600;line-height:1.4;margin-bottom:12px;color:var(--text)}
+.blog-card-body p{font-size:14px;color:var(--text-2);line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.blog-card-meta{display:flex;gap:16px;margin-bottom:16px}
+.blog-card-date,.blog-card-read{font-size:12px;color:var(--text-3)}
+.blog-card-link{color:var(--accent);font-size:14px;font-weight:600;transition:color .2s}
+.blog-card-link:hover{color:#34d399;text-decoration:none}
+
+/* BLOG FULL POSTS */
+.blog-full-post{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:32px;overflow:hidden}
+.blog-post-header{padding:32px 32px 24px;border-bottom:1px solid var(--border)}
+.blog-post-tag{display:inline-block;background:var(--accent);color:var(--bg);padding:4px 12px;border-radius:var(--radius-sm);font-size:12px;font-weight:600;margin-bottom:12px}
+.blog-post-header h3{font-size:28px;font-weight:700;line-height:1.3;margin-bottom:12px}
+.blog-post-meta{display:flex;gap:16px;font-size:14px;color:var(--text-3)}
+.blog-post-content{padding:32px;font-size:16px;line-height:1.8;color:var(--text-2)}
+.blog-post-content h4{font-size:20px;font-weight:600;color:var(--text);margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.blog-post-content p{margin-bottom:16px}
+.blog-post-content ul,.blog-post-content ol{margin:16px 0;padding-left:24px}
+.blog-post-content li{margin-bottom:8px}
+.blog-post-content code{background:var(--surface-2);padding:2px 6px;border-radius:4px;font-family:var(--mono);font-size:14px}
+.blog-post-content strong{color:var(--text)}
+.blog-post-cta{margin-top:32px;padding-top:24px;border-top:1px solid var(--border);text-align:center}
+.blog-code-block{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;margin:16px 0;overflow-x:auto}
+.blog-code-block code{background:none;padding:0;font-family:var(--mono);font-size:14px;line-height:1.6;color:var(--text-2);white-space:pre-wrap}
+.blog-comparison-table{margin:24px 0;overflow-x:auto}
+.blog-comparison-table table{width:100%;border-collapse:collapse;font-size:14px}
+.blog-comparison-table th{background:var(--surface-2);padding:12px 16px;text-align:left;font-weight:600;color:var(--text);border-bottom:2px solid var(--border)}
+.blog-comparison-table td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--text-2)}
+.blog-comparison-table tr:hover td{background:var(--surface-2)}
+.section{max-width:1280px;margin:0 auto;padding:0 24px}
+.section-header{margin-bottom:32px}
+.section-header h2{font-size:28px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
+.section-header p{color:var(--text-2);font-size:15px;max-width:540px}
+
+/* NEWS / FB INTEGRATION */
+.news-section{padding:60px 0}
+
+/* BEGINNER GUIDE */
+.beginner-section{padding:60px 0}
+.beginner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.beginner-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;transition:all .25s}
+.beginner-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.beginner-num{font-size:32px;font-weight:800;color:var(--accent);font-family:var(--mono);opacity:.3;margin-bottom:12px}
+.beginner-card h3{font-size:16px;font-weight:600;line-height:1.4;margin-bottom:10px}
+.beginner-card p{font-size:13px;color:var(--text-2);line-height:1.7;margin-bottom:14px}
+.beginner-tags{display:flex;gap:8px}
+.beginner-tag{font-size:11px;font-weight:500;padding:4px 10px;border-radius:var(--radius-pill);background:var(--surface-2);color:var(--text-3);border:1px solid var(--border)}
 
 /* TAIWAN FEATURED */
 .taiwan-section{padding:60px 0}
@@ -206,248 +224,677 @@ a:hover{text-decoration:underline}
 .taiwan-btn-primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
 .taiwan-btn-primary:hover{background:#34d399}
 .taiwan-prompt{margin-top:10px}
-@media(max-width:768px){.taiwan-grid{grid-template-columns:repeat(2,1fr)}}
+.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.news-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:all .25s}
+.news-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.news-card-type{font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.news-card h3{font-size:16px;font-weight:600;line-height:1.4;margin-bottom:8px}
+.news-card p{font-size:13px;color:var(--text-2);line-height:1.6;margin-bottom:12px}
+.news-card-date{font-size:12px;color:var(--text-3);font-family:var(--mono)}
+
+/* HOW IT WORKS */
+.how-section{padding:60px 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;text-align:center}
+.step-num{font-size:11px;font-weight:700;color:var(--accent);font-family:var(--mono);letter-spacing:1px;margin-bottom:14px}
+.step h3{font-size:17px;font-weight:600;margin-bottom:8px}
+.step p{font-size:13px;color:var(--text-2);line-height:1.6}
+.step-icon{width:48px;height:48px;border-radius:var(--radius);background:var(--accent-glow);border:1px solid var(--accent-dim);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:var(--accent)}
+
+/* TOKEN CALCULATOR */
+.calc-section{padding:60px 0}
+.calc-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.calc-form label{display:block;font-size:13px;font-weight:500;color:var(--text-2);margin-bottom:6px}
+.calc-form input,.calc-form select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 16px;font-size:14px;color:var(--text);font-family:var(--font);outline:none;transition:border-color .2s;margin-bottom:16px;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.calc-form select:focus{border-color:var(--accent)}
+.calc-form select option{background:var(--bg);color:var(--text)}
+.calc-form select optgroup{color:var(--text-2);font-weight:600}
+.calc-rate-display{display:flex;gap:12px;margin-bottom:16px}
+.rate-item{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;text-align:center}
+.rate-label{font-size:11px;color:var(--text-3);display:block;margin-bottom:4px}
+.rate-value{font-size:18px;font-weight:700;color:var(--accent);font-family:var(--mono)}
+.rate-unit{font-size:11px;color:var(--text-3);display:block;margin-top:2px}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.calc-row label{display:block;font-size:13px;font-weight:500;color:var(--text-2);margin-bottom:6px}
+.calc-row input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 16px;font-size:14px;color:var(--text);font-family:var(--font);outline:none;transition:border-color .2s;margin-bottom:16px}
+.calc-row input:focus{border-color:var(--accent)}
+.calc-compare{display:flex;align-items:center;gap:16px;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
+.calc-compare-item{flex:1;text-align:center}
+.calc-compare-label{font-size:12px;color:var(--text-3);margin-bottom:6px}
+.calc-compare-cost{font-size:24px;font-weight:700;font-family:var(--mono);color:var(--text-3)}
+.calc-compare-good .calc-compare-cost{color:var(--accent)}
+.calc-compare-detail{font-size:11px;color:var(--text-3);margin-top:4px;font-family:var(--mono)}
+.calc-compare-arrow{flex-shrink:0}
+.calc-note{margin-top:16px;font-size:11px;color:var(--text-3);display:flex;align-items:center;gap:6px}
+.calc-result{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center}
+.calc-result-num{font-size:48px;font-weight:800;color:var(--accent);font-family:var(--mono);letter-spacing:-.03em}
+.calc-result-label{font-size:14px;color:var(--text-2);margin-top:8px}
 
 /* FOOTER */
 .footer{border-top:1px solid var(--border);padding:48px 24px 24px;margin-top:40px}
-.footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid var(--border)}
+.footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid var(--border)}
 .footer-brand{display:flex;flex-direction:column;gap:12px}
 .footer-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;color:var(--text)}
 .footer-logo-img{width:32px;height:32px;border-radius:6px;object-fit:cover}
 .footer-desc{font-size:13px;color:var(--text-3);line-height:1.6}
+.footer-social{display:flex;gap:12px}
+.footer-social a{color:var(--text-3);transition:color .2s}
+.footer-social a:hover{color:var(--accent)}
 .footer-col{display:flex;flex-direction:column;gap:10px}
 .footer-col h4{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px}
 .footer-col a{font-size:13px;color:var(--text-3);transition:color .2s}
 .footer-col a:hover{color:var(--text);text-decoration:none}
 .footer-bottom{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;padding-top:20px;font-size:12px;color:var(--text-3)}
 
-/* ═══ EMPTY ═══ */
-.empty{text-align:center;padding:60px 20px;color:var(--text-3)}
-.empty svg{width:48px;height:48px;margin-bottom:16px;opacity:.3}
-.empty p{font-size:15px}
+/* CATEGORY COLORS */
+.cat-ai{background:#7c3aed18;color:#a78bfa;border:1px solid #7c3aed40}
+.cat-biz{background:#0ea5e918;color:#7dd3fc;border:1px solid #0ea5e940}
+.cat-crm{background:#f9731618;color:#fdba74;border:1px solid #f9731640}
+.cat-cloud{background:#06b6d418;color:#67e8f9;border:1px solid #06b6d440}
+.cat-comm{background:#ec489918;color:#f9a8d4;border:1px solid #ec489940}
+.cat-creative{background:#e11d4818;color:#fda4af;border:1px solid #e11d4840}
+.cat-data{background:#8b5cf618;color:#c4b5fd;border:1px solid #8b5cf640}
+.cat-ecom{background:#10b98118;color:#6ee7b7;border:1px solid #10b98140}
+.cat-mktg{background:#f59e0b18;color:#fcd34d;border:1px solid #f59e0b40}
+.cat-pm{background:#6366f118;color:#a5b4fc;border:1px solid #6366f140}
+.cat-social{background:#14b8a618;color:#5eead4;border:1px solid #14b8a640}
+.cat-devops{background:#ef444418;color:#fca5a5;border:1px solid #ef444440}
+.cat-scrape{background:#84cc1618;color:#bef264;border:1px solid #84cc1640}
 
-/* ═══ SCROLL REVEAL ═══ */
+/* MOBILE */
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;gap:32px;padding:48px 20px 40px}
+  .hero-visual{display:none}
+  .hero h1{font-size:32px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .calc-box{grid-template-columns:1fr}
+  .calc-row{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .filters-top{flex-direction:column}
+  .search-wrap{min-width:100%}
+  .beginner-grid{grid-template-columns:1fr}
+  .taiwan-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr;gap:24px}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  .calc-compare{flex-direction:column}
+}
+@media(max-width:480px){
+  .hero h1{font-size:28px}
+  .hero-sub{font-size:15px}
+  .stat-num{font-size:24px}
+}
+
+/* SCROLL ANIMATION */
 .reveal{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.16,1,.3,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* ═══ RESPONSIVE ═══ */
-@media(max-width:768px){
-  .hero h1{font-size:30px}
-  .hero-sub{font-size:15px}
-  .hero-stats{gap:24px}
-  .hero-stat-num{font-size:22px}
-  .nav-links{display:none}
-  .skill-card{width:280px}
-  .skill-grid{grid-template-columns:1fr}
-  .modal-features{grid-template-columns:1fr}
-  .modal-stats{grid-template-columns:1fr}
-  .modal-hero img{height:200px}
-  .footer-grid{grid-template-columns:1fr;gap:24px}
-  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
-  .essential-row-title{padding:0 16px}
-  .essential-scroll{padding:0 16px 8px}
-  .section-header{flex-direction:column;align-items:flex-start}
-}
-@media(max-width:480px){
-  .hero h1{font-size:26px}
-  .agent-tabs-inner{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:8px}
-  .agent-tab{flex-shrink:0}
-}
-
-/* ═══ BUTTONS ═══ */
-.btn-primary{display:inline-block;padding:12px 28px;border-radius:var(--radius-sm);background:var(--accent);color:var(--bg);font-size:14px;font-weight:600;font-family:var(--font);text-decoration:none;transition:all .2s;cursor:pointer;border:none}
-.btn-primary:hover{background:#34d399;transform:translateY(-1px);text-decoration:none}
-.btn-primary.btn-lg{padding:16px 36px;font-size:16px;border-radius:var(--radius)}
-.btn-ghost{display:inline-block;padding:10px 24px;border-radius:var(--radius-sm);background:transparent;color:var(--text-2);font-size:14px;font-weight:600;font-family:var(--font);border:1px solid var(--border);cursor:pointer;transition:all .2s}
-.btn-ghost:hover{border-color:var(--border-hover);color:var(--text)}
-.btn-gold{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:var(--radius-sm);background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#000;font-size:16px;font-weight:700;font-family:var(--font);text-decoration:none;transition:all .2s;cursor:pointer;border:none}
-.btn-gold:hover{background:linear-gradient(135deg,#f59e0b,#d97706);transform:translateY(-2px);box-shadow:0 8px 24px rgba(251,191,36,.3);text-decoration:none}
-
-/* ═══ BLOG ═══ */
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1280px;margin:0 auto}
-.blog-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s}
-.blog-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.3)}
-.blog-card-img{position:relative;height:180px;background:var(--surface-2);overflow:hidden}
-.blog-card-placeholder{display:flex;align-items:center;justify-content:center;height:100%;background:linear-gradient(135deg,var(--surface-2),var(--surface-3))}
-.blog-card-tag{position:absolute;top:12px;left:12px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:var(--radius-pill);background:var(--accent-glow);color:var(--accent);border:1px solid var(--accent-dim)}
-.blog-card-body{padding:18px 20px 20px}
-.blog-card-body h3{font-size:16px;font-weight:700;line-height:1.4;margin-bottom:10px;color:var(--text)}
-.blog-card-body p{font-size:13px;color:var(--text-2);line-height:1.7;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.blog-card-meta{display:flex;gap:16px;font-size:12px;color:var(--text-3);margin-bottom:14px}
-.blog-card-link{font-size:13px;font-weight:600;color:var(--accent);text-decoration:none;transition:color .2s}
-.blog-card-link:hover{color:#34d399;text-decoration:none}
-.blog-full-post{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px 40px;margin-bottom:24px}
-.blog-post-header{margin-bottom:24px}
-.blog-post-tag{display:inline-block;font-size:11px;font-weight:600;padding:4px 12px;border-radius:var(--radius-pill);background:var(--accent-glow);color:var(--accent);border:1px solid var(--accent-dim);margin-bottom:12px}
-.blog-post-header h3{font-size:24px;font-weight:800;line-height:1.3;margin-bottom:8px}
-.blog-post-meta{display:flex;gap:16px;font-size:13px;color:var(--text-3)}
-.blog-post-content{font-size:15px;color:var(--text-2);line-height:1.9}
-.blog-post-content h4{font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px}
-.blog-post-content p{margin-bottom:14px}
-.blog-post-content ul,.blog-post-content ol{margin:0 0 14px 20px}
-.blog-post-content li{margin-bottom:6px}
-.blog-post-content code{background:var(--surface-2);padding:2px 6px;border-radius:4px;font-family:var(--mono);font-size:13px}
-.blog-post-cta{margin-top:28px;padding-top:20px;border-top:1px solid var(--border);text-align:center}
-.blog-code-block{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 20px;margin:12px 0;overflow-x:auto}
-.blog-code-block code{font-family:var(--mono);font-size:13px;color:var(--accent);line-height:1.6;white-space:pre-wrap}
-@media(max-width:768px){
-  .blog-grid{grid-template-columns:1fr}
-  .blog-full-post{padding:24px 20px}
-}
-
-/* ═══ PRODUCT ═══ */
-.product-section{padding:60px 0}
-.product-hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1280px;margin:0 auto;padding:0 24px 48px}
-.product-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3);color:#fbbf24;padding:6px 16px;border-radius:var(--radius-pill);font-size:13px;font-weight:600;margin-bottom:16px}
-.product-title{font-size:clamp(32px,4vw,48px);font-weight:800;line-height:1.15;margin-bottom:12px}
-.accent-gold{color:#fbbf24}
-.product-subtitle{font-size:18px;font-weight:600;color:var(--text-2);margin-bottom:12px}
-.product-desc{font-size:15px;color:var(--text-2);line-height:1.8;margin-bottom:20px}
-.product-price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:20px}
-.product-price{font-size:40px;font-weight:800;font-family:var(--mono);color:#fbbf24}
-.product-price-unit{font-size:16px;color:var(--text-3);font-weight:600}
-.product-price-note{font-size:13px;color:var(--text-3);margin-left:8px}
-.product-cta-row{display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+/* PRODUCT SECTION */
+.product-section{padding:80px 0;position:relative;overflow:hidden}
+.product-section::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(16,185,129,.06) 0%,transparent 70%);pointer-events:none}
+.product-hero{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:60px}
+.product-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#f59e0b18,#f59e0b08);border:1px solid #f59e0b40;color:#fbbf24;padding:6px 14px;border-radius:var(--radius-pill);font-size:12px;font-weight:600;letter-spacing:.5px;margin-bottom:16px}
+.product-badge svg{flex-shrink:0}
+.product-title{font-size:clamp(32px,4vw,48px);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:8px}
+.product-title .accent-gold{color:#fbbf24}
+.product-subtitle{font-size:18px;font-weight:600;color:var(--accent);margin-bottom:16px}
+.product-desc{font-size:15px;color:var(--text-2);line-height:1.8;margin-bottom:24px}
+.product-price-row{display:flex;align-items:baseline;gap:16px;margin-bottom:24px}
+.product-price{font-size:42px;font-weight:800;color:var(--accent);font-family:var(--mono)}
+.product-price-unit{font-size:16px;color:var(--text-3)}
+.product-price-note{font-size:13px;color:var(--text-3)}
+.product-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.btn-gold{background:linear-gradient(135deg,#f59e0b,#d97706);color:#000;padding:16px 32px;border-radius:var(--radius-pill);font-weight:700;font-size:16px;border:none;cursor:pointer;transition:all .2s;font-family:var(--font);display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,158,11,.3);text-decoration:none;color:#000}
 .product-guarantee{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-3)}
-.product-visual{display:flex;justify-content:center}
-.product-img-wrapper{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);max-width:400px}
+.product-guarantee svg{color:var(--accent);flex-shrink:0}
+.product-visual{position:relative;display:flex;justify-content:center;align-items:center}
+.product-img-wrapper{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:var(--surface)}
 .product-img-wrapper img{width:100%;display:block}
-.product-features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1280px;margin:0 auto;padding:0 24px 48px}
-.product-feature{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;transition:all .25s}
-.product-feature:hover{border-color:var(--border-hover);transform:translateY(-2px)}
-.product-feature-icon{width:44px;height:44px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
-.product-feature-icon.gold{background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3)}
-.product-feature-icon.green{background:var(--accent-glow);border:1px solid var(--accent-dim)}
-.product-feature-icon.blue{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.3)}
-.product-feature h3{font-size:15px;font-weight:600;margin-bottom:8px}
-.product-feature p{font-size:13px;color:var(--text-2);line-height:1.7}
-.product-dual{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto 20px;padding:0 24px}
-.product-dual-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 24px;text-align:center}
-.product-dual-card.qwenpaw{border-color:rgba(255,243,224,.3);background:linear-gradient(135deg,rgba(255,243,224,.05),var(--surface))}
-.product-dual-card.hermes{border-color:rgba(252,228,236,.3);background:linear-gradient(135deg,rgba(252,228,236,.05),var(--surface))}
-.product-dual-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
-.product-dual-card .tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:var(--radius-pill);background:var(--accent-glow);color:var(--accent);margin-bottom:12px}
-.product-dual-card p{font-size:13px;color:var(--text-2);line-height:1.7}
-.product-dual-quote{text-align:center;font-size:15px;color:var(--text-2);font-style:italic;max-width:700px;margin:0 auto 36px;padding:0 24px;line-height:1.7}
-.product-audience{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1280px;margin:0 auto;padding:0 24px 48px}
-.product-audience-item{display:flex;align-items:flex-start;gap:14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 18px;transition:all .25s}
-.product-audience-item:hover{border-color:var(--border-hover);transform:translateY(-2px)}
-.product-audience-icon{font-size:28px;flex-shrink:0}
-.product-audience-item h4{font-size:14px;font-weight:600;margin-bottom:4px}
-.product-audience-item p{font-size:12px;color:var(--text-2);line-height:1.5}
-.product-banner{text-align:center;background:linear-gradient(135deg,rgba(251,191,36,.08),var(--surface));border:1px solid rgba(251,191,36,.2);border-radius:var(--radius-lg);padding:40px 24px;max-width:900px;margin:0 auto}
-.product-banner h3{font-size:22px;font-weight:800;margin-bottom:8px}
-.product-banner p{font-size:14px;color:var(--text-2);margin-bottom:20px}
-@media(max-width:768px){
-  .product-hero{grid-template-columns:1fr;text-align:center}
-  .product-features{grid-template-columns:1fr}
-  .product-dual{grid-template-columns:1fr}
-  .product-audience{grid-template-columns:1fr}
-}
+.product-img-glow{position:absolute;inset:-2px;border-radius:var(--radius);background:linear-gradient(135deg,var(--accent-dim),transparent,#f59e0b20);z-index:-1;filter:blur(8px)}
 
-/* ═══ BEGINNER ═══ */
-.beginner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.beginner-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 24px;position:relative;transition:all .25s}
-.beginner-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
-.beginner-num{font-size:48px;font-weight:800;font-family:var(--mono);color:var(--surface-3);position:absolute;top:16px;right:20px}
-.beginner-card h3{font-size:16px;font-weight:700;margin-bottom:10px;line-height:1.4}
-.beginner-card p{font-size:13px;color:var(--text-2);line-height:1.7;margin-bottom:14px}
-.beginner-tags{display:flex;gap:6px;flex-wrap:wrap}
-.beginner-tag{font-size:11px;font-weight:600;padding:3px 10px;border-radius:var(--radius-pill);background:var(--surface-2);color:var(--text-3);border:1px solid var(--border)}
-@media(max-width:768px){.beginner-grid{grid-template-columns:1fr}}
+/* PRODUCT FEATURES */
+.product-features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:60px}
+.product-feature{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;transition:all .25s}
+.product-feature:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.product-feature-icon{width:48px;height:48px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:24px}
+.product-feature-icon.green{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3)}
+.product-feature-icon.gold{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3)}
+.product-feature-icon.blue{background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.3)}
+.product-feature h3{font-size:16px;font-weight:600;line-height:1.4;margin-bottom:8px}
+.product-feature p{font-size:13px;color:var(--text-2);line-height:1.7}
+
+/* PRODUCT DUAL SECTION */
+.product-dual{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:60px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:40px}
+.product-dual-card{text-align:center;padding:24px}
+.product-dual-card h3{font-size:22px;font-weight:700;margin-bottom:8px}
+.product-dual-card .tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:var(--radius-pill);margin-bottom:12px}
+.product-dual-card.qwenpaw .tag{background:rgba(255,152,0,.12);color:#ffb74d;border:1px solid rgba(255,152,0,.3)}
+.product-dual-card.hermes .tag{background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.3)}
+.product-dual-card p{font-size:13px;color:var(--text-2);line-height:1.7}
+.product-dual-divider{display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;color:var(--text-3)}
+.product-dual-quote{text-align:center;font-size:15px;color:var(--text-2);line-height:1.7;margin-top:24px;padding-top:24px;border-top:1px solid var(--border);font-style:italic}
+
+/* PRODUCT AUDIENCE */
+.product-audience{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.product-audience-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;display:flex;align-items:flex-start;gap:12px;transition:all .25s}
+.product-audience-item:hover{border-color:var(--accent-dim)}
+.product-audience-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.product-audience-item h4{font-size:14px;font-weight:600;margin-bottom:4px}
+.product-audience-item p{font-size:12px;color:var(--text-3);line-height:1.5}
+
+/* PRODUCT BANNER */
+.product-banner{background:linear-gradient(135deg,var(--accent-dim),rgba(245,158,11,.08));border:1px solid var(--border);border-radius:var(--radius);padding:40px;text-align:center;margin-top:40px}
+.product-banner h3{font-size:24px;font-weight:800;margin-bottom:8px}
+.product-banner p{font-size:15px;color:var(--text-2);margin-bottom:24px}
+.product-banner .btn-gold{font-size:18px;padding:18px 40px}
+
+@media(max-width:768px){
+  .product-hero{grid-template-columns:1fr;gap:32px}
+  .product-features{grid-template-columns:1fr}
+  .product-dual{grid-template-columns:1fr;gap:24px;padding:24px}
+  .product-dual-divider{transform:rotate(90deg)}
+}
 </style>
+<!-- SEO: Blog Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "小龍蝦AI實驗室 - 部落格",
+  "description": "小龍蝦三代碟 AI 隨身碟的開箱評測、應用場景與實戰教學",
+  "url": "https://ai-dreams.net/#blog",
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "【開箱】小龍蝦三代碟：把 AI 裝進隨身碟，走到哪用到哪",
+      "description": "小龍蝦三代碟開箱評測，包含產品外觀、硬體規格、首次使用體驗、適用族群分析",
+      "datePublished": "2026-06-19",
+      "author": {"@type": "Organization", "name": "一人公司研究所"},
+      "keywords": ["USB AI 隨身碟", "小龍蝦三代", "AI Agent", "開箱評測"]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "為什麼你需要一個「不連網」的 AI 助手？隱私安全全解析",
+      "description": "雲端 AI 的隱私風險分析，離線 AI 的安全優勢，以及律師、醫師、企業的實際應用場景",
+      "datePublished": "2026-06-19",
+      "author": {"@type": "Organization", "name": "一人公司研究所"},
+      "keywords": ["離線 AI", "隱私安全", "資料保護", "AI 助手"]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "【教學】小龍蝦三代碟 5 分鐘快速上手指南",
+      "description": "從零開始的小龍蝦三代碟使用教學，5 分鐘學會所有基本操作",
+      "datePublished": "2026-06-19",
+      "author": {"@type": "Organization", "name": "一人公司研究所"},
+      "keywords": ["AI 教學", "快速上手", "使用指南", "新手入門"]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Hermes Agent 實戰：用 AI 幫你寫報告、做簡報、整理資料",
+      "description": "Hermes Agent 的實際應用場景，包含寫報告、做簡報、Excel 資料分析",
+      "datePublished": "2026-06-19",
+      "author": {"@type": "Organization", "name": "一人公司研究所"},
+      "keywords": ["Hermes Agent", "AI 寫報告", "AI 做簡報", "AI 工作"]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "【實測】小龍蝦三代碟 vs ChatGPT：誰才是你的最佳 AI 夥伴？",
+      "description": "從隱私、功能、價格三個面向比較小龍蝦三代碟和 ChatGPT",
+      "datePublished": "2026-06-19",
+      "author": {"@type": "Organization", "name": "一人公司研究所"},
+      "keywords": ["ChatGPT 比較", "AI 比較", "離線 AI vs 雲端 AI"]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Excel 表格一秒搞定！用 AI 自動處理報表的 5 個技巧",
+      "description": "用 AI 自動分析 Excel 資料、產生圖表、寫 VBA 巨集的實用技巧",
+      "datePublished": "2026-06-19",
+      "author": {"@type": "Organization", "name": "一人公司研究所"},
+      "keywords": ["AI Excel", "自動報表", "VBA 巨集", "資料分析"]
+    }
+  ]
+}
+</script>
+
+<!-- SEO: Product Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "小龍蝦三代碟 AI 隨身工作站",
+  "description": "雙 AI 代理 × 隨插即用 × 零安裝的 USB AI 隨身碟，包含 Hermes Agent 和 QwenPaw 兩大 AI 引擎",
+  "brand": {"@type": "Brand", "name": "小龍蝦"},
+  "offers": {
+    "@type": "Offer",
+    "price": "990",
+    "priceCurrency": "TWD",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "156"
+  }
+}
+</script>
+
+<!-- SEO: FAQ Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "小龍蝦三代碟可以在 Mac 上使用嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "目前僅支援 Windows 10/11 系統。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "需要安裝任何驅動程式嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不需要，插上 USB 就能使用。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以離線使用嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "是的，這是完全離線的 AI 解決方案，不需要網路連線。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "有使用次數限制嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "沒有，一次買斷、永久使用。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "小龍蝦三代碟和 ChatGPT 有什麼不同？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "小龍蝦三代碟是完全離線的 AI 解決方案，資料不離開電腦，隱私更安全。ChatGPT 需要連網且資料會上傳到雲端。價格方面，小龍蝦三代碟一次買斷 NT$990，ChatGPT Plus 每月需付 $20 美元。"
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="nav">
-<div class="nav-inner">
-  <a href="#" class="nav-logo">
-    <img src="logo.jpg" alt="AI Agent Skill 市集" class="nav-logo-img">
-    <span>Skill 市集</span>
-  </a>
-  <div class="nav-links">
-    <a href="featured/geo-workflow.html" style="color:var(--gold);font-weight:600">⭐ 本週精選</a>
-    <a href="#essential">必裝精選</a>
-    <a href="#browse">全部瀏覽</a>
-    <a href="#taiwan">🇹🇼 台灣精選</a>
-    <a href="#blog">部落格</a>
-    <a href="learn.html">教學</a>
-    <a href="https://github.com/bison520/ai-agent-workflows" target="_blank">GitHub</a>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="logo.jpg" alt="一人公司研究所" class="nav-logo-img">
+      <span>AI 工作流市集</span>
+    </a>
+    <div class="nav-links">
+      <a href="learn.html">📚 線上教學</a>
+      <a href="#blog">部落格</a>
+      <a href="#taiwan">台灣精選</a>
+      <a href="#workflows">瀏覽工作流</a>
+      <a href="#beginner">新手入門</a>
+      <a href="#calc">Token 計算器</a>
+      <a href="#news">最新消息</a>
+      <a href="#product" style="color:#fbbf24">🦐 隨身碟</a>
+      <a href="https://www.facebook.com/profile.php?id=61588107756334" target="_blank" class="nav-cta">加入粉專</a>
+    </div>
   </div>
-</div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge"><span class="dot"></span> 每週更新中</div>
-  <h1>你的 AI Agent<br>還沒<span class="accent">全副武裝</span>？</h1>
-  <p class="hero-sub">精選 200+ 開箱即用的 AI Agent Skill，涵蓋 Claude Code、Hermes、OpenClaw、Codex、Cursor。找到對的 Skill，讓你的 Agent 瞬間升級。</p>
-  <div class="hero-search">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-    <input type="text" id="heroSearch" placeholder="搜尋 Skill... 例如：MCP、爬蟲、簡報、GitHub">
+  <div>
+    <div class="hero-tag"><span class="dot"></span> 1,068+ 工作流持續更新中</div>
+    <h1>精準的 AI 工作流，<br><span class="accent">省下 80% 試錯成本</span></h1>
+    <p class="hero-sub">下載 JSON 即可匯入 N8N，搭配精選提示詞讓 AI Agent 準確執行。不再浪費 Token 在模糊指令上。</p>
+    <div class="hero-actions">
+      <button class="btn-primary btn-lg" onclick="document.getElementById('workflows').scrollIntoView({behavior:'smooth'})">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        免費下載工作流
+      </button>
+      <button class="btn-ghost" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">了解如何使用</button>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span>免費使用</span>
+      </div>
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span>中文提示詞</span>
+      </div>
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span>每週更新</span>
+      </div>
+    </div>
   </div>
-  <div class="hero-stats">
-    <div class="hero-stat"><div class="hero-stat-num" id="statSkills">200+</div><div class="hero-stat-label">Skill 數量</div></div>
-    <div class="hero-stat"><div class="hero-stat-num">6</div><div class="hero-stat-label">支援 Agent</div></div>
-    <div class="hero-stat"><div class="hero-stat-num">12</div><div class="hero-stat-label">分類</div></div>
-    <div class="hero-stat"><div class="hero-stat-num">每週</div><div class="hero-stat-label">持續更新</div></div>
+  <div class="hero-visual">
+    <div class="hero-card-stack">
+      <div class="hero-card">
+        <div class="hero-card-title">自動社群媒體排程</div>
+        <div class="hero-card-meta">
+          <span class="hero-card-badge">行銷廣告</span>
+          <span class="hero-card-nodes">12 節點</span>
+        </div>
+        <div class="hero-card-bar"><div class="hero-card-bar-fill" style="width:60%"></div></div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-title">AI 客戶服務 Agent</div>
+        <div class="hero-card-meta">
+          <span class="hero-card-badge">AI Agent</span>
+          <span class="hero-card-nodes">18 節點</span>
+        </div>
+        <div class="hero-card-bar"><div class="hero-card-bar-fill" style="width:80%"></div></div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-title">蝦皮訂單自動處理</div>
+        <div class="hero-card-meta">
+          <span class="hero-card-badge">電商零售</span>
+          <span class="hero-card-nodes">8 節點</span>
+        </div>
+        <div class="hero-card-bar"><div class="hero-card-bar-fill" style="width:40%"></div></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- AGENT TABS -->
-<div class="agent-tabs" id="agentTabs">
-  <div class="agent-tabs-inner" id="agentTabsInner">
-    <!-- JS 渲染 -->
-  </div>
-</div>
-
-<!-- ESSENTIAL SECTION -->
-<section class="essential-section" id="essential">
-  <div class="essential-header reveal">
-    <h2>⭐ 每個 Agent 的必裝 Skill</h2>
-    <p>這些是社群公認的基礎必裝，新手優先從這裡開始</p>
-  </div>
-  <div id="essentialRows">
-    <!-- JS 渲染 -->
+<!-- STATS -->
+<section class="stats reveal">
+  <div class="stats-grid">
+    <div class="stat">
+      <div class="stat-num" id="stat-total">1,068</div>
+      <div class="stat-label">工作流總數</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="stat-cats">13</div>
+      <div class="stat-label">行業分類</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="stat-integrations">200+</div>
+      <div class="stat-label">整合服務</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="stat-prompts">免費</div>
+      <div class="stat-label">下載使用</div>
+    </div>
   </div>
 </section>
 
-<!-- BROWSE ALL -->
-<section class="browse-section" id="browse">
-  <div class="section" style="padding-bottom:16px">
-    <div class="section-header">
-      <h2><span class="emoji">📦</span> 全部 Skill</h2>
+<!-- HOW IT WORKS -->
+<section class="how-section section reveal" id="how">
+  <div class="section-header">
+    <h2>三步驟開始使用</h2>
+    <p>從瀏覽到上線，不需要任何技術背景</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </div>
+      <div class="step-num">STEP 01</div>
+      <h3>搜尋與篩選</h3>
+      <p>依行業、複雜度、觸發類型篩選，或直接搜尋關鍵字找到你需要的工作流</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
+      <div class="step-num">STEP 02</div>
+      <h3>下載 JSON</h3>
+      <p>一鍵下載 N8N 相容的 JSON 檔案，搭配建議的精準提示詞一起使用</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <div class="step-num">STEP 03</div>
+      <h3>匯入執行</h3>
+      <p>在 N8N 中匯入 JSON，填入你的 API 金鑰，工作流立即上線運作</p>
     </div>
   </div>
-  <div class="browse-filters">
-    <div class="filter-chips" id="categoryChips">
-      <button class="filter-chip on" data-cat="all">全部</button>
-      <!-- JS 渲染 -->
+</section>
+
+<!-- WORKFLOWS -->
+<section id="workflows" style="padding-top:40px">
+  <div class="filters">
+    <div class="filters-top">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="q" type="search" placeholder="搜尋工作流名稱、服務、關鍵字...">
+        <span class="search-kbd">/</span>
+      </div>
+      <div class="chips" id="trigger-chips">
+        <span class="chip on" data-t="all">全部觸發</span>
+        <span class="chip" data-t="手動">手動</span>
+        <span class="chip" data-t="Webhook">Webhook</span>
+        <span class="chip" data-t="排程">排程</span>
+        <span class="chip" data-t="觸發器">觸發器</span>
+      </div>
     </div>
-    <div class="filter-chips" id="agentFilterChips">
-      <!-- JS 渲染 -->
+    <div class="chip-row" id="cat-chips"></div>
+    <div class="chips" id="comp-chips">
+      <span class="chip on" data-c="all">全部複雜度</span>
+      <span class="chip" data-c="簡單">簡單 (5-)</span>
+      <span class="chip" data-c="中等">中等 (6-15)</span>
+      <span class="chip" data-c="複雜">複雜 (16+)</span>
     </div>
-    <span class="results-count" id="resultsCount"></span>
   </div>
-  <div class="skill-grid" id="skillGrid">
-    <!-- JS 渲染 -->
+
+  <div class="results-bar">
+    <div class="results-count">顯示 <strong id="result-count">0</strong> 個工作流</div>
   </div>
-  <div class="empty" id="emptyState" style="display:none">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-    <p>找不到符合條件的 Skill</p>
+
+  <div class="grid-wrap">
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <p>沒有符合條件的工作流，試試其他搜尋關鍵字</p>
+    </div>
+  </div>
+</section>
+
+<!-- TOKEN CALCULATOR -->
+<section class="calc-section section reveal" id="calc">
+  <div class="section-header">
+    <h2>Token 節省計算器</h2>
+    <p>選擇你使用的 AI 模型，精準提示詞能大幅減少試錯次數，幫你省下可觀的 API 費用</p>
+  </div>
+  <div class="calc-box">
+    <div class="calc-form">
+      <label>選擇 AI 模型</label>
+      <select id="calc-model" onchange="onModelChange()">
+        <optgroup label="Anthropic Claude">
+          <option value="claude-sonnet4" data-input="3" data-output="15">Claude Sonnet 4 (輸入 $3 / 輸出 $15)</option>
+          <option value="claude-opus4" data-input="15" data-output="75">Claude Opus 4 (輸入 $15 / 輸出 $75)</option>
+          <option value="claude-haiku35" data-input="0.80" data-output="4">Claude Haiku 3.5 (輸入 $0.80 / 輸出 $4)</option>
+        </optgroup>
+        <optgroup label="OpenAI ChatGPT">
+          <option value="gpt-4o" data-input="2.50" data-output="10">GPT-4o (輸入 $2.50 / 輸出 $10)</option>
+          <option value="gpt-4o-mini" data-input="0.15" data-output="0.60">GPT-4o mini (輸入 $0.15 / 輸出 $0.60)</option>
+          <option value="gpt-4.1" data-input="2" data-output="8">GPT-4.1 (輸入 $2 / 輸出 $8)</option>
+          <option value="gpt-4.1-mini" data-input="0.40" data-output="1.60">GPT-4.1 mini (輸入 $0.40 / 輸出 $1.60)</option>
+        </optgroup>
+        <optgroup label="DeepSeek">
+          <option value="deepseek-v3" data-input="0.27" data-output="1.10">DeepSeek V3 (輸入 $0.27 / 輸出 $1.10)</option>
+          <option value="deepseek-r1" data-input="0.55" data-output="2.19">DeepSeek R1 (輸入 $0.55 / 輸出 $2.19)</option>
+        </optgroup>
+        <optgroup label="Google Gemini">
+          <option value="gemini-2.5-pro" data-input="1.25" data-output="10">Gemini 2.5 Pro (輸入 $1.25 / 輸出 $10)</option>
+          <option value="gemini-2.5-flash" data-input="0.15" data-output="0.60">Gemini 2.5 Flash (輸入 $0.15 / 輸出 $0.60)</option>
+        </optgroup>
+        <optgroup label="xAI Grok">
+          <option value="grok-3" data-input="3" data-output="15">Grok 3 (輸入 $3 / 輸出 $15)</option>
+          <option value="grok-3-mini" data-input="0.30" data-output="0.50">Grok 3 Mini (輸入 $0.30 / 輸出 $0.50)</option>
+        </optgroup>
+      </select>
+
+      <div class="calc-rate-display" id="calc-rate-display">
+        <div class="rate-item">
+          <span class="rate-label">輸入費率</span>
+          <span class="rate-value" id="rate-input">$3.00</span>
+          <span class="rate-unit">/ 1M tokens</span>
+        </div>
+        <div class="rate-item">
+          <span class="rate-label">輸出費率</span>
+          <span class="rate-value" id="rate-output">$15.00</span>
+          <span class="rate-unit">/ 1M tokens</span>
+        </div>
+      </div>
+
+      <label>每月 AI Agent 呼叫次數</label>
+      <input type="number" id="calc-calls" value="1000" min="1" oninput="calcTokens()">
+
+      <div class="calc-row">
+        <div>
+          <label>模糊提示詞 - 平均輸入 Token</label>
+          <input type="number" id="calc-input-bad" value="1500" min="1" oninput="calcTokens()">
+        </div>
+        <div>
+          <label>模糊提示詞 - 平均輸出 Token</label>
+          <input type="number" id="calc-output-bad" value="800" min="1" oninput="calcTokens()">
+        </div>
+      </div>
+
+      <div class="calc-row">
+        <div>
+          <label>精準提示詞 - 平均輸入 Token</label>
+          <input type="number" id="calc-input-good" value="300" min="1" oninput="calcTokens()">
+        </div>
+        <div>
+          <label>精準提示詞 - 平均輸出 Token</label>
+          <input type="number" id="calc-output-good" value="200" min="1" oninput="calcTokens()">
+        </div>
+      </div>
+    </div>
+    <div class="calc-result">
+      <div style="font-size:13px;color:var(--text-3);margin-bottom:16px">使用精準提示詞每月可節省</div>
+      <div class="calc-result-num" id="calc-saved">$12.60</div>
+      <div class="calc-result-label">Token 消耗減少 <span id="calc-pct" style="color:var(--accent);font-weight:700">73</span>%</div>
+
+      <div class="calc-compare">
+        <div class="calc-compare-item">
+          <div class="calc-compare-label">使用模糊提示詞</div>
+          <div class="calc-compare-cost" id="calc-cost-bad">$17.10</div>
+          <div class="calc-compare-detail">輸入 <span id="calc-tok-in-bad">1.5M</span> + 輸出 <span id="calc-tok-out-bad">800K</span></div>
+        </div>
+        <div class="calc-compare-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="calc-compare-item calc-compare-good">
+          <div class="calc-compare-label">使用精準提示詞</div>
+          <div class="calc-compare-cost" id="calc-cost-good">$4.50</div>
+          <div class="calc-compare-detail">輸入 <span id="calc-tok-in-good">300K</span> + 輸出 <span id="calc-tok-out-good">200K</span></div>
+        </div>
+      </div>
+
+      <div class="calc-note">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        費率基於各廠商官方定價，實際費用可能因用量折扣而更低
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEGINNER GUIDE -->
+<section class="beginner-section section reveal" id="beginner">
+  <div class="section-header">
+    <h2>新手入門指南</h2>
+    <p>第一次使用 N8N？跟著這三篇文章，10 分鐘內就能上手你的第一個自動化工作流</p>
+  </div>
+  <div class="beginner-grid">
+    <div class="beginner-card">
+      <div class="beginner-num">01</div>
+      <h3>N8N 是什麼？一分鐘搞懂自動化工作流</h3>
+      <p>N8N 是一個開源自動化平台，讓你用視覺化介面串接各種服務（Gmail、LINE、蝦皮、ChatGPT 等），建立自動化流程。不需要寫程式，只要拖拉節點就能完成。</p>
+      <div class="beginner-tags">
+        <span class="beginner-tag">入門概念</span>
+        <span class="beginner-tag">3 分鐘閱讀</span>
+      </div>
+    </div>
+    <div class="beginner-card">
+      <div class="beginner-num">02</div>
+      <h3>如何匯入 JSON 工作流？三步驟完成</h3>
+      <p>從本站下載 JSON 檔案後，開啟 N8N 點選「Import from File」，選擇下載的 JSON 檔案即可匯入。匯入後填入你的 API 金鑰，工作流就能開始運作。</p>
+      <div class="beginner-tags">
+        <span class="beginner-tag">實作教學</span>
+        <span class="beginner-tag">5 分鐘完成</span>
+      </div>
+    </div>
+    <div class="beginner-card">
+      <div class="beginner-num">03</div>
+      <h3>如何用精準提示詞省 Token？</h3>
+      <p>模糊的提示詞會讓 AI 反覆試錯，浪費 Token。本站每個工作流都附帶精準的中文提示詞，直接複製貼上就能大幅減少 API 呼叫次數。</p>
+      <div class="beginner-tags">
+        <span class="beginner-tag">進階技巧</span>
+        <span class="beginner-tag">省錢秘訣</span>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:32px">
+    <a href="learn.html" class="btn-primary btn-lg" style="display:inline-flex;align-items:center;gap:8px">
+      📚 前往完整線上教學（8 章免費課程）
+    </a>
   </div>
 </section>
 
 <!-- TAIWAN FEATURED -->
 <section class="taiwan-section section reveal" id="taiwan">
   <div class="section-header">
-    <h2>🇹🇼 台灣專屬工作流</h2>
+    <h2>台灣專屬工作流</h2>
     <p>針對台灣常用平台（蝦皮、LINE、Facebook、Instagram）量身打造的自動化工作流</p>
   </div>
   <div class="taiwan-grid" id="taiwan-grid"></div>
 </section>
 
+<!-- NEWS / FB INTEGRATION -->
+<section class="news-section section reveal" id="news">
+  <div class="section-header">
+    <h2>最新消息與教學</h2>
+    <p>來自「一人公司研究所」粉絲專頁的 AI Agent 實戰分享</p>
+  </div>
+  <div class="news-grid">
+    <div class="news-card">
+      <div class="news-card-type">教學</div>
+      <h3>N8N 入門：從零搭建你的第一個 AI 工作流</h3>
+      <p>手把手帶你安裝 N8N、匯入第一個 JSON 工作流，並串接 OpenAI API 實現自動化客服。</p>
+      <div class="news-card-date">2026.06.10</div>
+    </div>
+    <div class="news-card">
+      <div class="news-card-type">實戰</div>
+      <h3>一人公司如何用 AI Agent 自動化 80% 日常工作</h3>
+      <p>從社群排程、客戶回覆到報表生成，三個工作流讓你專注在真正重要的事。</p>
+      <div class="news-card-date">2026.06.08</div>
+    </div>
+    <div class="news-card">
+      <div class="news-card-type">更新</div>
+      <h3>本週新增 50+ 工作流：電商、行銷、DevOps 分類大補充</h3>
+      <p>持續從 N8N 社群精選高品質工作流，本週重點新增電商自動化與 CI/CD 整合類型。</p>
+      <div class="news-card-date">2026.06.06</div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:24px">
+    <a href="https://www.facebook.com/profile.php?id=61588107756334" target="_blank" class="btn-ghost" style="display:inline-flex;align-items:center;gap:8px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      追蹤「一人公司研究所」看更多 AI 實戰分享
+    </a>
+  </div>
+</section>
+
+<!-- BLOG: 小龍蝦三代碟使用心得與教學 -->
 <section class="blog-section section reveal" id="blog">
   <div class="section-header" style="text-align:center">
     <h2>部落格：AI 隨身碟使用心得與教學</h2>
@@ -987,7 +1434,7 @@ a:hover{text-decoration:underline}
   </div>
 </section>
 
-
+<!-- PRODUCT: 小龍蝦第三代隨身碟 -->
 <section class="product-section section reveal" id="product">
   <div class="product-hero">
     <div>
@@ -1136,425 +1583,269 @@ a:hover{text-decoration:underline}
   </div>
 </section>
 
-
-<section class="beginner-section section reveal" id="beginner">
-  <div class="section-header">
-    <h2>新手入門指南</h2>
-    <p>第一次使用 N8N？跟著這三篇文章，10 分鐘內就能上手你的第一個自動化工作流</p>
-  </div>
-  <div class="beginner-grid">
-    <div class="beginner-card">
-      <div class="beginner-num">01</div>
-      <h3>N8N 是什麼？一分鐘搞懂自動化工作流</h3>
-      <p>N8N 是一個開源自動化平台，讓你用視覺化介面串接各種服務（Gmail、LINE、蝦皮、ChatGPT 等），建立自動化流程。不需要寫程式，只要拖拉節點就能完成。</p>
-      <div class="beginner-tags">
-        <span class="beginner-tag">入門概念</span>
-        <span class="beginner-tag">3 分鐘閱讀</span>
-      </div>
-    </div>
-    <div class="beginner-card">
-      <div class="beginner-num">02</div>
-      <h3>如何匯入 JSON 工作流？三步驟完成</h3>
-      <p>從本站下載 JSON 檔案後，開啟 N8N 點選「Import from File」，選擇下載的 JSON 檔案即可匯入。匯入後填入你的 API 金鑰，工作流就能開始運作。</p>
-      <div class="beginner-tags">
-        <span class="beginner-tag">實作教學</span>
-        <span class="beginner-tag">5 分鐘完成</span>
-      </div>
-    </div>
-    <div class="beginner-card">
-      <div class="beginner-num">03</div>
-      <h3>如何用精準提示詞省 Token？</h3>
-      <p>模糊的提示詞會讓 AI 反覆試錯，浪費 Token。本站每個工作流都附帶精準的中文提示詞，直接複製貼上就能大幅減少 API 呼叫次數。</p>
-      <div class="beginner-tags">
-        <span class="beginner-tag">進階技巧</span>
-        <span class="beginner-tag">省錢秘訣</span>
-      </div>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:32px">
-    <a href="learn.html" class="btn-primary btn-lg" style="display:inline-flex;align-items:center;gap:8px">
-      📚 前往完整線上教學（8 章免費課程）
-    </a>
-  </div>
-</section>
-
-
 <!-- FOOTER -->
 <footer class="footer">
-<div class="footer-grid">
-  <div class="footer-brand">
-    <div class="footer-logo"><img src="logo.jpg" alt="Logo" class="footer-logo-img"> AI Agent Skill 市集</div>
-    <p class="footer-desc">由<a href="https://www.facebook.com/profile.php?id=61588107756334" target="_blank">一人公司研究所</a>維護。每週從 GitHub 精選最新、最實用的 AI Agent Skill。</p>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="logo.jpg" alt="一人公司研究所" class="footer-logo-img">
+        <span>AI 工作流市集</span>
+      </div>
+      <p class="footer-desc">精選 N8N 自動化工作流，搭配精準提示詞，讓一人公司也能擁有大企業的自動化能力。</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61588107756334" target="_blank" title="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>快速連結</h4>
+      <a href="#workflows">瀏覽工作流</a>
+      <a href="#how">使用教學</a>
+      <a href="#calc">Token 計算器</a>
+      <a href="#product" style="color:#fbbf24">🦐 隨身碟產品</a>
+      <a href="#news">最新消息</a>
+    </div>
+    <div class="footer-col">
+      <h4>熱門分類</h4>
+      <a href="#workflows">AI Agent</a>
+      <a href="#workflows">行銷自動化</a>
+      <a href="#workflows">電商整合</a>
+      <a href="#workflows">社群管理</a>
+    </div>
+    <div class="footer-col">
+      <h4>關於我們</h4>
+      <a href="https://www.facebook.com/profile.php?id=61588107756334" target="_blank">一人公司研究所</a>
+      <a href="/cdn-cgi/l/email-protection#14767d677b7a212625547379757d783a777b79">聯絡我們</a>
+      <a href="https://n8n.io" target="_blank">N8N 官網</a>
+    </div>
   </div>
-  <div class="footer-col">
-    <h4>Agent 分類</h4>
-    <a href="#" onclick="filterByAgent('claude')">Claude Code</a>
-    <a href="#" onclick="filterByAgent('hermes')">Hermes Agent</a>
-    <a href="#" onclick="filterByAgent('openclaw')">OpenClaw</a>
-    <a href="#" onclick="filterByAgent('codex')">Codex CLI</a>
-    <a href="#" onclick="filterByAgent('cursor')">Cursor</a>
+  <div class="footer-bottom">
+    <span>&copy; 2026 一人公司研究所. All rights reserved.</span>
+    <span>Powered by N8N Community Workflows</span>
   </div>
-  <div class="footer-col">
-    <h4>連結</h4>
-    <a href="https://github.com/bison520/ai-agent-workflows" target="_blank">GitHub 倉庫</a>
-    <a href="https://www.facebook.com/profile.php?id=61588107756334" target="_blank">Facebook 粉專</a>
-    <a href="https://github.com/modelcontextprotocol/servers" target="_pattern">MCP Servers</a>
-  </div>
-</div>
-<div class="footer-bottom">
-  <span>© 2026 一人公司研究所. All rights reserved.</span>
-  <span>最後更新：2026-06-21</span>
-</div>
 </footer>
 
-<!-- DETAIL MODAL -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal" id="modal">
-    <div class="modal-hero" style="position:relative">
-      <button class="modal-close" id="modalClose">×</button>
-      <img id="modalImg" src="" alt="">
-      <div class="modal-hero-overlay">
-        <div class="modal-hero-title" id="modalTitle"></div>
-        <div class="modal-hero-tagline" id="modalTagline"></div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="data.js"></script>
+<script>
+// ====== CATEGORY CONFIG ======
+const CAT_CONFIG = {
+  'AI Agent Development':     {cls:'cat-ai',    label:'AI Agent'},
+  'Business Process Automation':{cls:'cat-biz',  label:'商業流程'},
+  'CRM & Sales':              {cls:'cat-crm',    label:'CRM 銷售'},
+  'Cloud Storage':            {cls:'cat-cloud',  label:'雲端儲存'},
+  'Communication':            {cls:'cat-comm',   label:'通訊訊息'},
+  'Creative Content':         {cls:'cat-creative',label:'創意內容'},
+  'Creative Design Automation':{cls:'cat-creative',label:'創意設計'},
+  'Data Processing':          {cls:'cat-data',   label:'資料處理'},
+  'E-commerce':               {cls:'cat-ecom',   label:'電商零售'},
+  'Financial & Accounting':   {cls:'cat-mktg',   label:'財務記帳'},
+  'Marketing':                {cls:'cat-mktg',   label:'行銷廣告'},
+  'Project Management':       {cls:'cat-pm',     label:'專案管理'},
+  'Social Media':             {cls:'cat-social',  label:'社群媒體'},
+  'DevOps':                   {cls:'cat-devops', label:'DevOps'},
+  'Web Scraping':             {cls:'cat-scrape', label:'爬蟲抓取'}
+};
+
+// ====== SUGGESTED PROMPTS (curated for top categories) ======
+const PROMPT_TEMPLATES = {
+  'AI Agent Development': '你是一個 AI Agent 工作流設計師。請根據以下 JSON 工作流架構，幫我設定每個節點的參數，並解釋整體流程邏輯。我需要串接的服務是 [你的服務名稱]。',
+  'Business Process Automation': '請幫我分析這個自動化工作流的邏輯，並根據我的業務需求調整：我的公司是 [公司名稱]，主要需要自動化 [具體流程]。請優化節點順序並建議錯誤處理機制。',
+  'Communication': '我要建立一個自動訊息發送系統。這個工作流需要連接 [訊息平台]，在 [觸發條件] 時自動發送 [訊息內容]。請幫我設定每個節點的具體參數。',
+  'Marketing': '我要自動化行銷流程。這個工作流需要在 [時間/條件] 觸發，自動執行 [行銷動作]。請幫我檢查流程邏輯並建議 A/B 測試的節點位置。',
+  'Web Scraping': '我要抓取 [目標網站] 的 [資料類型]。這個工作流的爬蟲節點需要設定哪些 headers 和 selectors？請幫我調整以避免被封鎖。',
+  'Data Processing': '我有一批 [資料格式] 格式的資料需要處理。這個工作流需要完成 [處理目標]。請幫我設定每個轉換節點的欄位對應。',
+  'Project Management': '我要把 [專案管理工具] 跟其他服務串接。當 [觸發事件] 發生時，自動 [執行動作]。請幫我檢查 API 認證設定。',
+  'Social Media': '我要自動管理社群帳號。這個工作流需要在 [時間] 自動發布 [內容類型] 到 [平台]。請幫我設定排程節點和內容格式化。',
+  'E-commerce': '我的電商平台是 [平台名稱]，需要在 [訂單狀態] 時自動 [處理動作]。請幫我設定 webhook 觸發和資料映射。',
+  'CRM & Sales': '我要把 CRM 跟 [其他服務] 串接。當 [商機狀態] 改變時，自動 [後續動作]。請幫我設定欄位同步邏輯。',
+  'DevOps': '這個 CI/CD 工作流需要在 [觸發條件] 時自動 [部署/測試/通知動作]。請幫我設定每個節點的環境變數和錯誤處理。',
+  'Cloud Storage': '當 [觸發條件] 時，自動把 [檔案類型] 從 [來源] 同步到 [目的地]。請幫我設定檔案篩選規則和命名規則。',
+  'Creative Content': '我要自動化內容創作流程。當 [觸發條件] 時，自動 [生成/處理/發布內容]。請幫我設定 AI 生成節點的 prompt。'
+};
+
+let cat='all', trigger='all', comp='all', q='';
+
+// Build category chips
+const cats = Object.keys(CAT_CONFIG);
+document.getElementById('cat-chips').innerHTML =
+  `<span class="chip on" data-cat="all">全部分類</span>` +
+  cats.map(c=>`<span class="chip" data-cat="${c}">${CAT_CONFIG[c].label}</span>`).join('');
+
+// ====== RENDER ======
+function render(){
+  const list = WORKFLOWS.filter(w=>
+    (cat==='all'||w.category===cat) &&
+    (trigger==='all'||w.trigger===trigger) &&
+    (comp==='all'||w.complexity===comp) &&
+    (!q || (w.name+w.description+(w.integrations||[]).join(' ')).toLowerCase().includes(q))
+  );
+
+  document.getElementById('result-count').textContent = list.length.toLocaleString();
+  document.getElementById('empty').style.display = list.length ? 'none' : 'block';
+
+  // Show top 200 for performance, with "load more" concept
+  const shown = list.slice(0, 200);
+  const grid = document.getElementById('grid');
+  grid.innerHTML = shown.map((w,i)=>{
+    const cfg = CAT_CONFIG[w.category] || {cls:'cat-biz',label:w.category};
+    const compCls = w.complexity==='簡單'?'c-low':w.complexity==='中等'?'c-med':'c-high';
+    const compLabel = w.complexity;
+    const prompt = PROMPT_TEMPLATES[w.category] || `請幫我分析並優化這個 N8N 工作流：${w.name}。工作流包含 ${w.nodeCount} 個節點，使用 ${w.integrations.slice(0,3).join(', ')} 等服務。請說明流程邏輯並建議如何調整參數以符合我的需求。`;
+
+    return `
+    <div class="card" data-idx="${i}">
+      <div class="card-head">
+        <span class="card-cat ${cfg.cls}">${cfg.label}</span>
+        <span class="card-complexity ${compCls}">${compLabel}</span>
       </div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-agents" id="modalAgents"></div>
-      <div class="modal-video" id="modalVideo" style="display:none"></div>
-      <div class="modal-section">
-        <h4>介紹</h4>
-        <div class="modal-desc" id="modalDesc"></div>
-      </div>
-      <div class="modal-section">
-        <h4>功能亮點</h4>
-        <div class="modal-features" id="modalFeatures"></div>
-      </div>
-      <div class="modal-section">
-        <h4>安裝方式</h4>
-        <div class="modal-install">
-          <code id="modalInstall"></code>
-          <button class="copy-btn" id="modalCopy">複製</button>
+      <div class="card-body">
+        <div class="card-title">${escHtml(w.name)}</div>
+        <div class="card-desc">${escHtml(w.description)}</div>
+        <div class="card-meta">
+          <span class="card-tag">${w.nodeCount} nodes</span>
+          <span class="card-tag">${w.trigger}</span>
+          ${(w.integrations||[]).slice(0,3).map(t=>`<span class="card-tag">${escHtml(t)}</span>`).join('')}
         </div>
       </div>
-      <div class="modal-section">
-        <h4>統計</h4>
-        <div class="modal-stats" id="modalStats"></div>
+      <div class="card-prompt">
+        <div class="card-prompt-box">${escHtml(prompt)}</div>
+        <div class="card-prompt-actions">
+          <button class="prompt-copy" onclick="copyPrompt(this,${i})">複製提示詞</button>
+        </div>
       </div>
-      <div class="modal-section">
-        <h4>相容性</h4>
-        <div class="modal-compat" id="modalCompat"></div>
+      <div class="card-actions">
+        <button class="card-btn card-btn-ghost" onclick="togglePrompt(this)">建議 Prompt</button>
+        <button class="card-btn card-btn-primary" onclick="downloadWF(${i})">下載 JSON</button>
       </div>
-      <div class="modal-links" id="modalLinks"></div>
-    </div>
-  </div>
-</div>
+    </div>`;
+  }).join('');
 
-<script src="data.js"></script>
-<script>
-// ═══ STATE ═══
-let currentAgent = 'all';
-let currentCategory = 'all';
-let searchQuery = '';
-
-// ═══ HELPERS ═══
-function agentColor(key) {
-  const map = {universal:'#10b981',claude:'#f97316',hermes:'#a855f7',openclaw:'#22c55e',codex:'#3b82f6',cursor:'#94a3b8'};
-  return map[key] || '#71717a';
+  if(list.length > 200){
+    grid.innerHTML += `<div style="grid-column:1/-1;text-align:center;padding:24px;color:var(--text-3);font-size:14px">
+      顯示前 200 個結果，共 ${list.length} 個。請縮小搜尋範圍查看其他結果。
+    </div>`;
+  }
 }
 
-function formatStars(n) {
-  if (n >= 1000) return (n/1000).toFixed(1).replace(/\.0$/,'') + 'k';
+function escHtml(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+function togglePrompt(btn){
+  const card = btn.closest('.card');
+  card.classList.toggle('open');
+  btn.textContent = card.classList.contains('open') ? '收起 Prompt' : '建議 Prompt';
+}
+
+function copyPrompt(btn, idx){
+  const prompt = PROMPT_TEMPLATES[WORKFLOWS[idx]?.category] || '';
+  navigator.clipboard.writeText(prompt).then(()=>{
+    btn.textContent = '已複製';
+    btn.classList.add('done');
+    setTimeout(()=>{btn.textContent='複製提示詞';btn.classList.remove('done')},1500);
+  });
+}
+
+function downloadWF(idx){
+  // Create a sample JSON structure
+  const w = WORKFLOWS[idx];
+  const sample = {
+    name: w.name,
+    nodes: w.integrations.map((int,i)=>({
+      name: int,
+      type: `n8n-nodes-base.${int.toLowerCase()}`,
+      position: [300+i*200, 300],
+      parameters: {}
+    })),
+    connections: {},
+    active: false,
+    settings: {executionOrder:'v1'}
+  };
+  const blob = new Blob([JSON.stringify(sample,null,2)],{type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `${w.name.replace(/[^a-zA-Z0-9\u4e00-\u9fff]/g,'_')}.json`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+// ====== FILTERS ======
+document.getElementById('cat-chips').onclick=e=>{
+  if(!e.target.dataset.cat) return;
+  cat=e.target.dataset.cat;
+  document.querySelectorAll('#cat-chips .chip').forEach(c=>c.classList.toggle('on',c===e.target));
+  render();
+};
+document.getElementById('trigger-chips').onclick=e=>{
+  if(!e.target.dataset.t) return;
+  trigger=e.target.dataset.t;
+  document.querySelectorAll('#trigger-chips .chip').forEach(c=>c.classList.toggle('on',c===e.target));
+  render();
+};
+document.getElementById('comp-chips').onclick=e=>{
+  if(!e.target.dataset.c) return;
+  comp=e.target.dataset.c;
+  document.querySelectorAll('#comp-chips .chip').forEach(c=>c.classList.toggle('on',c===e.target));
+  render();
+};
+document.getElementById('q').oninput=e=>{q=e.target.value.toLowerCase();render()};
+
+// Keyboard shortcut: / to focus search
+document.addEventListener('keydown',e=>{
+  if(e.key==='/' && document.activeElement.tagName!=='INPUT'){
+    e.preventDefault();
+    document.getElementById('q').focus();
+  }
+});
+
+// ====== TOKEN CALCULATOR ======
+function onModelChange(){
+  const sel = document.getElementById('calc-model');
+  const opt = sel.options[sel.selectedIndex];
+  document.getElementById('rate-input').textContent = '$'+parseFloat(opt.dataset.input).toFixed(2);
+  document.getElementById('rate-output').textContent = '$'+parseFloat(opt.dataset.output).toFixed(2);
+  calcTokens();
+}
+
+function calcTokens(){
+  const sel = document.getElementById('calc-model');
+  const opt = sel.options[sel.selectedIndex];
+  const inputRate = parseFloat(opt.dataset.input) || 3;
+  const outputRate = parseFloat(opt.dataset.output) || 15;
+  const calls = +document.getElementById('calc-calls').value || 1000;
+  const inputBad = +document.getElementById('calc-input-bad').value || 1500;
+  const outputBad = +document.getElementById('calc-output-bad').value || 800;
+  const inputGood = +document.getElementById('calc-input-good').value || 300;
+  const outputGood = +document.getElementById('calc-output-good').value || 200;
+
+  // Cost = (tokens / 1M) * rate * calls
+  const costBad = ((inputBad * inputRate + outputBad * outputRate) / 1000000) * calls;
+  const costGood = ((inputGood * inputRate + outputGood * outputRate) / 1000000) * calls;
+  const saved = costBad - costGood;
+  const pct = costBad > 0 ? Math.round(((costBad - costGood) / costBad) * 100) : 0;
+
+  document.getElementById('calc-saved').textContent = '$' + saved.toFixed(2);
+  document.getElementById('calc-pct').textContent = pct;
+  document.getElementById('calc-cost-bad').textContent = '$' + costBad.toFixed(2);
+  document.getElementById('calc-cost-good').textContent = '$' + costGood.toFixed(2);
+  document.getElementById('calc-tok-in-bad').textContent = formatTokens(inputBad * calls);
+  document.getElementById('calc-tok-out-bad').textContent = formatTokens(outputBad * calls);
+  document.getElementById('calc-tok-in-good').textContent = formatTokens(inputGood * calls);
+  document.getElementById('calc-tok-out-good').textContent = formatTokens(outputGood * calls);
+}
+
+function formatTokens(n){
+  if(n >= 1000000) return (n/1000000).toFixed(1)+'M';
+  if(n >= 1000) return (n/1000).toFixed(0)+'K';
   return n.toString();
 }
 
-function agentDotHTML(key) {
-  const a = AGENTS[key];
-  if (!a) return '';
-  return `<span class="skill-agent-dot" title="${a.name}" style="color:${a.color}">${a.icon}</span>`;
-}
+// ====== SCROLL REVEAL ======
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-// ═══ AGENT TABS ═══
-function renderAgentTabs() {
-  const container = document.getElementById('agentTabsInner');
-  const counts = {all: SKILLS.length};
-  Object.keys(AGENTS).forEach(k => {
-    counts[k] = SKILLS.filter(s => s.agents.includes(k)).length;
-  });
-  let html = `<button class="agent-tab active" data-agent="all"><span class="icon">🌐</span> 全部 <span class="count">${counts.all}</span></button>`;
-  for (const [k, v] of Object.entries(AGENTS)) {
-    html += `<button class="agent-tab" data-agent="${k}"><span class="icon">${v.icon}</span> ${v.name} <span class="count">${counts[k]}</span></button>`;
-  }
-  container.innerHTML = html;
-  container.querySelectorAll('.agent-tab').forEach(btn => {
-    btn.addEventListener('click', () => {
-      container.querySelectorAll('.agent-tab').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentAgent = btn.dataset.agent;
-      applyFilters();
-    });
-  });
-}
-
-// ═══ ESSENTIAL ROWS ═══
-function renderEssentialRows() {
-  const container = document.getElementById('essentialRows');
-  // 只取 essential skills，每個只出現一次，按 star 排序
-  const essentialSkills = SKILLS.filter(s => s.essential).sort((a, b) => b.stars - a.stars);
-  if (essentialSkills.length === 0) { container.innerHTML = ''; return; }
-  let html = `<div class="essential-row reveal">
-    <div class="essential-row-title">
-      <span class="agent-icon">⭐</span>
-      <h3>必裝精選<span class="agent-name">每個 Agent 都該有的基礎 Skill</span></h3>
-    </div>
-    <div class="essential-scroll">`;
-  essentialSkills.forEach(skill => {
-    html += renderSkillCard(skill, true);
-  });
-  html += `</div></div>`;
-  container.innerHTML = html;
-}
-
-// ═══ SKILL CARD ═══
-function renderSkillCard(skill, carousel) {
-  const agentsHTML = skill.agents.map(a => agentDotHTML(a)).join('');
-  const essentialBadge = skill.essential ? '<span class="skill-card-essential">必裝</span>' : '';
-  return `<div class="skill-card" data-id="${skill.id}" onclick="openModal('${skill.id}')">
-    <img class="skill-card-img" src="${skill.imageUrl}" alt="${skill.name}" loading="lazy" onerror="this.style.display='none'">
-    <div class="skill-card-body">
-      <div class="skill-card-top">
-        <div class="skill-card-name">${skill.name}</div>
-        ${essentialBadge}
-      </div>
-      <div class="skill-card-tagline">${skill.tagline}</div>
-      <div class="skill-card-agents">${agentsHTML}</div>
-      <div class="skill-card-meta">
-        <span class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> ${formatStars(skill.stars)}</span>
-        <span class="lang">${skill.lang}</span>
-      </div>
-    </div>
-  </div>`;
-}
-
-// ═══ CATEGORY CHIPS ═══
-function renderCategoryChips() {
-  const container = document.getElementById('categoryChips');
-  const cats = {};
-  SKILLS.forEach(s => {
-    cats[s.category] = (cats[s.category] || 0) + 1;
-  });
-  let html = '<button class="filter-chip on" data-cat="all">全部</button>';
-  for (const [k, count] of Object.entries(cats)) {
-    const cat = CATEGORIES[k];
-    if (!cat) continue;
-    html += `<button class="filter-chip" data-cat="${k}">${cat.icon} ${cat.name} (${count})</button>`;
-  }
-  container.innerHTML = html;
-  container.querySelectorAll('.filter-chip').forEach(btn => {
-    btn.addEventListener('click', () => {
-      container.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('on'));
-      btn.classList.add('on');
-      currentCategory = btn.dataset.cat;
-      applyFilters();
-    });
-  });
-}
-
-// ═══ AGENT FILTER CHIPS ═══
-function renderAgentFilterChips() {
-  const container = document.getElementById('agentFilterChips');
-  let html = '';
-  for (const [k, v] of Object.entries(AGENTS)) {
-    html += `<button class="filter-chip" data-agent="${k}">${v.icon} ${v.name}</button>`;
-  }
-  container.innerHTML = html;
-  container.querySelectorAll('.filter-chip').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (btn.classList.contains('on')) {
-        btn.classList.remove('on');
-        currentAgent = 'all';
-      } else {
-        container.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('on'));
-        btn.classList.add('on');
-        currentAgent = btn.dataset.agent;
-      }
-      // Sync top tabs
-      document.querySelectorAll('#agentTabsInner .agent-tab').forEach(t => {
-        t.classList.toggle('active', t.dataset.agent === currentAgent);
-      });
-      applyFilters();
-    });
-  });
-}
-
-// ═══ APPLY FILTERS ═══
-function applyFilters() {
-  let filtered = SKILLS;
-  if (currentAgent !== 'all') {
-    filtered = filtered.filter(s => s.agents.includes(currentAgent));
-  }
-  if (currentCategory !== 'all') {
-    filtered = filtered.filter(s => s.category === currentCategory);
-  }
-  if (searchQuery) {
-    const q = searchQuery.toLowerCase();
-    filtered = filtered.filter(s =>
-      s.name.toLowerCase().includes(q) ||
-      s.tagline.toLowerCase().includes(q) ||
-      s.description.toLowerCase().includes(q) ||
-      (CATEGORIES[s.category] && CATEGORIES[s.category].name.toLowerCase().includes(q))
-    );
-  }
-  renderGrid(filtered);
-}
-
-// ═══ RENDER GRID ═══
-function renderGrid(skills) {
-  const grid = document.getElementById('skillGrid');
-  const empty = document.getElementById('emptyState');
-  const count = document.getElementById('resultsCount');
-  count.innerHTML = `共 <strong>${skills.length}</strong> 個 Skill`;
-  if (skills.length === 0) {
-    grid.innerHTML = '';
-    empty.style.display = 'block';
-    return;
-  }
-  empty.style.display = 'none';
-  grid.innerHTML = skills.map(s => renderSkillCard(s, false)).join('');
-}
-
-// ═══ MODAL ═══
-function openModal(id) {
-  const skill = SKILLS.find(s => s.id === id);
-  if (!skill) return;
-  document.getElementById('modalImg').src = skill.imageUrl;
-  document.getElementById('modalTitle').textContent = skill.name;
-  document.getElementById('modalTagline').textContent = skill.tagline;
-  document.getElementById('modalDesc').textContent = skill.description;
-  document.getElementById('modalInstall').textContent = skill.installCmd;
-  // Agents
-  const agentsDiv = document.getElementById('modalAgents');
-  agentsDiv.innerHTML = skill.agents.map(a => {
-    const ag = AGENTS[a];
-    return `<span class="modal-agent-badge" style="background:${ag.color}18;color:${ag.color};border-color:${ag.color}40">${ag.icon} ${ag.name}</span>`;
-  }).join('');
-  // Features (only if non-empty)
-  const featuresDiv = document.getElementById('modalFeatures');
-  if (skill.features && skill.features.length > 0) {
-    featuresDiv.parentElement.style.display = '';
-    featuresDiv.innerHTML = skill.features.map(f => `<div class="modal-feature">${f}</div>`).join('');
-  } else {
-    featuresDiv.parentElement.style.display = 'none';
-  }
-  // Stats
-  document.getElementById('modalStats').innerHTML = `
-    <div class="modal-stat"><div class="modal-stat-num">${formatStars(skill.stars)}</div><div class="modal-stat-label">⭐ Stars</div></div>
-    <div class="modal-stat"><div class="modal-stat-num">${formatStars(skill.forks)}</div><div class="modal-stat-label">🍴 Forks</div></div>
-    <div class="modal-stat"><div class="modal-stat-num">${skill.updated}</div><div class="modal-stat-label">🕐 更新日期</div></div>
-  `;
-  // Compat
-  const compatDiv = document.getElementById('modalCompat');
-  compatDiv.innerHTML = Object.entries(skill.compatibility).map(([k, v]) => {
-    const ag = AGENTS[k];
-    return `<div class="modal-compat-row"><span class="agent">${ag.icon} ${ag.name}</span><span class="version">${v}</span></div>`;
-  }).join('');
-  // Video
-  const videoDiv = document.getElementById('modalVideo');
-  if (skill.videoUrl && skill.videoUrl.includes('youtube.com')) {
-    const vidMatch = skill.videoUrl.match(/(?:v=|youtu\.be\/)([\w-]+)/);
-    if (vidMatch) {
-      videoDiv.innerHTML = `<iframe src="https://www.youtube.com/embed/${vidMatch[1]}" allowfullscreen></iframe>`;
-      videoDiv.style.display = 'block';
-    }
-  } else {
-    videoDiv.style.display = 'none';
-  }
-  // Links
-  document.getElementById('modalLinks').innerHTML = `
-    <a class="modal-link" href="https://github.com/${skill.repo}" target="_blank">📂 GitHub Repo</a>
-    <a class="modal-link modal-link-primary" href="#" onclick="navigator.clipboard.writeText('${skill.installCmd.replace(/'/g,"\\'")}');this.textContent='已複製 ✓';return false;">📋 複製安裝指令</a>
-  `;
-  document.getElementById('modalOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  document.getElementById('modalOverlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-document.getElementById('modalClose').addEventListener('click', closeModal);
-document.getElementById('modalOverlay').addEventListener('click', e => {
-  if (e.target === document.getElementById('modalOverlay')) closeModal();
-});
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-// Copy button
-document.getElementById('modalCopy').addEventListener('click', function() {
-  const cmd = document.getElementById('modalInstall').textContent;
-  navigator.clipboard.writeText(cmd).then(() => {
-    this.textContent = '已複製 ✓';
-    this.classList.add('done');
-    setTimeout(() => { this.textContent = '複製'; this.classList.remove('done'); }, 2000);
-  });
-});
-
-// ═══ SEARCH ═══
-const heroSearchInput = document.getElementById('heroSearch');
-function doSearch() {
-  searchQuery = heroSearchInput.value.trim();
-  applyFilters();
-}
-heroSearchInput.addEventListener('input', doSearch);
-heroSearchInput.addEventListener('keyup', doSearch);
-heroSearchInput.addEventListener('change', doSearch);
-// Enter 鍵：執行搜尋並滾動到結果區
-heroSearchInput.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') {
-    e.preventDefault();
-    searchQuery = heroSearchInput.value.trim();
-    applyFilters();
-    document.getElementById('browse').scrollIntoView({behavior:'smooth'});
-  }
-});
-
-// ═══ BLOG FUNCTIONS ═══
-function showBlogPost(id, e) {
-  if (e) e.preventDefault();
-  var container = document.getElementById('all-blog-posts');
-  if (container) container.style.display = 'block';
-  var post = document.getElementById(id);
-  if (post) {
-    post.style.display = 'block';
-    post.scrollIntoView({behavior:'smooth'});
-  }
-}
-
-function toggleAllPosts() {
-  var container = document.getElementById('all-blog-posts');
-  if (!container) return;
-  if (container.style.display === 'none') {
-    container.style.display = 'block';
-    container.scrollIntoView({behavior:'smooth'});
-  } else {
-    container.style.display = 'none';
-  }
-}
-
-function filterByAgent(agent) {
-  currentAgent = agent;
-  // Sync top tabs
-  document.querySelectorAll('#agentTabsInner .agent-tab').forEach(function(t) {
-    t.classList.toggle('active', t.dataset.agent === agent);
-  });
-  // Sync filter chips
-  document.querySelectorAll('#agentFilterChips .filter-chip').forEach(function(b) {
-    b.classList.toggle('on', b.dataset.agent === agent);
-  });
-  applyFilters();
-  document.getElementById('browse').scrollIntoView({behavior:'smooth'});
-}
-
-// ═══ TAIWAN SECTION ═══
+// ====== TAIWAN SECTION ======
 const TW_ICONS = {
   'E-commerce': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>',
   'Communication': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
@@ -1562,63 +1853,72 @@ const TW_ICONS = {
   'Marketing': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>',
 };
 
-// Taiwan workflow data (hardcoded from original site)
-const TAIWAN_WF = [
-  {name:'⭐ GEO 最佳化工作流 — 讓 AI 搜尋引擎主動引用你', category:'Marketing', nodeCount:5, description:'基於 Princeton 研究的 GEO 工作流，5 大階段系統性優化網站：診斷、Schema 標記、內容重構、平台佈局、效果監控。提升 30-40% AI 搜尋可見度。', featured:true, link:'featured/geo-workflow.html'},
-  {name:'蝦皮訂單自動通知 - 新訂單推播到 LINE', category:'E-commerce', nodeCount:8, description:'蝦皮賣場接到新訂單時，自動透過 LINE Notify 推播訂單明細給賣家。'},
-  {name:'LINE 官方帳號自動回覆 + AI 客服', category:'Communication', nodeCount:12, description:'LINE 官方帳號收到訊息時，自動透過 AI 分析意圖並回覆。'},
-  {name:'Facebook 粉專貼文自動排程 + AI 產生文案', category:'Social Media', nodeCount:10, description:'每週自動從 Google 試算表讀取貼文主題，用 AI 產生文案。'},
-  {name:'Instagram 潛在客戶自動收集 + CRM 建檔', category:'Marketing', nodeCount:15, description:'定期掃描 Instagram 留言和私訊，用 AI 分析潛在客戶意圖。'},
-  {name:'蝦皮商品庫存同步 - 多平台管理', category:'E-commerce', nodeCount:18, description:'定時同步蝦皮商品庫存到 Google 試算表，庫存低於設定值時自動通知。'},
-  {name:'台灣發票自動整理 + 記帳', category:'E-commerce', nodeCount:10, description:'自動從 Gmail 擷取電子發票，解析發票內容並分類，匯入 Google 試算表記帳。'},
-  {name:'LINE 群組訊息摘要 + AI 整理', category:'Communication', nodeCount:5, description:'每天自動整理 LINE 群組的訊息，用 AI 產生摘要重點。'},
-  {name:'Facebook 廣告成效自動報表', category:'Marketing', nodeCount:12, description:'每週自動拉取 Facebook 廣告成效數據，產生報表並透過 Email 發送。'},
-];
+// ====== BLOG SECTION ======
+function toggleAllPosts(){
+  const el = document.getElementById('all-blog-posts');
+  if(!el) return;
+  const btn = el.previousElementSibling.querySelector('button');
+  if(el.style.display==='none'){
+    el.style.display='block';
+    if(btn) btn.textContent='收合文章';
+    el.scrollIntoView({behavior:'smooth',block:'start'});
+  } else {
+    el.style.display='none';
+    if(btn) btn.textContent='查看所有文章';
+  }
+}
 
-function renderTaiwan() {
+function showBlogPost(postId, evt){
+  if(evt) evt.preventDefault();
+  const container = document.getElementById('all-blog-posts');
+  if(!container) return;
+  const btn = container.previousElementSibling.querySelector('button');
+  if(container.style.display==='none'){
+    container.style.display='block';
+    if(btn) btn.textContent='收合文章';
+  }
+  setTimeout(function(){
+    const target = document.getElementById(postId);
+    if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+  }, 50);
+}
+
+function renderTaiwan(){
   const grid = document.getElementById('taiwan-grid');
-  if (!grid) return;
-  grid.innerHTML = TAIWAN_WF.map((w, i) => {
+  if(!grid) return;
+  const tw = WORKFLOWS.filter(w => w.name.startsWith('蝦皮') || w.name.startsWith('LINE') || w.name.startsWith('Facebook') || w.name.startsWith('Instagram') || w.name.startsWith('台灣'));
+  grid.innerHTML = tw.map((w,i)=>{
+    const idx = WORKFLOWS.indexOf(w);
     const icon = TW_ICONS[w.category] || TW_ICONS['Communication'];
-    const isFeatured = w.featured;
-    const badgeHtml = isFeatured ? '<span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;background:rgba(251,191,36,.15);color:#fbbf24;border:1px solid rgba(251,191,36,.4);margin-bottom:8px">⭐ 本週精選</span>' : '';
-    const btnAction = isFeatured
-      ? `window.location.href='${w.link}'`
-      : `alert('此功能為 N8N 工作流下載，請至原工作流市集使用')`;
-    const btnStyle = isFeatured ? 'background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#000;border-color:#fbbf24' : '';
-    const cardStyle = isFeatured ? 'border-color:rgba(251,191,36,.4);background:linear-gradient(135deg,rgba(251,191,36,.05),var(--surface))' : '';
-    return `<div class="taiwan-card" style="${cardStyle}">
+    const cfg = CAT_CONFIG[w.category] || {label:w.category};
+    const prompt = PROMPT_TEMPLATES[w.category] || `請幫我分析並優化這個 N8N 工作流：${w.name}。`;
+    return `
+    <div class="taiwan-card">
       <div class="taiwan-icon">${icon}</div>
-      ${badgeHtml}
-      <h3>${w.name}</h3>
-      <p>${w.description}</p>
-      <span class="taiwan-badge">${w.nodeCount} ${isFeatured ? '階段' : '節點'}</span>
+      <h3>${escHtml(w.name)}</h3>
+      <p>${escHtml(w.description)}</p>
+      <span class="taiwan-badge">${w.nodeCount} 節點</span>
       <div class="taiwan-actions">
-        <button class="taiwan-btn taiwan-btn-primary" style="${btnStyle}" onclick="${btnAction}">${isFeatured ? '查看完整介紹' : '查看工作流'}</button>
+        <button class="taiwan-btn" onclick="showTaiwanPrompt(${idx})">建議 Prompt</button>
+        <button class="taiwan-btn taiwan-btn-primary" onclick="downloadWF(${idx})">下載 JSON</button>
+      </div>
+      <div class="taiwan-prompt" id="tw-prompt-${idx}" style="display:none">
+        <div class="card-prompt-box">${escHtml(prompt)}</div>
+        <button class="prompt-copy" onclick="copyPrompt(this,${idx})">複製提示詞</button>
       </div>
     </div>`;
   }).join('');
 }
 
-// ═══ SCROLL REVEAL ═══
-function initReveal() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, {threshold:0.1});
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+function showTaiwanPrompt(idx){
+  const el = document.getElementById('tw-prompt-'+idx);
+  if(el) el.style.display = el.style.display==='none'?'block':'none';
 }
 
-// ═══ INIT ═══
-renderAgentTabs();
-renderEssentialRows();
-renderCategoryChips();
-renderAgentFilterChips();
-applyFilters();
+// ====== INIT ======
+calcTokens();
 renderTaiwan();
-initReveal();
-
-// Update stat count
-document.getElementById('statSkills').textContent = SKILLS.length + '+';
+render();
 </script>
 </body>
 </html>
