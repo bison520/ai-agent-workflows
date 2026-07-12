@@ -21,6 +21,7 @@
 ## Workflow JSON
 
 ```json
+{% raw %}
 {
   "name": "LINE群組每日摘要",
   "nodes": [
@@ -36,6 +37,8 @@
     "AI生成摘要": [{"node": "推播摘要"}, {"node": "歸檔記錄"}]
   }
 }
+
+{% endraw %}
 ```
 
 ## 自訂建議

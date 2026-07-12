@@ -22,6 +22,7 @@
 ## Workflow JSON
 
 ```json
+{% raw %}
 {
   "name": "IG潛在客戶CRM",
   "nodes": [
@@ -34,6 +35,8 @@
   ],
   "connections": {"排程檢查": [{"node": "取得IG留言"}], "取得IG留言": [{"node": "關鍵字篩選"}], "關鍵字篩選": [{"node": "整理客戶資料"}], "整理客戶資料": [{"node": "寫入CRM"}, {"node": "通知負責人"}]}
 }
+
+{% endraw %}
 ```
 
 ## 自訂建議

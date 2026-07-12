@@ -22,6 +22,7 @@
 ## Workflow JSON
 
 ```json
+{% raw %}
 {
   "name": "FB粉專自動排程",
   "nodes": [
@@ -33,6 +34,8 @@
   ],
   "connections": {"每日觸發": [{"node": "讀取Google Sheet"}], "讀取Google Sheet": [{"node": "篩選今日貼文"}], "篩選今日貼文": [{"node": "發佈FB貼文"}], "發佈FB貼文": [{"node": "更新狀態"}]}
 }
+
+{% endraw %}
 ```
 
 ## 自訂建議

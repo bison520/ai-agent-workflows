@@ -22,6 +22,7 @@
 ## Workflow JSON
 
 ```json
+{% raw %}
 {
   "name": "FB廣告成效報表",
   "nodes": [
@@ -39,6 +40,8 @@
     "生成摘要": [{"node": "推播通知"}]
   }
 }
+
+{% endraw %}
 ```
 
 ## 自訂建議

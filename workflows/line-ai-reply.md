@@ -22,6 +22,7 @@
 ## Workflow JSON
 
 ```json
+{% raw %}
 {
   "name": "LINE AI自動回覆客服",
   "nodes": [
@@ -34,6 +35,8 @@
   ],
   "connections": {"LINE Webhook": [{"node": "解析訊息"}], "解析訊息": [{"node": "AI判斷"}], "AI判斷": [{"node": "判斷轉接"}], "判斷轉接": [{"true": "通知真人客服", "false": "回覆AI答案"}]}
 }
+
+{% endraw %}
 ```
 
 ## 自訂建議
