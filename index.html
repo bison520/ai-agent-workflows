@@ -367,7 +367,7 @@ a:hover{text-decoration:underline}
     <span>Skill 市集</span>
   </a>
   <div class="nav-links">
-    <a href="featured/zernio-social-media.html" style="color:var(--gold);font-weight:600">⭐ 本週精選</a>
+    <a href="featured/ai-video-workflow.html" style="color:var(--gold);font-weight:600">⭐ 本週精選</a>
     <a href="#essential">必裝精選</a>
     <a href="#browse">全部瀏覽</a>
     <a href="#taiwan">🇹🇼 台灣精選</a>
@@ -1564,16 +1564,17 @@ const TW_ICONS = {
 
 // Taiwan workflow data (hardcoded from original site)
 const TAIWAN_WF = [
-  {name:'⭐ Zernio 免費社群發布工具 — 一個帳號綁兩組社群', category:'Social Media', nodeCount:4, description:'一個電子郵件帳號免費綁定兩組社群帳號，Facebook + Instagram + TikTok 一次搞定。跨平台社群發布 API，小編必備。', featured:true, link:'featured/zernio-social-media.html'},
-  {name:'GEO 最佳化工作流 — 讓 AI 搜尋引擎主動引用你', category:'Marketing', nodeCount:5, description:'基於 Princeton 研究的 GEO 工作流，5 大階段系統性優化網站：診斷、Schema 標記、內容重構、平台佈局、效果監控。提升 30-40% AI 搜尋可見度。', link:'featured/geo-workflow.html'},
-  {name:'蝦皮訂單自動通知 - 新訂單推播到 LINE', category:'E-commerce', nodeCount:8, description:'蝦皮賣場接到新訂單時，自動透過 LINE Notify 推播訂單明細給賣家。'},
-  {name:'LINE 官方帳號自動回覆 + AI 客服', category:'Communication', nodeCount:12, description:'LINE 官方帳號收到訊息時，自動透過 AI 分析意圖並回覆。'},
-  {name:'Facebook 粉專貼文自動排程 + AI 產生文案', category:'Social Media', nodeCount:10, description:'每週自動從 Google 試算表讀取貼文主題，用 AI 產生文案。'},
-  {name:'Instagram 潛在客戶自動收集 + CRM 建檔', category:'Marketing', nodeCount:15, description:'定期掃描 Instagram 留言和私訊，用 AI 分析潛在客戶意圖。'},
-  {name:'蝦皮商品庫存同步 - 多平台管理', category:'E-commerce', nodeCount:18, description:'定時同步蝦皮商品庫存到 Google 試算表，庫存低於設定值時自動通知。'},
-  {name:'台灣發票自動整理 + 記帳', category:'E-commerce', nodeCount:10, description:'自動從 Gmail 擷取電子發票，解析發票內容並分類，匯入 Google 試算表記帳。'},
-  {name:'LINE 群組訊息摘要 + AI 整理', category:'Communication', nodeCount:5, description:'每天自動整理 LINE 群組的訊息，用 AI 產生摘要重點。'},
-  {name:'Facebook 廣告成效自動報表', category:'Marketing', nodeCount:12, description:'每週自動拉取 Facebook 廣告成效數據，產生報表並透過 Email 發送。'},
+  {name:'⭐ 一句話產出知識類解說影片，完全免費！', category:'Marketing', nodeCount:7, description:'講一句話，AI Agent 自動完成腳本、動畫場景、中文配音、字幕燒錄到成片匯出。全開源工具，零成本，2 分鐘出片。', featured:true, link:'featured/ai-video-workflow.html'},
+  {name:'Zernio 免費社群發布工具 — 一個帳號綁兩組社群', category:'Social Media', nodeCount:4, description:'一個電子郵件帳號免費綁定兩組社群帳號，Facebook + Instagram + TikTok 一次搞定。跨平台社群發布 API，小編必備。', link:'featured/zernio-social-media.html', download:'featured/zernio-social-media-guide.md'},
+  {name:'GEO 最佳化工作流 — 讓 AI 搜尋引擎主動引用你', category:'Marketing', nodeCount:5, description:'基於 Princeton 研究的 GEO 工作流，5 大階段系統性優化網站：診斷、Schema 標記、內容重構、平台佈局、效果監控。提升 30-40% AI 搜尋可見度。', link:'featured/geo-workflow.html', download:'featured/geo-workflow-guide.md'},
+  {name:'蝦皮訂單自動通知 - 新訂單推播到 LINE', category:'E-commerce', nodeCount:8, description:'蝦皮賣場接到新訂單時，自動透過 LINE Notify 推播訂單明細給賣家。', download:'workflows/shopee-line-notify.md'},
+  {name:'LINE 官方帳號自動回覆 + AI 客服', category:'Communication', nodeCount:12, description:'LINE 官方帳號收到訊息時，自動透過 AI 分析意圖並回覆。', download:'workflows/line-ai-reply.md'},
+  {name:'Facebook 粉專貼文自動排程 + AI 產生文案', category:'Social Media', nodeCount:10, description:'每週自動從 Google 試算表讀取貼文主題，用 AI 產生文案。', download:'workflows/fb-auto-schedule.md'},
+  {name:'Instagram 潛在客戶自動收集 + CRM 建檔', category:'Marketing', nodeCount:15, description:'定期掃描 Instagram 留言和私訊，用 AI 分析潛在客戶意圖。', download:'workflows/instagram-crm.md'},
+  {name:'蝦皮商品庫存同步 - 多平台管理', category:'E-commerce', nodeCount:18, description:'定時同步蝦皮商品庫存到 Google 試算表，庫存低於設定值時自動通知。', download:'workflows/shopee-stock-sync.md'},
+  {name:'台灣發票自動整理 + 記帳', category:'E-commerce', nodeCount:10, description:'自動從 Gmail 擷取電子發票，解析發票內容並分類，匯入 Google 試算表記帳。', download:'workflows/tw-invoice-accounting.md'},
+  {name:'LINE 群組訊息摘要 + AI 整理', category:'Communication', nodeCount:5, description:'每天自動整理 LINE 群組的訊息，用 AI 產生摘要重點。', download:'workflows/line-group-summary.md'},
+  {name:'Facebook 廣告成效自動報表', category:'Marketing', nodeCount:12, description:'每週自動拉取 Facebook 廣告成效數據，產生報表並透過 Email 發送。', download:'workflows/fb-ad-report.md'},
 ];
 
 function renderTaiwan() {
@@ -1585,7 +1586,7 @@ function renderTaiwan() {
     const badgeHtml = isFeatured ? '<span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;background:rgba(251,191,36,.15);color:#fbbf24;border:1px solid rgba(251,191,36,.4);margin-bottom:8px">⭐ 本週精選</span>' : '';
     const btnAction = isFeatured
       ? `window.location.href='${w.link}'`
-      : `alert('此功能為 N8N 工作流下載，請至原工作流市集使用')`;
+      : (w.link ? `window.location.href='${w.link}'` : (w.download ? `window.open('${w.download}','_blank')` : `alert('工作流檔案準備中，敬請期待')`));
     const btnStyle = isFeatured ? 'background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#000;border-color:#fbbf24' : '';
     const cardStyle = isFeatured ? 'border-color:rgba(251,191,36,.4);background:linear-gradient(135deg,rgba(251,191,36,.05),var(--surface))' : '';
     return `<div class="taiwan-card" style="${cardStyle}">
@@ -1595,7 +1596,7 @@ function renderTaiwan() {
       <p>${w.description}</p>
       <span class="taiwan-badge">${w.nodeCount} ${isFeatured ? '階段' : '節點'}</span>
       <div class="taiwan-actions">
-        <button class="taiwan-btn taiwan-btn-primary" style="${btnStyle}" onclick="${btnAction}">${isFeatured ? '查看完整介紹' : '查看工作流'}</button>
+        <button class="taiwan-btn taiwan-btn-primary" style="${btnStyle}" onclick="${btnAction}">${isFeatured ? '查看完整介紹' : (w.link ? '查看介紹' : '📥 下載工作流')}</button>
       </div>
     </div>`;
   }).join('');
