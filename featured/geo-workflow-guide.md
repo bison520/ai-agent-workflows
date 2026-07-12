@@ -1,3 +1,5 @@
+---
+---
 # 🦐 GEO 優化工作流 — AI Agent 部署指南
 
 > **用途：** 讓 AI Agent（如 QwenPaw、ChatGPT、Claude）自動幫你優化網站 GEO
