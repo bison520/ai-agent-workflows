@@ -208,6 +208,45 @@ a:hover{text-decoration:underline}
 .taiwan-prompt{margin-top:10px}
 @media(max-width:768px){.taiwan-grid{grid-template-columns:repeat(2,1fr)}}
 
+/* ═══ AI FRONTIER ═══ */
+.ai-frontier-section{padding:60px 0;background:linear-gradient(180deg,rgba(59,130,246,.04) 0%,rgba(168,85,247,.04) 50%,transparent 100%);position:relative;overflow:hidden}
+.ai-frontier-section::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.06) 0%,transparent 70%);pointer-events:none}
+.ai-frontier-section .section-header h2{background:linear-gradient(135deg,#60a5fa,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:28px;font-weight:800;letter-spacing:-.5px}
+.ai-frontier-section .section-header p{color:var(--text-2);font-size:15px}
+.ai-frontier-meta{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.ai-frontier-meta-tag{font-size:12px;font-weight:600;padding:4px 12px;border-radius:var(--radius-pill);font-family:var(--mono)}
+.ai-frontier-meta-tag.podcast{background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2)}
+.ai-frontier-meta-tag.builders{background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)}
+.ai-frontier-meta-tag.tweets{background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.2)}
+.ai-frontier-meta-date{font-size:12px;color:var(--text-3);font-family:var(--mono)}
+.ai-frontier-podcast{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:24px;transition:all .25s;position:relative;overflow:hidden}
+.ai-frontier-podcast::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#ef4444,#f97316,#eab308)}
+.ai-frontier-podcast:hover{border-color:rgba(239,68,68,.3);transform:translateY(-2px)}
+.ai-frontier-podcast-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#f87171;margin-bottom:8px;font-family:var(--mono)}
+.ai-frontier-podcast h3{font-size:18px;font-weight:700;line-height:1.4;margin-bottom:6px}
+.ai-frontier-podcast h3 a{color:var(--text);text-decoration:none}
+.ai-frontier-podcast h3 a:hover{color:#60a5fa}
+.ai-frontier-podcast p{font-size:14px;color:var(--text-2);line-height:1.7}
+.ai-frontier-podcast-source{font-size:12px;color:var(--text-3);margin-top:8px;font-family:var(--mono)}
+.ai-frontier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ai-frontier-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:all .25s;position:relative}
+.ai-frontier-card:hover{border-color:rgba(96,165,250,.3);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.ai-frontier-card-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.ai-frontier-card-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#a855f7);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff;flex-shrink:0}
+.ai-frontier-card-name{font-size:15px;font-weight:700;color:var(--text)}
+.ai-frontier-card-role{font-size:11px;color:var(--text-3);font-family:var(--mono);margin-top:2px}
+.ai-frontier-card-tweet{font-size:14px;color:var(--text-2);line-height:1.7;margin-bottom:12px}
+.ai-frontier-card-link{font-size:12px;color:#60a5fa;text-decoration:none;font-family:var(--mono);display:inline-flex;align-items:center;gap:4px}
+.ai-frontier-card-link:hover{text-decoration:underline}
+.ai-frontier-update-btn{display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:12px 24px;background:linear-gradient(135deg,#3b82f6,#a855f7);color:#fff;border:none;border-radius:var(--radius-pill);font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;font-family:var(--font)}
+.ai-frontier-update-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(59,130,246,.3)}
+.ai-frontier-update-btn svg{width:16px;height:16px}
+.ai-frontier-source{font-size:11px;color:var(--text-3);margin-top:12px;font-family:var(--mono)}
+.ai-frontier-source a{color:var(--text-3);text-decoration:none}
+.ai-frontier-source a:hover{color:var(--text)}
+@media(max-width:1024px){.ai-frontier-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.ai-frontier-grid{grid-template-columns:1fr}.ai-frontier-section .section-header h2{font-size:22px}}
+
 /* FOOTER */
 .footer{border-top:1px solid var(--border);padding:48px 24px 24px;margin-top:40px}
 .footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid var(--border)}
@@ -371,6 +410,7 @@ a:hover{text-decoration:underline}
     <a href="#essential">必裝精選</a>
     <a href="#browse">全部瀏覽</a>
     <a href="#taiwan">🇹🇼 台灣精選</a>
+    <a href="#ai-frontier" style="color:#60a5fa">📡 AI 最前線</a>
     <a href="#blog">部落格</a>
     <a href="learn.html">教學</a>
     <a href="https://github.com/bison520/ai-agent-workflows" target="_blank">GitHub</a>
@@ -446,6 +486,22 @@ a:hover{text-decoration:underline}
     <p>針對台灣常用平台（蝦皮、LINE、Facebook、Instagram）量身打造的自動化工作流</p>
   </div>
   <div class="taiwan-grid" id="taiwan-grid"></div>
+</section>
+
+<!-- AI FRONTIER -->
+<section class="ai-frontier-section section reveal" id="ai-frontier">
+  <div class="section-header" style="text-align:center">
+    <h2>📡 AI 最前線</h2>
+    <p>追蹤 Karpathy、Sam Altman、Swyx 等 26 位 AI 建設者的最新動態，每日自動更新</p>
+  </div>
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="ai-frontier-meta" id="ai-frontier-meta"></div>
+    <div id="ai-frontier-podcast"></div>
+    <div class="ai-frontier-grid" id="ai-frontier-grid"></div>
+    <div style="text-align:center">
+      <div class="ai-frontier-source">資料來源：<a href="https://github.com/zarazhangrui/follow-builders" target="_blank">Follow Builders</a>（⭐5.8k）· 追蹤 26 位 AI 建設者 + 6 個 Podcast</div>
+    </div>
+  </div>
 </section>
 
 <section class="blog-section section reveal" id="blog">
@@ -1612,6 +1668,71 @@ function renderTaiwan() {
   }).join('');
 }
 
+// ═══ AI FRONTIER ═══
+function renderAIFrontier() {
+  const meta = document.getElementById('ai-frontier-meta');
+  const podcastEl = document.getElementById('ai-frontier-podcast');
+  const grid = document.getElementById('ai-frontier-grid');
+  if (!meta || !podcastEl || !grid) return;
+
+  // Static data from follow-builders (last fetched: 2026-07-14)
+  const AI_DATA = {
+    generatedAt: '2026-07-14',
+    stats: { builders: 15, tweets: 30, podcasts: 1 },
+    podcast: {
+      name: 'No Priors',
+      title: '核能如何解鎖能源豐饒 — Valar Atomics 創辦人 Isaiah Taylor 專訪',
+      url: 'https://www.youtube.com/watch?v=5Xvbq_zvOQ4',
+      summary: 'Valar Atomics 創辦人 Isaiah Taylor 分享為何核能是人類技術工業未來的唯一能源輸入。他的曾祖父是曼哈頓計畫的核物理學家，而他正致力於打造「行星規模」的核反應堆 — 比建造而非施工更簡單安全，目標是讓能源便宜 10 倍。Valar 剛展示了全球第一個由核反應堆驅動的 AI 晶片。'
+    },
+    builders: [
+      { name: 'Sam Altman', role: 'OpenAI 執行長', avatar: 'SA', tweet: '很想看看大家用 5.6 Sol 做出什麼有趣的東西。我會送做出最酷作品的人一份 OpenAI 的特別禮物。', url: 'https://x.com/sama/status/2076398253332140410' },
+      { name: 'Thibault Sottiaux', role: 'OpenAI Codex 與 ChatGPT 負責人', avatar: 'TS', tweet: 'Codex 和 ChatGPT Work 用戶更新：沒有削弱，只有好東西！我們完成了推理最佳化，並將省下來的成本回饋給所有付費訂閱用戶。', url: 'https://x.com/thsottiaux/status/2076495156757577895' },
+      { name: 'Guillermo Rauch', role: 'Vercel 執行長', avatar: 'GR', tweet: '讓模型成為你擁有的機器中的一個齒輪。AI SDK → 開放模型 API、AI Gateway → 開放 ZDR 推理。從第一天起就堅持開放標準。', url: 'https://x.com/rauchg/status/2076364176252191222' },
+      { name: 'Aaron Levie', role: 'Box 執行長', avatar: 'AL', tweet: '21 世紀企業最關鍵的架構問題之一，將是如何最大化你的企業 IP — 以決策、洞察和工作流程的形式存在。', url: 'https://x.com/levie/status/2076338364635287637' },
+      { name: 'Amjad Masad', role: 'Replit 執行長', avatar: 'AM', tweet: '看 Replit 的電腦使用模型對戰我的新西洋棋引擎很有趣。在 Replit 上微調 Qwen-8b 模型來下棋，同時跑 3 個平行實驗分支。', url: 'https://x.com/amasad/status/2076356893736673507' },
+      { name: 'Zara Zhang', role: 'Builder / 前 GitHub', avatar: 'ZZ', tweet: '試試「會議逐字稿當 PRD」，效果驚人！我和同事討論功能實作，把逐字稿丟給 Codex，它就直接建出原型了。', url: 'https://x.com/zarazhangrui/status/2076300222884626754' },
+      { name: 'Swyx', role: 'Latent Space 主持人', avatar: 'SX', tweet: '差別在於自我反省和反向傳播。就像愛因斯坦說的，瘋狂的定義是用不同參數做多次嘗試卻期待相同結果。', url: 'https://x.com/swyx/status/2076345087634620528' },
+      { name: 'Peter Yang', role: 'AI 教學創作者', avatar: 'PY', tweet: '看到很多人今天都在用 GPT 5.6 Sol。我猜 90%+ 的人在用 Sol，不到 10% 在用 Terra 或 Luna。', url: 'https://x.com/petergyang/status/2076519927843000448' },
+      { name: 'Claude', role: 'Anthropic AI 助理', avatar: 'CL', tweet: '延長所有付費方案的 Claude Fable 5 使用權限，同時維持 Claude Code 的每週速率限制提高 50%，直到 7 月 19 日。', url: 'https://x.com/claudeai/status/2076351399999557669' }
+    ]
+  };
+
+  // Render meta tags
+  meta.innerHTML = `
+    <span class="ai-frontier-meta-tag builders">${AI_DATA.stats.builders} 位建設者</span>
+    <span class="ai-frontier-meta-tag tweets">${AI_DATA.stats.tweets} 則推文</span>
+    <span class="ai-frontier-meta-tag podcast">${AI_DATA.stats.podcasts} 集 Podcast</span>
+    <span class="ai-frontier-meta-date">更新於 ${AI_DATA.generatedAt}</span>
+  `;
+
+  // Render podcast
+  const p = AI_DATA.podcast;
+  podcastEl.innerHTML = `
+    <div class="ai-frontier-podcast">
+      <div class="ai-frontier-podcast-label">🎙️ Podcast 精選</div>
+      <h3><a href="${p.url}" target="_blank">${p.title}</a></h3>
+      <p>${p.summary}</p>
+      <div class="ai-frontier-podcast-source">${p.name} · YouTube</div>
+    </div>
+  `;
+
+  // Render builder cards
+  grid.innerHTML = AI_DATA.builders.map(b => `
+    <div class="ai-frontier-card">
+      <div class="ai-frontier-card-header">
+        <div class="ai-frontier-card-avatar">${b.avatar}</div>
+        <div>
+          <div class="ai-frontier-card-name">${b.name}</div>
+          <div class="ai-frontier-card-role">${b.role}</div>
+        </div>
+      </div>
+      <div class="ai-frontier-card-tweet">${b.tweet}</div>
+      <a class="ai-frontier-card-link" href="${b.url}" target="_blank">查看原文</a>
+    </div>
+  `).join('');
+}
+
 // ═══ SCROLL REVEAL ═══
 function initReveal() {
   const observer = new IntersectionObserver((entries) => {
@@ -1627,6 +1748,7 @@ renderCategoryChips();
 renderAgentFilterChips();
 applyFilters();
 renderTaiwan();
+renderAIFrontier();
 initReveal();
 
 // Update stat count
