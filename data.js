@@ -3435,7 +3435,7 @@ const SKILLS = [
         features: ['公開訊號分析', '潛在客戶排名', '證據來源追溯', '一鍵匯出報告'],
         compatibility: { claude: '>=1.0', hermes: '>=0.8' },
         essential: false
-      }
+      },
       {
     id: 'video-shotcraft',
     name: 'Video Shotcraft',
