@@ -47,7 +47,7 @@ const SKILLS = [
     description: '讓 AI Agent 安全地讀寫本機檔案。支援目錄瀏覽、檔案搜尋、讀寫操作，可設定允許存取的路徑範圍，防止越權存取。是所有 MCP 相容 Agent 的第一個該裝的 Skill。',
     features: ['安全的檔案讀寫', '目錄樹瀏覽', '路徑白名單', '檔案搜尋與 glob'],
     compatibility: { claude: '>=1.0', hermes: '>=0.8', openclaw: '>=0.5', codex: '>=0.3' },
-    essential: true,
+    essential: false,
   },
   {
     id: 'mcp-memory',
@@ -68,7 +68,7 @@ const SKILLS = [
     description: '為 AI Agent 提供基於知識圖譜的長期記憶能力。Agent 可以在對話之間記住重要事實、使用者偏好和專案上下文，不再每次對話都從零開始。支援實體與關係管理、跨 session 記憶持久化、自動摘要生成。是打造「有記憶」的 AI Agent 的基礎設施。',
     features: ['知識圖譜儲存', '實體與關係管理', '跨 session 記憶', '自動摘要'],
     compatibility: { claude: '>=1.0', hermes: '>=0.8', openclaw: '>=0.5', codex: '>=0.3' },
-    essential: true,
+    essential: false,
   },
   {
     id: 'mcp-brave-search',
@@ -89,7 +89,7 @@ const SKILLS = [
     description: '賦予 AI Agent 即時網路搜尋能力。使用 Brave Search API 進行網頁搜尋，讓 Agent 能查詢最新資訊、技術文件、套件版本等即時資料。支援本地化搜尋結果、SafeSearch 控制、結果自動摘要。讓 Agent 不再受限於訓練資料的截止日期。',
     features: ['即時網頁搜尋', '本地化搜尋結果', '結果摘要', 'SafeSearch 控制'],
     compatibility: { claude: '>=1.0', hermes: '>=0.8', openclaw: '>=0.5', codex: '>=0.3' },
-    essential: true,
+    essential: false,
   },
   {
     id: 'hermes-code-review',
@@ -131,7 +131,7 @@ const SKILLS = [
     description: '完整的 Git 操作 MCP Server。支援 commit、branch、diff、log、merge、rebase 等所有常用 Git 操作，讓 AI Agent 能自主管理版本控制。可搭配 GitHub API 進行 PR 建立、衝突解決、分支策略管理，是開發者工作流的核心基礎設施。',
     features: ['commit / branch / merge', 'diff 與 log 查看', '衝突解決輔助', 'GitHub PR 整合'],
     compatibility: { claude: '>=1.0', hermes: '>=0.8', openclaw: '>=0.5' },
-    essential: true,
+    essential: false,
   },
 
   // ═══════════════════════════════════════
