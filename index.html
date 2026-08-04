@@ -232,7 +232,7 @@ a:hover{text-decoration:underline}
 .ai-frontier-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:all .25s;position:relative}
 .ai-frontier-card:hover{border-color:rgba(96,165,250,.3);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
 .ai-frontier-card-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.ai-frontier-card-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#a855f7);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff;flex-shrink:0}
+.ai-frontier-card-avatar-img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(99,102,241,.2)}.ai-frontier-card-avatar-fallback{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#a855f7);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff;flex-shrink:0}
 .ai-frontier-card-name{font-size:15px;font-weight:700;color:var(--text)}
 .ai-frontier-card-role{font-size:11px;color:var(--text-3);font-family:var(--mono);margin-top:2px}
 .ai-frontier-card-tweet{font-size:14px;color:var(--text-2);line-height:1.7;margin-bottom:12px}
@@ -1678,23 +1678,23 @@ function renderAIFrontier() {
   // Static data from follow-builders (last fetched: 2026-08-04)
   const AI_DATA = {
     generatedAt: '2026-08-04',
-    stats: { builders: 12, tweets: 22, podcasts: 1 },
+    stats: { builders: 26, tweets: 22, podcasts: 1 },
     podcast: {
       name: 'Unsupervised Learning',
-      title: 'AI Vibe Check: Chinese Open Models, Distillation & The Hugging Face Breach',
+      title: '中國開源模型、知識蒸餾與 Hugging Face 資安事件',
       url: 'https://www.youtube.com/watch?v=_GlSkJjRDMM',
-      summary: 'My mom, like, knows nothing about AI. She texted me last week, Rob, what do you think about OpenAI\'s agents hacking into Hugging Face?  What did you make of it?'
+      summary: '主持人 Rob 與來賓深入討論近期 AI 產業三大議題：中國開源模型的快速崛起如何改變競爭格局、知識蒸餾技術在模型訓練中的角色與爭議、以及 Hugging Face 遭駭事件對開源生態的影響。節目認為開源模型的能力已經接近閉源模型，這將根本性地改變 AI 產業的權力結構。'
     },
     builders: [
-      { name: 'Swyx', role: 'Latent Space 主持人', avatar: 'S', tweet: 'linking my main cua wow moments thread    but this one is just about do we need captchas anymore ...', url: 'https://x.com/swyx' },      { name: 'Thibault Sottiaux', role: 'OpenAI Codex 負責人', avatar: 'TS', tweet: 'Some fine folks apparently misunderstood, but the GPT-5.6 Luna price reduction by 80% is not a te...', url: 'https://x.com/thsottiaux' },      { name: 'Peter Yang', role: 'AI 教學創作者', avatar: 'PY', tweet: 'ChatGPT is for creating memories', url: 'https://x.com/petergyang' },      { name: 'Amanda Askell', role: 'Anthropic 研究員', avatar: 'AA', tweet: 'It\'s surprisingly difficult to acquire a hereditary peerage in the UK. Like you can\'t even take o...', url: 'https://x.com/AmandaAskell' },      { name: 'Thariq', role: 'Builder', avatar: 'T', tweet: 'do it here', url: 'https://x.com/trq212' },      { name: 'Amjad Masad', role: 'Replit 執行長', avatar: 'AM', tweet: 'We built a self-driving &amp; self-correcting shared semantic layer on top of our databases, conv...', url: 'https://x.com/amasad' }
+      { name: 'Thibault Sottiaux', role: 'OpenAI Codex 負責人', avatar: 'https://unavatar.io/x/thsottiaux', tweet: 'GPT-5.6 Luna 降價 80% 不是臨時促銷，是永久性的。效率提升帶來的成本下降會持續回饋給用戶。', url: 'https://x.com/thsottiaux', handle: 'thsottiaux' },      { name: 'Aaron Levie', role: 'Box 執行長', avatar: 'https://unavatar.io/x/levie', tweet: '又一天，又一個接近前沿的開源權重模型發布。如果回到 3-6 個月前，讓大家看到我們現在的成果，沒有人會相信。', url: 'https://x.com/levie', handle: 'levie' },      { name: 'Guillermo Rauch', role: 'Vercel 執行長', avatar: 'https://unavatar.io/x/rauchg', tweet: '這就是為什麼 PLG（產品驅動增長）永遠是新創的王道。讓 Agent 先採用你的產品，然後再開會討論。', url: 'https://x.com/rauchg', handle: 'rauchg' },      { name: 'Amjad Masad', role: 'Replit 執行長', avatar: 'https://unavatar.io/x/amasad', tweet: '我們在資料庫、對話和文件之上建了一個自駕車式、自我修正的共享語意層。一切都是可查詢的。', url: 'https://x.com/amasad', handle: 'amasad' },      { name: 'Zara Zhang', role: 'Builder / 前 GitHub', avatar: 'https://unavatar.io/x/zarazhangrui', tweet: '用 Codex 規劃旅行的簡單實用案例：把餐廳、火車、活動的截圖丟給 Codex，讓它自動整理成行程表。', url: 'https://x.com/zarazhangrui', handle: 'zarazhangrui' },      { name: 'Swyx', role: 'Latent Space 主持人', avatar: 'https://unavatar.io/x/swyx', tweet: '我們還需要 CAPTCHA 嗎？機器人顯然已經能輕鬆通過了。每個 token 成本已經不是重點，$/task 才是新指標。', url: 'https://x.com/swyx', handle: 'swyx' },      { name: 'Peter Yang', role: 'AI 教學創作者', avatar: 'https://unavatar.io/x/petergyang', tweet: 'ChatGPT 是用來創造回憶的。（分享了 AI 在日常生活記錄中的應用場景）', url: 'https://x.com/petergyang', handle: 'petergyang' },      { name: 'Dan Shipper', role: 'Every 執行長', avatar: 'https://unavatar.io/x/danshipper', tweet: '這是我做過最深入的一次訪談之一。（討論 AI 時代的深度對話與思考方式轉變）', url: 'https://x.com/danshipper', handle: 'danshipper' },      { name: 'Amanda Askell', role: 'Anthropic 研究員', avatar: 'https://unavatar.io/x/AmandaAskell', tweet: '在英國取得世襲貴族頭銜出乎意料地困難——你甚至不能用武力奪取了，他們會對你生氣。（分享英國制度趣聞）', url: 'https://x.com/AmandaAskell', handle: 'AmandaAskell' }
     ]
   };
 
   // Render meta tags
   meta.innerHTML = `
-    <span class="ai-frontier-meta-tag">${AI_DATA.stats.builders} 位建設者</span>
-    <span class="ai-frontier-meta-tag">${AI_DATA.stats.tweets} 則推文</span>
-    <span class="ai-frontier-meta-tag">${AI_DATA.stats.podcasts} 集 Podcast</span>
+    <span class="ai-frontier-meta-tag builders">${AI_DATA.stats.builders} 位建設者</span>
+    <span class="ai-frontier-meta-tag tweets">${AI_DATA.stats.tweets} 則推文</span>
+    <span class="ai-frontier-meta-tag podcast">${AI_DATA.stats.podcasts} 集 Podcast</span>
     <span class="ai-frontier-meta-date">更新於 ${AI_DATA.generatedAt}</span>
   `;
 
@@ -1709,18 +1709,19 @@ function renderAIFrontier() {
     </div>
   `;
 
-  // Render builder cards
+  // Render builder cards with avatar images
   grid.innerHTML = AI_DATA.builders.map(b => `
     <div class="ai-frontier-card">
       <div class="ai-frontier-card-header">
-        <div class="ai-frontier-card-avatar">${b.avatar}</div>
+        <img class="ai-frontier-card-avatar-img" src="${b.avatar}" alt="${b.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="lazy">
+        <div class="ai-frontier-card-avatar-fallback" style="display:none">${b.name.split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase()}</div>
         <div>
           <div class="ai-frontier-card-name">${b.name}</div>
           <div class="ai-frontier-card-role">${b.role}</div>
         </div>
       </div>
       <div class="ai-frontier-card-tweet">${b.tweet}</div>
-      <a class="ai-frontier-card-link" href="${b.url}" target="_blank">查看原文</a>
+      <a class="ai-frontier-card-link" href="${b.url}" target="_blank">查看原文 ↗</a>
     </div>
   `).join('');
 }
