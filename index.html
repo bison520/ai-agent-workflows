@@ -1675,34 +1675,26 @@ function renderAIFrontier() {
   const grid = document.getElementById('ai-frontier-grid');
   if (!meta || !podcastEl || !grid) return;
 
-  // Static data from follow-builders (last fetched: 2026-07-29)
+  // Static data from follow-builders (last fetched: 2026-08-04)
   const AI_DATA = {
-    generatedAt: '2026-07-29',
-    stats: { builders: 14, tweets: 29, podcasts: 1 },
+    generatedAt: '2026-08-04',
+    stats: { builders: 12, tweets: 22, podcasts: 1 },
     podcast: {
-      name: 'AI & I by Every',
-      title: '15 億美元 AI 公司創辦人談：第一波 AI App 之後，下一步是什麼？',
-      url: 'https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL',
-      summary: 'Granolah 執行長 Chris 分享 AI 會議筆記工具的創業心路歷程。他認為會議紀錄只是起點，真正的機會在於重新定義 AI 時代的工作方式。從 12 人到 70 人團隊的擴張挑戰、產品靈魂如何在規模化中保持、以及「海盜與建築師」的開發模式——前沿探索者負責快速試錯，架構師負責把有價值的東西變成可持續系統。'
+      name: 'Unsupervised Learning',
+      title: 'AI Vibe Check: Chinese Open Models, Distillation & The Hugging Face Breach',
+      url: 'https://www.youtube.com/watch?v=_GlSkJjRDMM',
+      summary: 'My mom, like, knows nothing about AI. She texted me last week, Rob, what do you think about OpenAI\'s agents hacking into Hugging Face?  What did you make of it?'
     },
     builders: [
-      { name: 'Thibault Sottiaux', role: 'OpenAI Codex 與 ChatGPT 負責人', avatar: 'TS', tweet: 'Codex 和 ChatGPT Work 所有付費用戶的使用限額已全面重置！我們完成了推理最佳化，把省下來的成本全部回饋給用戶。', url: 'https://x.com/thsottiaux/status/2081940052154933696' },
-      { name: 'Guillermo Rauch', role: 'Vercel 執行長', avatar: 'GR', tweet: '最新基準測試結果：Grok 4.5 成為效能價格比最佳的資安 AI 模型。', url: 'https://x.com/rauchg/status/2081852481517318560' },
-      { name: 'Aaron Levie', role: 'Box 執行長', avatar: 'AL', tweet: 'AI 造成大量失業的悲觀預測持續落空。我接觸的大多數企業並沒有因為 AI 而大幅裁員，反而在用 AI 提升現有員工的生產力。', url: 'https://x.com/levie/status/2081930301752942703' },
-      { name: 'Peter Yang', role: 'AI 教學創作者', avatar: 'PY', tweet: 'OpenAI DevEx 工程師分享：有次騎單車時接到同事訊息要修 launch 影片。他從手機遠端連線，讓 Codex 用電腦操作功能剪輯、匯出、上傳到 Slack。20 分鐘後新影片就出現在討論串了。', url: 'https://x.com/petergyang/status/2081775399097549083' },
-      { name: 'Amjad Masad', role: 'Replit 執行長', avatar: 'AM', tweet: '我們正在進入一個全新的探索時代。祖先探索了地球，然後探索了太空。我們這一代人探索的，可能是 AI 帶來的無限可能。', url: 'https://x.com/amasad/status/2082000490066592127' },
-      { name: 'Zara Zhang', role: 'Builder / 前 GitHub', avatar: 'ZZ', tweet: '如何獲得源源不絕的內容靈感，一張圖說完。（分享了一個創意方法論的視覺圖）', url: 'https://x.com/zarazhangrui/status/2081983750658044079' },
-      { name: 'Swyx', role: 'Latent Space 主持人', avatar: 'SX', tweet: '每 token 成本已經不是 relevant 的衡量標準了。如果你的 X 軸還在用 $/token，而不是 @ArtificialAnlys 的 $/task，那你的分析可能已經過時。', url: 'https://x.com/swyx/status/2081904230768816487' },
-      { name: 'Dan Shipper', role: 'Every 執行長', avatar: 'DS', tweet: '如果這是真的，那很糟糕，不應該繼續下去。（關於稀有書籍數位化的爭議討論）', url: 'https://x.com/danshipper/status/2081754482568835152' },
-      { name: 'Madhu Guru', role: 'Meta AI 高級總監', avatar: 'MG', tweet: '最好的產品審查會議，能把數月的學習壓縮一小時——前提是你需要真正懂市場、有產品 sense、而且常常判斷正確的人在場。太多產品審查已經淪為進度匯報。', url: 'https://x.com/realmadhuguru/status/2081781952437486052' }
+      { name: 'Swyx', role: 'Latent Space 主持人', avatar: 'S', tweet: 'linking my main cua wow moments thread    but this one is just about do we need captchas anymore ...', url: 'https://x.com/swyx' },      { name: 'Thibault Sottiaux', role: 'OpenAI Codex 負責人', avatar: 'TS', tweet: 'Some fine folks apparently misunderstood, but the GPT-5.6 Luna price reduction by 80% is not a te...', url: 'https://x.com/thsottiaux' },      { name: 'Peter Yang', role: 'AI 教學創作者', avatar: 'PY', tweet: 'ChatGPT is for creating memories', url: 'https://x.com/petergyang' },      { name: 'Amanda Askell', role: 'Anthropic 研究員', avatar: 'AA', tweet: 'It\'s surprisingly difficult to acquire a hereditary peerage in the UK. Like you can\'t even take o...', url: 'https://x.com/AmandaAskell' },      { name: 'Thariq', role: 'Builder', avatar: 'T', tweet: 'do it here', url: 'https://x.com/trq212' },      { name: 'Amjad Masad', role: 'Replit 執行長', avatar: 'AM', tweet: 'We built a self-driving &amp; self-correcting shared semantic layer on top of our databases, conv...', url: 'https://x.com/amasad' }
     ]
   };
 
   // Render meta tags
   meta.innerHTML = `
-    <span class="ai-frontier-meta-tag builders">${AI_DATA.stats.builders} 位建設者</span>
-    <span class="ai-frontier-meta-tag tweets">${AI_DATA.stats.tweets} 則推文</span>
-    <span class="ai-frontier-meta-tag podcast">${AI_DATA.stats.podcasts} 集 Podcast</span>
+    <span class="ai-frontier-meta-tag">${AI_DATA.stats.builders} 位建設者</span>
+    <span class="ai-frontier-meta-tag">${AI_DATA.stats.tweets} 則推文</span>
+    <span class="ai-frontier-meta-tag">${AI_DATA.stats.podcasts} 集 Podcast</span>
     <span class="ai-frontier-meta-date">更新於 ${AI_DATA.generatedAt}</span>
   `;
 
