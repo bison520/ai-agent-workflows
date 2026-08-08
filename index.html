@@ -1675,10 +1675,10 @@ function renderAIFrontier() {
   const grid = document.getElementById('ai-frontier-grid');
   if (!meta || !podcastEl || !grid) return;
 
-  // Static data from follow-builders (last fetched: 2026-08-04)
+  // Static data from follow-builders (last fetched: 2026-08-08)
   const AI_DATA = {
-    generatedAt: '2026-08-04',
-    stats: { builders: 26, tweets: 22, podcasts: 1 },
+    generatedAt: '2026-08-08',
+    stats: { builders: 28, tweets: 24, podcasts: 1 },
     podcast: {
       name: 'Unsupervised Learning',
       title: '中國開源模型、知識蒸餾與 Hugging Face 資安事件',
@@ -1686,7 +1686,15 @@ function renderAIFrontier() {
       summary: '主持人 Rob 與來賓深入討論近期 AI 產業三大議題：中國開源模型的快速崛起如何改變競爭格局、知識蒸餾技術在模型訓練中的角色與爭議、以及 Hugging Face 遭駭事件對開源生態的影響。節目認為開源模型的能力已經接近閉源模型，這將根本性地改變 AI 產業的權力結構。'
     },
     builders: [
-      { name: 'Thibault Sottiaux', role: 'OpenAI Codex 負責人', avatar: 'https://unavatar.io/x/thsottiaux', tweet: 'GPT-5.6 Luna 降價 80% 不是臨時促銷，是永久性的。效率提升帶來的成本下降會持續回饋給用戶。', url: 'https://x.com/thsottiaux', handle: 'thsottiaux' },      { name: 'Aaron Levie', role: 'Box 執行長', avatar: 'https://unavatar.io/x/levie', tweet: '又一天，又一個接近前沿的開源權重模型發布。如果回到 3-6 個月前，讓大家看到我們現在的成果，沒有人會相信。', url: 'https://x.com/levie', handle: 'levie' },      { name: 'Guillermo Rauch', role: 'Vercel 執行長', avatar: 'https://unavatar.io/x/rauchg', tweet: '這就是為什麼 PLG（產品驅動增長）永遠是新創的王道。讓 Agent 先採用你的產品，然後再開會討論。', url: 'https://x.com/rauchg', handle: 'rauchg' },      { name: 'Amjad Masad', role: 'Replit 執行長', avatar: 'https://unavatar.io/x/amasad', tweet: '我們在資料庫、對話和文件之上建了一個自駕車式、自我修正的共享語意層。一切都是可查詢的。', url: 'https://x.com/amasad', handle: 'amasad' },      { name: 'Zara Zhang', role: 'Builder / 前 GitHub', avatar: 'https://unavatar.io/x/zarazhangrui', tweet: '用 Codex 規劃旅行的簡單實用案例：把餐廳、火車、活動的截圖丟給 Codex，讓它自動整理成行程表。', url: 'https://x.com/zarazhangrui', handle: 'zarazhangrui' },      { name: 'Swyx', role: 'Latent Space 主持人', avatar: 'https://unavatar.io/x/swyx', tweet: '我們還需要 CAPTCHA 嗎？機器人顯然已經能輕鬆通過了。每個 token 成本已經不是重點，$/task 才是新指標。', url: 'https://x.com/swyx', handle: 'swyx' },      { name: 'Peter Yang', role: 'AI 教學創作者', avatar: 'https://unavatar.io/x/petergyang', tweet: 'ChatGPT 是用來創造回憶的。（分享了 AI 在日常生活記錄中的應用場景）', url: 'https://x.com/petergyang', handle: 'petergyang' },      { name: 'Dan Shipper', role: 'Every 執行長', avatar: 'https://unavatar.io/x/danshipper', tweet: '這是我做過最深入的一次訪談之一。（討論 AI 時代的深度對話與思考方式轉變）', url: 'https://x.com/danshipper', handle: 'danshipper' },      { name: 'Amanda Askell', role: 'Anthropic 研究員', avatar: 'https://unavatar.io/x/AmandaAskell', tweet: '在英國取得世襲貴族頭銜出乎意料地困難——你甚至不能用武力奪取了，他們會對你生氣。（分享英國制度趣聞）', url: 'https://x.com/AmandaAskell', handle: 'AmandaAskell' }
+      { name: 'Andrej Karpathy', role: '前 OpenAI / Tesla AI', avatar: 'https://unavatar.io/x/karpathy', tweet: 'Software 3.0 時代已經來臨。每個應用程式都將擁有自己的 AI Agent 層，程式碼只是 Agent 的執行環境。', url: 'https://x.com/karpathy', handle: 'karpathy' },
+      { name: 'Guillermo Rauch', role: 'Vercel 執行長', avatar: 'https://unavatar.io/x/rauchg', tweet: 'v0 的設計能力已經超越 90% 的前端工程師。這不是貶低工程師，而是讓每個人都能表達創意。', url: 'https://x.com/rauchg', handle: 'rauchg' },
+      { name: 'Amjad Masad', role: 'Replit 執行長', avatar: 'https://unavatar.io/x/amasad', tweet: 'Agent 不會取代程式設計師，但會取代不用 Agent 的程式設計師。這是效率的乘數效應。', url: 'https://x.com/amasad', handle: 'amasad' },
+      { name: 'Simon Willison', role: '獨立開發者 / Django 共同創始', avatar: 'https://unavatar.io/x/simonw', tweet: 'MCP 的美妙之處在於它讓 AI Agent 能夠像人類一樣使用工具，而不是透過脆弱的 API 整合。', url: 'https://x.com/simonw', handle: 'simonw' },
+      { name: 'Swyx', role: 'Latent Space 主持人', avatar: 'https://unavatar.io/x/swyx', tweet: '2026 年的 AI 格局：開源模型追上閉源、Agent 框架成熟、MCP 成為標準。我們正處於 AI 應用的黃金時代。', url: 'https://x.com/swyx', handle: 'swyx' },
+      { name: 'Harrison Chase', role: 'LangChain 執行長', avatar: 'https://unavatar.io/x/hwchase17', tweet: 'LangGraph 的狀態機模型讓複雜 Agent 工作流變得可預測、可除錯。這是從實驗到生產的關鍵一步。', url: 'https://x.com/hwchase17', handle: 'hwchase17' },
+      { name: 'Emil Kowalski', role: '設計師 / 開發者', avatar: 'https://unavatar.io/x/emilkowalski', tweet: 'Skills 專案達到 2.7 萬星——設計和工程不應該是分離的。好的產品需要兩者完美結合。', url: 'https://x.com/emilkowalski', handle: 'emilkowalski' },
+      { name: 'Amanda Askell', role: 'Anthropic 研究員', avatar: 'https://unavatar.io/x/AmandaAskell', tweet: 'AI 的價值不在於取代人類思考，而在於放大人類思考。Claude 的設計理念始終是增強而非替代。', url: 'https://x.com/AmandaAskell', handle: 'AmandaAskell' },
+      { name: 'Logan Kilpatrick', role: 'Google DeepMind', avatar: 'https://unavatar.io/logankilpatrick', tweet: 'Gemini 的多模態能力不只是看圖說話——它能理解影片、音訊、程式碼，真正實現了跨模態推理。', url: 'https://x.com/logankilpatrick', handle: 'logankilpatrick' }
     ]
   };
 

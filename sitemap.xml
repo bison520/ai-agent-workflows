@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ai-dreams.net/</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ai-dreams.net/learn.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://ai-dreams.net/learn</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -20,14 +20,14 @@
   </url>
   <url>
     <loc>https://ai-dreams.net/featured/zernio-social-media</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ai-dreams.net/featured/ai-video-workflow</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>
